@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".ShopRegister_"></activity>
+        <activity android:name=".ShopHomeScreen_"></activity>
+        <activity android:name=".ShopRegister_" />
         <activity android:name=".ShopOwnerWelcomePage_" />
         <activity android:name=".MainActivity_">
             <intent-filter>
