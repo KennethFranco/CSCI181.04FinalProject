@@ -11,6 +11,8 @@ public class Shops extends RealmObject {
     private String shopUsername;
     private String shopPassword;
 
+    private String shop;
+
     public Shops() {}
 
     public String getUuid() {
@@ -35,6 +37,14 @@ public class Shops extends RealmObject {
 
     public void setShopPassword(String shopPassword) {
         this.shopPassword = shopPassword;
+    }
+
+    public String getShop() {
+        return shop;
+    }
+
+    public void setShop(String shop) {
+        this.shop = shop;
     }
 
     public Shops(String uuid, String username, String password) {

@@ -19,6 +19,7 @@ import io.realm.Realm;
 public class ShopOwnerWelcomePage extends AppCompatActivity {
 
     Realm realm;
+
     @ViewById
     Button shopOwner_register;
 
