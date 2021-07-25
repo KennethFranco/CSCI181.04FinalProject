@@ -12,6 +12,37 @@ public class Shops extends RealmObject {
     private String shopPassword;
 
     private String shop;
+    private String shopDescription;
+    private String shopName;
+
+    public String getShopDescription() {
+        return shopDescription;
+    }
+
+    public void setShopDescription(String shopDescription) {
+        this.shopDescription = shopDescription;
+    }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Shops{" +
+                "uuid='" + uuid + '\'' +
+                ", shopUsername='" + shopUsername + '\'' +
+                ", shopPassword='" + shopPassword + '\'' +
+                ", shop='" + shop + '\'' +
+                ", shopDescription='" + shopDescription + '\'' +
+                ", shopName='" + shopName + '\'' +
+                '}';
+    }
+
+    public void setShopName(String shopName) {
+        this.shopName = shopName;
+    }
 
     public Shops() {}
 
@@ -47,17 +78,12 @@ public class Shops extends RealmObject {
         this.shop = shop;
     }
 
-    public Shops(String uuid, String username, String password) {
+    public Shops(String uuid, String username, String password, String shopDescription, String shopName) {
         this.uuid = uuid;
         this.shopUsername = username;
         this.shopPassword = password;
+        this.shopDescription = shopDescription;
+        this.shopName = shopName;
     }
 
-    @Override
-    public String toString() {
-        return "Shops [" +
-                "UUID = " + uuid + "'\'" +
-                ", Shop Name = " + shopUsername + "'\'" +
-                ", Shop Password = " + shopPassword + "]";
-    }
 }

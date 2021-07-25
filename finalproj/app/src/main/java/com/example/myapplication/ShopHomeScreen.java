@@ -48,4 +48,9 @@ public class ShopHomeScreen extends AppCompatActivity {
     public void ViewProducts() {
         ViewProducts_.intent(this).start();
     }
+
+    @Click(R.id.shopsAccountButton)
+    public void account(){
+        ShopAccount_.intent(this).start();
+    }
 }

@@ -34,6 +34,9 @@ public class AddProduct extends AppCompatActivity {
     @ViewById(R.id.editText_ProductNumber)
     EditText prod_num;
 
+    @ViewById(R.id.addProductDescription)
+    EditText addProductD;
+
     @AfterViews
     public void init() {
         realm = Realm.getDefaultInstance();
@@ -47,6 +50,7 @@ public class AddProduct extends AppCompatActivity {
 
         String name = prod_name.getText().toString();
         String price = prod_num.getText().toString();
+        String description = addProductD.getText().toString();
         String prod_uuid = UUID.randomUUID().toString();
 
         Products result = realm.where(Products.class).equalTo("product_name", name).findFirst();
@@ -71,6 +75,7 @@ public class AddProduct extends AppCompatActivity {
             newProduct.setUuid(prod_uuid);
             newProduct.setProduct_name(name);
             newProduct.setProduct_price(price);
+            newProduct.setProduct_description(description);
             newProduct.setShop_name(valueUUID.getShop());
             newProduct.setShop_uuid(valueUUID.getUuid());
 

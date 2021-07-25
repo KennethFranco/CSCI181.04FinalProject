@@ -10,8 +10,30 @@ public class Products extends RealmObject {
 
     private String product_name;
     private String product_price;
+    private String product_description;
 
     private String shop_name;
+
+    public String getProduct_description() {
+        return product_description;
+    }
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "uuid='" + uuid + '\'' +
+                ", product_name='" + product_name + '\'' +
+                ", product_price='" + product_price + '\'' +
+                ", product_description='" + product_description + '\'' +
+                ", shop_name='" + shop_name + '\'' +
+                ", shop_uuid='" + shop_uuid + '\'' +
+                '}';
+    }
+
+    public void setProduct_description(String product_description) {
+        this.product_description = product_description;
+    }
+
     private String shop_uuid;
 
     public Products() {}
@@ -56,22 +78,13 @@ public class Products extends RealmObject {
         this.shop_uuid = shop_uuid;
     }
 
-    public Products(String uuid, String product_name, String product_price, String shop_name, String shop_uuid) {
+    public Products(String uuid, String product_name, String product_price, String shop_name, String shop_uuid, String product_description) {
         this.uuid = uuid;
         this.product_name = product_name;
         this.product_price = product_price;
+        this.product_description = product_description;
         this.shop_name = shop_name;
         this.shop_uuid = shop_uuid;
     }
 
-    @Override
-    public String toString() {
-        return "Products{" +
-                "uuid='" + uuid + '\'' +
-                ", product_name='" + product_name + '\'' +
-                ", product_price='" + product_price + '\'' +
-                ", shop_name='" + shop_name + '\'' +
-                ", shop_uuid='" + shop_uuid + '\'' +
-                '}';
-    }
 }

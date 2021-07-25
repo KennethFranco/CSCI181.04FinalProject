@@ -57,7 +57,13 @@ public class ShopRegister extends AppCompatActivity {
         }
         else if ((result == null) && (checkPassword.equals(checkConfirm))){
 
-            Shops newShop = new Shops(uuid, checkUname, checkPassword);
+            Shops newShop = new Shops();
+            newShop.setUuid(uuid);
+            newShop.setShopUsername(checkUname);
+            newShop.setShopPassword(checkPassword);
+            newShop.setShopName("");
+            newShop.setShopDescription("");
+
             long count = 0;
 
             realm.beginTransaction();
