@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Click(R.id.customerButton)
     public void customer(){
-        
+        CustomerWelcome_.intent(this).start();
     }
 
     @Click(R.id.shopButton)

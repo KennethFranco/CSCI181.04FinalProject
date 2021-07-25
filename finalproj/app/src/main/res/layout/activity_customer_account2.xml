@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerAccount">
+
+    <TextView
+        android:id="@+id/customerAccountPasswordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Password:"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountUsername"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountUsername" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="103dp"
+        android:layout_height="133dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        app:srcCompat="@android:drawable/btn_star" />
+
+    <Button
+        android:id="@+id/customerAccountSaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <ImageButton
+        android:id="@+id/customerAccountCancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+    <TextView
+        android:id="@+id/customerAccountFullNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265" />
+
+    <EditText
+        android:id="@+id/customerAccountFullName"
+        android:layout_width="341dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountFullNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountFullNameTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountContactNumberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Contact Number (Please enter only numbers):"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountFullName"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountFullName" />
+
+    <EditText
+        android:id="@+id/customerAccountContactNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="0908123456"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumberTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumberTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Address:"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumber"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumber" />
+
+    <EditText
+        android:id="@+id/customerAccountAddress"
+        android:layout_width="340dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountAddressTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountAddressTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountUsernameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Username:"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountAddress"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountAddress" />
+
+    <EditText
+        android:id="@+id/customerAccountUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountUsernameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountUsernameTitle" />
+
+    <EditText
+        android:id="@+id/customerAccountPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountPasswordTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountPasswordTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
