@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     @ViewById(R.id.customerButton)
     Button customerB;
 
+    @ViewById
+    Button shopButton;
+
 
     @AfterViews
     public void init(){
@@ -26,5 +29,10 @@ public class MainActivity extends AppCompatActivity {
     @Click(R.id.customerButton)
     public void customer(){
         
+    }
+
+    @Click(R.id.shopButton)
+    public void shopOwner() {
+        ShopOwnerWelcomePage_.intent(this).start();
     }
 }
