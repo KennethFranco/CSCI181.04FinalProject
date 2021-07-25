@@ -7,7 +7,7 @@
     tools:context=".ViewProducts">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/products_recyclerView"
         android:layout_width="335dp"
         android:layout_height="289dp"
         android:layout_marginTop="28dp"
@@ -32,10 +32,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:text="Clear All"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/products_recyclerView"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/recyclerView"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintStart_toStartOf="@+id/products_recyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/products_recyclerView" />
 
     <Button
         android:id="@+id/Products_add"

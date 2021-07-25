@@ -9,7 +9,7 @@ public class Products extends RealmObject {
     private String uuid;
 
     private String product_name;
-    private Double product_price;
+    private String product_price;
 
     private String shop_name;
     private String shop_uuid;
@@ -32,11 +32,11 @@ public class Products extends RealmObject {
         this.product_name = product_name;
     }
 
-    public Double getProduct_price() {
+    public String getProduct_price() {
         return product_price;
     }
 
-    public void setProduct_price(Double product_price) {
+    public void setProduct_price(String product_price) {
         this.product_price = product_price;
     }
 
@@ -56,18 +56,22 @@ public class Products extends RealmObject {
         this.shop_uuid = shop_uuid;
     }
 
-    public Products(String uuid, String username, Double price) {
+    public Products(String uuid, String product_name, String product_price, String shop_name, String shop_uuid) {
         this.uuid = uuid;
-        this.product_name = username;
-        this.product_price = price;
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.shop_name = shop_name;
+        this.shop_uuid = shop_uuid;
     }
 
     @Override
     public String toString() {
-        return "Shops [" +
-                "UUID = " + uuid + "'\'" +
-                ", Shop Name = " + shop_name + "'\'" +
-                ", Product Name = " + product_name + "]" +
-                ", Product Price = " + product_price + "'\'";
+        return "Products{" +
+                "uuid='" + uuid + '\'' +
+                ", product_name='" + product_name + '\'' +
+                ", product_price='" + product_price + '\'' +
+                ", shop_name='" + shop_name + '\'' +
+                ", shop_uuid='" + shop_uuid + '\'' +
+                '}';
     }
 }

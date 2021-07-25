@@ -48,7 +48,7 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
                 SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
                 SharedPreferences.Editor edit = prefs.edit();
-                edit.putString("uuid", username.getUuid());
+                edit.putString("shopUUID", username.getUuid());
                 edit.apply();
 
                 ShopHomeScreen_.intent(this).start();
