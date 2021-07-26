@@ -1,12 +1,15 @@
-package com.example.myapplication;
+package com.example.myapplication.shops;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.myapplication.R;
+import com.example.myapplication.shops.ShopHomeScreen_;
+import com.example.myapplication.shops.ShopRegister_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

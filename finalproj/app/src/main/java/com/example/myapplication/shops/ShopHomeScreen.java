@@ -1,11 +1,14 @@
-package com.example.myapplication;
+package com.example.myapplication.shops;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.myapplication.R;
+import com.example.myapplication.shops.ShopAccount_;
+import com.example.myapplication.shops.ViewProducts_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

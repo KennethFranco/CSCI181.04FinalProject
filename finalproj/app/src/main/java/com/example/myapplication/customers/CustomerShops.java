@@ -1,11 +1,15 @@
-package com.example.myapplication;
+package com.example.myapplication.customers;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
+
+import com.example.myapplication.customers.CustomerShopsProducts_;
+import com.example.myapplication.R;
+import com.example.myapplication.shops.Shops;
+import com.example.myapplication.shops.ShopsAdapter;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

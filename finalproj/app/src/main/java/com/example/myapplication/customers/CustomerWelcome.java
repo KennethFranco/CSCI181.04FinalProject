@@ -1,9 +1,13 @@
-package com.example.myapplication;
+package com.example.myapplication.customers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.myapplication.customers.CustomerLogin_;
+import com.example.myapplication.customers.CustomerRegister_;
+import com.example.myapplication.R;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

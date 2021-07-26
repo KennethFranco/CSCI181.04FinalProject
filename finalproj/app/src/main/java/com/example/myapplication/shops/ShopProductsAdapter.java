@@ -1,9 +1,8 @@
-package com.example.myapplication;
+package com.example.myapplication.shops;
 
-import android.media.Image;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -11,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.R;
+import com.example.myapplication.customers.CustomerShopsProducts;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
@@ -37,7 +39,8 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         TextView product_price;
         TextView product_description;
         EditText product_quantity;
-        CheckBox product_addToCart;
+        Button product_remove;
+        Button product_addToCart;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -49,7 +52,8 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
 
             // initialize the buttons in the layout
             product_quantity = itemView.findViewById(R.id.editTextNumber);
-            product_addToCart = itemView.findViewById(R.id.addCheckButton);
+            product_remove = itemView.findViewById(R.id.removeItem);
+            product_addToCart = itemView.findViewById(R.id.addItemToCart);
         }
     }
 
@@ -77,6 +81,21 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         holder.product_name.setText(u.getProduct_name());
         holder.product_price.setText(u.getProduct_price());
         holder.product_description.setText(u.getProduct_description());
+
+        holder.product_remove.setTag(u);
+        holder.product_remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        holder.product_addToCart.setTag(u);
+        holder.product_addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {activity.addItem((Products) v.getTag());
+            }
+        });
 
         // NOTE: MUST BE A STRING NOT INTs, etc.
         // String.valueOf() converts most types to a string

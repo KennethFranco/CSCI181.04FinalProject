@@ -1,10 +1,11 @@
-package com.example.myapplication;
+package com.example.myapplication.shops;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.myapplication.R;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

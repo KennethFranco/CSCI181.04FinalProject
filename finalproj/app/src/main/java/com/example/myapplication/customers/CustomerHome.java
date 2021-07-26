@@ -1,10 +1,14 @@
-package com.example.myapplication;
+package com.example.myapplication.customers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.example.myapplication.customers.CustomerAccount_;
+import com.example.myapplication.customers.CustomerShops_;
+import com.example.myapplication.R;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

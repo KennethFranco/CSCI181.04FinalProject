@@ -1,12 +1,13 @@
-package com.example.myapplication;
+package com.example.myapplication.shops;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.myapplication.R;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -16,7 +17,6 @@ import org.androidannotations.annotations.ViewById;
 import java.util.UUID;
 
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 @EActivity(R.layout.activity_add_product)
 public class AddProduct extends AppCompatActivity {

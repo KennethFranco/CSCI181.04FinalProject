@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.customers;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
