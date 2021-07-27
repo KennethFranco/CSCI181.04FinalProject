@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.media.Image;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -35,9 +36,7 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         // have a field for each one
         TextView product_name;
         TextView product_price;
-        TextView product_description;
-        EditText product_quantity;
-        CheckBox product_addToCart;
+        Button add;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -45,11 +44,8 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
             // initialize them from the itemView using standard style
             product_name = itemView.findViewById(R.id.shopProductName);
             product_price = itemView.findViewById(R.id.shopProductPrice);
-            product_description = itemView.findViewById(R.id.shopProductDescription);
+            add = itemView.findViewById(R.id.shopAdd);
 
-            // initialize the buttons in the layout
-            product_quantity = itemView.findViewById(R.id.editTextNumber);
-            product_addToCart = itemView.findViewById(R.id.addCheckButton);
         }
     }
 
@@ -75,29 +71,17 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
 
         // copy all the values needed to the appropriate views
         holder.product_name.setText(u.getProduct_name());
-        holder.product_price.setText(u.getProduct_price());
-        holder.product_description.setText(u.getProduct_description());
 
-        // NOTE: MUST BE A STRING NOT INTs, etc.
-        // String.valueOf() converts most types to a string
-        // holder.age.setText(String.valueOf(u.getAge()));
+        String price = u.getProduct_price();
+        holder.product_price.setText("PHP "+price);
 
-        // do any other initializations here as well,  e.g. Button listeners
-//        holder.delete.setTag(u);
-//        holder.delete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                activity.delete((Products) view.getTag());
-//            }
-//        });
-//
-//        holder.edit.setTag(u);
-//        holder.edit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                activity.edit((Products) view.getTag());
-//            }
-//        });
+        holder.add.setTag(u);
+        holder.add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.add((Products) view.getTag());
+            }
+        });
     }
 
 }

@@ -45,5 +45,17 @@ public class CustomerShopsProducts extends AppCompatActivity {
 
     }
 
+    public void add(Products u){
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+        String uuid = u.getUuid();
+
+        System.out.println(uuid);
+        edit.putString("productUUID", uuid);
+        edit.apply();
+
+        CustomerShopsSpecificProduct_.intent(this).start();
+    }
+
 
 }

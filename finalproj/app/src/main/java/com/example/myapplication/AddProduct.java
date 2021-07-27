@@ -58,6 +58,7 @@ public class AddProduct extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         String prefsID = prefs.getString("shopUUID", null);
 
+//        valueUUID is shops uuid
         Shops valueUUID = realm.where(Shops.class).equalTo("uuid", prefsID).findFirst();
 
         System.out.println(result);
@@ -76,8 +77,11 @@ public class AddProduct extends AppCompatActivity {
             newProduct.setProduct_name(name);
             newProduct.setProduct_price(price);
             newProduct.setProduct_description(description);
-            newProduct.setShop_name(valueUUID.getShop());
+
+            newProduct.setShop_name(valueUUID.getShopName());
             newProduct.setShop_uuid(valueUUID.getUuid());
+
+
 
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(newProduct);

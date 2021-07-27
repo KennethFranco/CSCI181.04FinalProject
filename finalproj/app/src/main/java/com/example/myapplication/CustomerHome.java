@@ -44,5 +44,10 @@ public class CustomerHome extends AppCompatActivity {
         }
     }
 
+    @Click(R.id.customerHomeCartButton)
+    public void cart(){
+        ViewCart_.intent(this).start();
+    }
+
 
 }
