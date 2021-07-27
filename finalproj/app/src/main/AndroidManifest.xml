@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".shops.EditProduct_"></activity>
+        <activity android:name=".customers.CustomerShopsSpecificProduct"></activity>
+        <activity android:name=".shops.EditProduct_" />
         <activity android:name=".customers.CustomerShopsProducts_" />
         <activity android:name=".shops.ShopAccount_" />
         <activity android:name=".shops.AddProduct_" />
