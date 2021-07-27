@@ -8,7 +8,49 @@ public class Orders extends RealmObject {
     private String uuid;
 
     private String order_name;
+    private String date;
     private Double order_price;
+    private String customer_uuid;
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "uuid='" + uuid + '\'' +
+                ", order_name='" + order_name + '\'' +
+                ", date='" + date + '\'' +
+                ", order_price=" + order_price +
+                ", customer_uuid='" + customer_uuid + '\'' +
+                ", qty='" + qty + '\'' +
+                ", shop_uuid='" + shop_uuid + '\'' +
+                '}';
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getCustomer_uuid() {
+        return customer_uuid;
+    }
+
+    public void setCustomer_uuid(String customer_uuid) {
+        this.customer_uuid = customer_uuid;
+    }
+
+    public Orders(String uuid, String order_name, String date, Double order_price, String customer_uuid, String qty, String shop_uuid) {
+        this.uuid = uuid;
+        this.order_name = order_name;
+        this.date = date;
+        this.order_price = order_price;
+        this.customer_uuid = customer_uuid;
+        this.qty = qty;
+        this.shop_uuid = shop_uuid;
+    }
+
     private String qty;
 
     private String shop_uuid;
@@ -63,14 +105,4 @@ public class Orders extends RealmObject {
         this.shop_uuid = shop_uuid;
     }
 
-    @Override
-    public String toString() {
-        return "Orders{" +
-                "uuid='" + uuid + '\'' +
-                ", order_name='" + order_name + '\'' +
-                ", order_price=" + order_price +
-                ", qty='" + qty + '\'' +
-                ", shop_uuid='" + shop_uuid + '\'' +
-                '}';
-    }
 }

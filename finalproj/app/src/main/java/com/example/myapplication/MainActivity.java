@@ -2,7 +2,10 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import org.androidannotations.annotations.AfterViews;
@@ -21,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     Button shopButton;
 
 
+
     @AfterViews
     public void init(){
-
     }
 
     @Click(R.id.customerButton)

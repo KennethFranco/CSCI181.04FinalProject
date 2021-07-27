@@ -49,5 +49,9 @@ public class CustomerHome extends AppCompatActivity {
         ViewCart_.intent(this).start();
     }
 
+    @Click(R.id.customerHomeOrdersHistoryButton)
+    public void history(){
+        CustomerOrders_.intent(this).start();
+    }
 
 }
