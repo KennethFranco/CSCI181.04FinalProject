@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,8 +40,8 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         TextView product_price;
         TextView product_description;
         EditText product_quantity;
-        Button product_remove;
-        Button product_addToCart;
+        ImageButton product_remove;
+        ImageButton product_addToCart;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -64,11 +64,6 @@ public class CustomerShopsProducts extends AppCompatActivity {
         // query by shop UUID
         RealmResults<Products> list = realm.where(Products.class).equalTo("shop_uuid", prefsID).findAll();
 
-        System.out.println(list);
-        System.out.println(prefsID);
-        System.out.println(realm.where(Products.class).findAll());
-
-
         ShopProductsAdapter adapter = new ShopProductsAdapter(this, list, true);
         rV.setAdapter(adapter);
 
@@ -77,14 +72,15 @@ public class CustomerShopsProducts extends AppCompatActivity {
     public void addItem(Products p){
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         String prefsID = prefs.getString("viewShopUUID", null);
-
+//        String qty = editQty.getText().toString();
         String order_uuid = UUID.randomUUID().toString();
+
         realm = Realm.getDefaultInstance();
 
         Orders newOrder = new Orders();
         newOrder.setUuid(order_uuid);
         newOrder.setOrder_name(p.getProduct_name());
-        newOrder.setQty(editQty.getText().toString());
+//        newOrder.setQty(qty);
         newOrder.setShop_uuid(prefsID);
 
         realm.beginTransaction();
