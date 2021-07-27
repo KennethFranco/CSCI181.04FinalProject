@@ -1,4 +1,4 @@
-package com.example.myapplication.customers;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.CustomerAccount_;
+import com.example.myapplication.CustomerShops_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

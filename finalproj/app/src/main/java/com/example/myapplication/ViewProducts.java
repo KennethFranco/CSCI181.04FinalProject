@@ -1,4 +1,4 @@
-package com.example.myapplication.shops;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.myapplication.R;
+import com.example.myapplication.AddProduct_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

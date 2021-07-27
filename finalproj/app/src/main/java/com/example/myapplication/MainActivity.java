@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.example.myapplication.customers.CustomerWelcome_;
-import com.example.myapplication.shops.ShopOwnerWelcomePage_;
+import com.example.myapplication.CustomerWelcome_;
+import com.example.myapplication.ShopOwnerWelcomePage_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

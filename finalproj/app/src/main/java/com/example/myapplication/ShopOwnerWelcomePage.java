@@ -1,4 +1,4 @@
-package com.example.myapplication.shops;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.R;
-import com.example.myapplication.shops.ShopHomeScreen_;
-import com.example.myapplication.shops.ShopRegister_;
+import com.example.myapplication.ShopHomeScreen_;
+import com.example.myapplication.ShopRegister_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

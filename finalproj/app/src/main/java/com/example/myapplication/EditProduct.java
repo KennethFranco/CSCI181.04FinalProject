@@ -1,4 +1,4 @@
-package com.example.myapplication.shops;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 

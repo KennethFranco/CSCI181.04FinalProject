@@ -1,12 +1,12 @@
-package com.example.myapplication.customers;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.example.myapplication.customers.CustomerLogin_;
-import com.example.myapplication.customers.CustomerRegister_;
+import com.example.myapplication.CustomerLogin_;
+import com.example.myapplication.CustomerRegister_;
 import com.example.myapplication.R;
 
 import org.androidannotations.annotations.AfterViews;

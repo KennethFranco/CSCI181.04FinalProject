@@ -1,4 +1,4 @@
-package com.example.myapplication.customers;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.customers.CustomerHome_;
-import com.example.myapplication.R;
+import com.example.myapplication.CustomerHome_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
