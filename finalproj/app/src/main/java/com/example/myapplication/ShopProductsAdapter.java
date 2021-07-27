@@ -34,9 +34,6 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         // have a field for each one
         TextView product_name;
         TextView product_price;
-        TextView product_description;
-        EditText product_quantity;
-        ImageButton product_remove;
         Button product_addToCart;
 
         public ViewHolder(@NonNull View itemView) {
@@ -45,11 +42,6 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
             // initialize them from the itemView using standard style
             product_name = itemView.findViewById(R.id.shopProductName);
             product_price = itemView.findViewById(R.id.shopProductPrice);
-            product_description = itemView.findViewById(R.id.shopProductDescription);
-
-            // initialize the buttons in the layout
-            product_quantity = itemView.findViewById(R.id.editTextNumber);
-            product_remove = itemView.findViewById(R.id.removeItem);
             product_addToCart = itemView.findViewById(R.id.addItemToCart);
         }
     }
@@ -76,16 +68,11 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
 
         // copy all the values needed to the appropriate views
         holder.product_name.setText(u.getProduct_name());
-        holder.product_price.setText(u.getProduct_price());
-        holder.product_description.setText(u.getProduct_description());
 
-        holder.product_remove.setTag(u);
-        holder.product_remove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        String price = u.getProduct_price();
 
-            }
-        });
+        holder.product_price.setText("PHP "+price);
+
 
         holder.product_addToCart.setTag(u);
         holder.product_addToCart.setOnClickListener(new View.OnClickListener() {
