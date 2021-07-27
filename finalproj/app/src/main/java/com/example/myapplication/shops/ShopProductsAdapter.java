@@ -41,7 +41,7 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         TextView product_description;
         EditText product_quantity;
         ImageButton product_remove;
-        ImageButton product_addToCart;
+        Button product_addToCart;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
