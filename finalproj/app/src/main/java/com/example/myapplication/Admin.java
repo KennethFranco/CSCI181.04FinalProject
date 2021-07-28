@@ -34,4 +34,12 @@ public class Admin extends RealmObject {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Admin(String uuid, String username, String password) {
+        this.uuid = uuid;
+        this.username = username;
+        this.password = password;
+    }
+
+    public Admin() {}
 }

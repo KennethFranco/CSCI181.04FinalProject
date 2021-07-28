@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     @ViewById
     Button shopButton;
 
+    @ViewById(R.id.adminButton)
+    Button admin;
+
 
 
     @AfterViews
@@ -37,5 +40,10 @@ public class MainActivity extends AppCompatActivity {
     @Click(R.id.shopButton)
     public void shopOwner() {
         ShopOwnerWelcomePage_.intent(this).start();
+    }
+
+    @Click(R.id.adminButton)
+    public void admin() {
+        AdminLogin_.intent(this).start();
     }
 }

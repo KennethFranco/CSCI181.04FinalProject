@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".AdminLogin_"></activity>
+        <activity android:name=".AdminRegister_"></activity>
+        <activity android:name=".AdminLogin_" />
         <activity android:name=".AdminWelcome_" />
         <activity android:name=".CustomerOrders_" />
         <activity android:name=".ViewCart_" />
