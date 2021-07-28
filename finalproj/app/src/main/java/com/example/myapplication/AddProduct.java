@@ -77,7 +77,8 @@ public class AddProduct extends AppCompatActivity {
             newProduct.setProduct_name(name);
             newProduct.setProduct_price(price);
             newProduct.setProduct_description(description);
-
+            newProduct.setTotalQty(0);
+            newProduct.setTotalPrice(0.0);
             newProduct.setShop_name(valueUUID.getShopName());
             newProduct.setShop_uuid(valueUUID.getUuid());
 

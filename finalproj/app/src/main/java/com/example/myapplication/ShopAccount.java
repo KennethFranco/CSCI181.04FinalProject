@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -31,6 +34,9 @@ public class ShopAccount extends AppCompatActivity {
     @ViewById(R.id.shopAccountPassword)
     EditText shopAccountP;
 
+    @ViewById(R.id.shopAccountSaveButton)
+    Button shopAccountSaveB;
+
     
     @AfterViews
     public void init(){
@@ -53,6 +59,100 @@ public class ShopAccount extends AppCompatActivity {
         shopAccountU.setText(aU);
         shopAccountP.setText(aP);
 
+        if (shopAccountN.getText().toString().equals("") || shopAccountD.getText().toString().equals("") || shopAccountU.getText().toString().equals("") || shopAccountP.getText().toString().equals("")){
+            shopAccountSaveB.setEnabled(false);
+        } else{
+            shopAccountSaveB.setEnabled(true);
+        }
+
+        shopAccountN.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || shopAccountD.getText().toString().equals("") || shopAccountU.getText().toString().equals("") || shopAccountP.getText().toString().equals("")){
+                    shopAccountSaveB.setEnabled(false);
+                } else {
+                    shopAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        shopAccountD.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || shopAccountN.getText().toString().equals("") || shopAccountU.getText().toString().equals("") || shopAccountP.getText().toString().equals("")){
+                    shopAccountSaveB.setEnabled(false);
+                } else {
+                    shopAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        shopAccountU.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || shopAccountD.getText().toString().equals("") || shopAccountN.getText().toString().equals("") || shopAccountP.getText().toString().equals("")){
+                    shopAccountSaveB.setEnabled(false);
+                } else {
+                    shopAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        shopAccountP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || shopAccountD.getText().toString().equals("") || shopAccountU.getText().toString().equals("") || shopAccountN.getText().toString().equals("")){
+                    shopAccountSaveB.setEnabled(false);
+                } else {
+                    shopAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+
+
     }
 
     @Click(R.id.shopAccountSaveButton)
@@ -70,15 +170,38 @@ public class ShopAccount extends AppCompatActivity {
                 .equalTo("uuid", ""+uuid)
                 .findFirst();
 
-        realm.beginTransaction();
-        result2.setShopUsername(u);
-        result2.setShopPassword(p);
-        result2.setShopDescription(d);
-        result2.setShopName(n);
+        Shops result3 = realm.where(Shops.class).equalTo("shopUsername",u).findFirst();
 
-        realm.commitTransaction();
-        Toast t = Toast.makeText(this, "Successfully updated shop account details!", Toast.LENGTH_LONG);
-        t.show();
-        finish();
+        if (result3 != null){
+            if (result2.getShopUsername().equals(u)){
+                realm.beginTransaction();
+                result2.setShopUsername(u);
+                result2.setShopPassword(p);
+                result2.setShopDescription(d);
+                result2.setShopName(n);
+                result2.setFirstTime(false);
+                realm.commitTransaction();
+                Toast t = Toast.makeText(this, "Successfully updated shop account details!", Toast.LENGTH_LONG);
+                t.show();
+                ShopHomeScreen_.intent(this).start();
+            }
+            else{
+                Toast t = Toast.makeText(this, "This username has already been taken! Please choose a new one.", Toast.LENGTH_LONG);
+                t.show();
+            }
+        }
+        else{
+            realm.beginTransaction();
+            result2.setShopUsername(u);
+            result2.setShopPassword(p);
+            result2.setShopDescription(d);
+            result2.setShopName(n);
+            result2.setFirstTime(false);
+            realm.commitTransaction();
+            Toast t = Toast.makeText(this, "Successfully updated shop account details!", Toast.LENGTH_LONG);
+            t.show();
+            ShopHomeScreen_.intent(this).start();
+        }
+
     }
 }

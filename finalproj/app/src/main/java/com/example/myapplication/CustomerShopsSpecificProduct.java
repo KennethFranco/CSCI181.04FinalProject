@@ -20,6 +20,7 @@ import org.w3c.dom.Text;
 import java.util.UUID;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 @EActivity(R.layout.activity_customer_shops_specific_product)
 public class CustomerShopsSpecificProduct extends AppCompatActivity {
@@ -120,7 +121,10 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
                     .findFirst();
 
             String shopName = result2.getShopName();
+
             String productName = result.getProduct_name();
+            String product_uuid = result.getUuid();
+            System.out.println(product_uuid);
 
             Double individiualPrice = Double.parseDouble(price);
             String qtyvalue= pQuantity.getText().toString();
@@ -134,6 +138,62 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
             System.out.println(shopName);
             System.out.println(productName);
 
+            String userUUID = prefs.getString("uuid", null);
+            System.out.println(userUUID);
+
+            RealmResults<Cart> list2 = realm.where(Cart.class)
+                    .equalTo("user_uuid",userUUID)
+                    .findAll()
+                    .where()
+                    .equalTo("product_uuid",product_uuid)
+                    .findAll();
+            System.out.println(list2);
+
+            if (list2==null){
+                Cart newCart = new Cart();
+                newCart.setIndividual_price(individiualPrice);
+                newCart.setProduct_name(productName);
+                newCart.setShop_name(shopName);
+                newCart.setQuantity(qty);
+                newCart.setTotal_price(totalProductPrice);
+                String uuid2 = prefs.getString("uuid", null);
+                newCart.setUser_uuid(uuid2);
+                newCart.setUuid(randomUUID);
+                newCart.setProduct_uuid(product_uuid);
+
+                System.out.println(newCart);
+
+                realm.beginTransaction();
+                realm.copyToRealmOrUpdate(newCart);
+                realm.commitTransaction();
+
+                String a = "Added "+productName + " x"+qty + " to Cart.";
+                Toast t = Toast.makeText(this, ""+a, Toast.LENGTH_LONG);
+                t.show();
+
+                finish();
+            }
+            else{
+                for (Cart c: list2){
+                    Double initialPrice = c.getTotal_price();
+                    Double newPrice = initialPrice+totalProductPrice;
+                    int initialQty = c.getQuantity();
+                    int newQty = initialQty+qty;
+
+                    System.out.println(newQty);
+                    System.out.println(newPrice);
+
+                    realm.beginTransaction();
+                    c.setTotal_price(newPrice);
+                    c.setQuantity(newQty);
+                    realm.commitTransaction();
+                    String a = "Updated quantity for "+productName + ", x"+newQty + " now in Cart.";
+                    Toast t = Toast.makeText(this, ""+a, Toast.LENGTH_LONG);
+                    t.show();
+
+                    finish();
+                }
+            }
 
             Cart newCart = new Cart();
             newCart.setIndividual_price(individiualPrice);
@@ -144,6 +204,9 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
             String uuid2 = prefs.getString("uuid", null);
             newCart.setUser_uuid(uuid2);
             newCart.setUuid(randomUUID);
+            newCart.setProduct_uuid(product_uuid);
+
+            System.out.println(newCart);
 
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(newCart);
@@ -154,6 +217,8 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
             t.show();
 
             finish();
+
+
         }
     }
 }

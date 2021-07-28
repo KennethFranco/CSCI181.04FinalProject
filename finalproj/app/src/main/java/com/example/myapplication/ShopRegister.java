@@ -2,7 +2,10 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import android.content.SharedPreferences;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +22,7 @@ import io.realm.Realm;
 public class ShopRegister extends AppCompatActivity {
 
     Realm realm;
+    SharedPreferences prefs;
 
     @ViewById(R.id.editText_ShopRegisterUsername)
     EditText username;
@@ -29,12 +33,92 @@ public class ShopRegister extends AppCompatActivity {
     @ViewById(R.id.editText_ShopRegisterConfirm)
     EditText confirm;
 
+    @ViewById(R.id.shopRegisterButton)
+    Button shopRegisterB;
+
+
     @AfterViews
     public void init() {
+
         realm = Realm.getDefaultInstance();
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+
+        if (username.getText().toString().equals("") || password.getText().toString().equals("")){
+            shopRegisterB.setEnabled(false);
+        }
+        else{
+            shopRegisterB.setEnabled(true);
+        }
+
+        username.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || password.getText().toString().equals("") || confirm.getText().toString().equals("")){
+                    shopRegisterB.setEnabled(false);
+                } else
+                {
+                    shopRegisterB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || username.getText().toString().equals("") || confirm.getText().toString().equals("")){
+                    shopRegisterB.setEnabled(false);
+                } else
+                {
+                    shopRegisterB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        confirm.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || password.getText().toString().equals("") || username.getText().toString().equals("")){
+                    shopRegisterB.setEnabled(false);
+                } else
+                {
+                    shopRegisterB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
-    @Click(R.id.ShopRegister)
+    @Click(R.id.shopRegisterButton)
     public void Register() {
         String checkUname = username.getText().toString();
         String checkPassword = password.getText().toString();
@@ -56,6 +140,8 @@ public class ShopRegister extends AppCompatActivity {
             t.show();
         }
         else if ((result == null) && (checkPassword.equals(checkConfirm))){
+            SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+            SharedPreferences.Editor edit = prefs.edit();
 
             Shops newShop = new Shops();
             newShop.setUuid(uuid);
@@ -63,6 +149,14 @@ public class ShopRegister extends AppCompatActivity {
             newShop.setShopPassword(checkPassword);
             newShop.setShopName("");
             newShop.setShopDescription("");
+            newShop.setFirstTime(true);
+
+            System.out.println(checkUname);
+            System.out.println(checkPassword);
+            System.out.println(uuid);
+            edit.putString("shopUUID", uuid);
+            edit.apply();
+            System.out.println(newShop.getFirstTime());
 
             long count = 0;
 

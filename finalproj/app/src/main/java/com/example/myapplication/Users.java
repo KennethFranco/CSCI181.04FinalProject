@@ -13,6 +13,39 @@ public class Users extends RealmObject {
     private String contactNumber;
     private String address;
 
+    public Boolean getFirstTime() {
+        return firstTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "uuid='" + uuid + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", firstTime=" + firstTime +
+                '}';
+    }
+
+    public void setFirstTime(Boolean firstTime) {
+        this.firstTime = firstTime;
+    }
+
+    public Users(String uuid, String username, String password, String fullName, String contactNumber, String address, Boolean firstTime) {
+        this.uuid = uuid;
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.contactNumber = contactNumber;
+        this.address = address;
+        this.firstTime = firstTime;
+    }
+
+    private Boolean firstTime;
+
     public String getFullName() {
         return fullName;
     }
@@ -76,15 +109,4 @@ public class Users extends RealmObject {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Users{" +
-                "uuid='" + uuid + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", contactNumber=" + contactNumber +
-                ", address='" + address + '\'' +
-                '}';
-    }
 }

@@ -14,9 +14,8 @@ public class Products extends RealmObject {
 
     private String shop_name;
 
-    public String getProduct_description() {
-        return product_description;
-    }
+    private int totalQty;
+    private Double totalPrice;
 
     @Override
     public String toString() {
@@ -26,8 +25,41 @@ public class Products extends RealmObject {
                 ", product_price='" + product_price + '\'' +
                 ", product_description='" + product_description + '\'' +
                 ", shop_name='" + shop_name + '\'' +
+                ", totalQty=" + totalQty +
+                ", totalPrice=" + totalPrice +
                 ", shop_uuid='" + shop_uuid + '\'' +
                 '}';
+    }
+
+    public int getTotalQty() {
+        return totalQty;
+    }
+
+    public void setTotalQty(int totalQty) {
+        this.totalQty = totalQty;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public Products(String uuid, String product_name, String product_price, String product_description, String shop_name, int totalQty, Double totalPrice, String shop_uuid) {
+        this.uuid = uuid;
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_description = product_description;
+        this.shop_name = shop_name;
+        this.totalQty = totalQty;
+        this.totalPrice = totalPrice;
+        this.shop_uuid = shop_uuid;
+    }
+
+    public String getProduct_description() {
+        return product_description;
     }
 
     public void setProduct_description(String product_description) {

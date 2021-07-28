@@ -20,7 +20,9 @@ import org.androidannotations.annotations.ViewById;
 import org.w3c.dom.Text;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.UUID;
 
 import io.realm.Realm;
@@ -34,7 +36,13 @@ public class ViewCart extends AppCompatActivity {
 
     double sum;
     int counter;
+    double catcherPrice;
     String combination;
+    List<String> test = new ArrayList<>();
+    List<String> test2 = new ArrayList<>();
+    List<String> test3 = new ArrayList<>();
+    List<String> test4 = new ArrayList<>();
+
 
     @ViewById(R.id.viewCartRecyclerView)
     RecyclerView rV;
@@ -88,7 +96,7 @@ public class ViewCart extends AppCompatActivity {
     }
 
     @Click(R.id.viewCartAddButton)
-    public void finish(){
+    public void submit(){
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         String uuid = prefs.getString("uuid", null);
@@ -96,16 +104,32 @@ public class ViewCart extends AppCompatActivity {
 
         for (Cart c:list2){
             if (counter==1){
-                combination = ""+c.getProduct_name().toString() + " x" + c.getTotal_price().toString();
+                combination = ""+c.getProduct_name().toString() + " x" + String.valueOf(c.getQuantity());
                 counter+=1;
+
+                Double priceZ = c.getTotal_price();
+                test.add(c.getProduct_uuid());
+                test2.add(String.valueOf(c.getQuantity()));
+                test3.add(String.valueOf(c.getTotal_price()));
+
+                test4.add(c.getProduct_uuid());
+                test4.add(String.valueOf(c.getQuantity()));
+                test4.add(String.valueOf(c.getTotal_price()));
+
+                System.out.println(test);
             } else{
-                combination = combination + ", " + c.getProduct_name().toString() + " x" + c.getTotal_price().toString();
+                combination = combination + ", " + c.getProduct_name().toString() + " x" + String.valueOf(c.getQuantity());
+                test.add(c.getProduct_uuid());
+                System.out.println(test);
             }
         }
 
         System.out.println(uuid);
         System.out.println(mydate);
         System.out.println(combination);
+        System.out.println(test);
+
+
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Confirmation of Order");
@@ -113,6 +137,39 @@ public class ViewCart extends AppCompatActivity {
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                RealmResults<Cart> list3 = realm.where(Cart.class).equalTo("user_uuid",uuid).findAll();
+                for (Cart c: list3){
+                    String d = c.getProduct_uuid();
+                    System.out.println(d);
+                    System.out.println("ditolods");
+
+                    Products result = realm.where(Products.class)
+                            .equalTo("uuid", ""+d)
+                            .findFirst();
+                    System.out.println(result);
+                    System.out.println(result.getTotalPrice());
+                    int q = c.getQuantity();
+                    Double tp = c.getTotal_price();
+                    System.out.println(q);
+                    System.out.println(tp);
+                    int newQ = result.getTotalQty() + q;
+                    Double newtp = result.getTotalPrice() + tp;
+
+                    System.out.println(newQ);
+                    System.out.println(newtp);
+
+
+                    realm.beginTransaction();
+                    result.setTotalPrice(newtp);
+                    result.setTotalQty(newQ);
+                    realm.commitTransaction();
+
+                    System.out.println(q);
+                    System.out.println(tp);
+                    System.out.println(newQ);
+                    System.out.println(newtp);
+                }
+
                 realm.beginTransaction();
                 Orders newOrder = new Orders();
                 newOrder.setCustomer_uuid(uuid);
@@ -151,6 +208,8 @@ public class ViewCart extends AppCompatActivity {
         u.setQuantity(qty);
         u.setTotal_price(totalPrice);
         realm.commitTransaction();
+
+
 
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         String uuid = prefs.getString("uuid", null);

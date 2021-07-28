@@ -3,8 +3,14 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -35,18 +41,31 @@ public class CustomerAccount extends AppCompatActivity {
     @ViewById(R.id.customerAccountAddress)
     EditText customerAccountA;
 
+    @ViewById(R.id.customerAccountCancelButton)
+    ImageButton customerAccountCancelB;
+
+    @ViewById(R.id.customerAccountSaveButton)
+    Button customerAccountSaveB;
+
     @AfterViews
     public void init(){
         realm = Realm.getDefaultInstance();
+
 
         prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();
 
         String uuid = prefs.getString("uuid", null);
 
+
+
         Users result= realm.where(Users.class)
                 .equalTo("uuid", ""+uuid)
                 .findFirst();
+
+        System.out.println(result);
+
+        Boolean checker = prefs.getBoolean("userFT", true);
 
         String username = result.getUsername();
         String password = result.getPassword();
@@ -58,8 +77,141 @@ public class CustomerAccount extends AppCompatActivity {
         customerAccountP.setText(password);
         customerAccountA.setText(address);
         customerAccountCN.setText(contactNumber);
-
         customerAccountFN.setText(fullName);
+
+        if (customerAccountFN.getText().toString().equals("") || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals(""))
+        {
+            customerAccountSaveB.setEnabled(false);
+        }
+        else{
+            customerAccountSaveB.setEnabled(true);
+        }
+
+        customerAccountFN.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
+                    customerAccountSaveB.setEnabled(false);
+                } else {
+                    customerAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerAccountFN.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
+                    customerAccountSaveB.setEnabled(false);
+                } else {
+                    customerAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerAccountCN.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerAccountFN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
+                    customerAccountSaveB.setEnabled(false);
+                } else {
+                    customerAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerAccountA.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountFN.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
+                    customerAccountSaveB.setEnabled(false);
+                } else {
+                    customerAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerAccountU.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountFN.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
+                    customerAccountSaveB.setEnabled(false);
+                } else {
+                    customerAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerAccountP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountFN.getText().toString().equals("")){
+                    customerAccountSaveB.setEnabled(false);
+                } else {
+                    customerAccountSaveB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
     }
 
@@ -83,21 +235,54 @@ public class CustomerAccount extends AppCompatActivity {
                     .equalTo("uuid", ""+uuid)
                     .findFirst();
 
-            realm.beginTransaction();
-            result2.setUsername(u);
-            result2.setPassword(p);
-            result2.setContactNumber(cN);
-            result2.setAddress(a);
-            result2.setFullName(fN);
 
-            edit.putString("contactNumber", cN);
-            edit.putString("address", a);
-            edit.putString("fullName", fN);
-            edit.apply();
-            realm.commitTransaction();
-            Toast t = Toast.makeText(this, "Successfully updated account details!", Toast.LENGTH_LONG);
-            t.show();
-            finish();
+
+            Users result3 = realm.where(Users.class).equalTo("username",u).findFirst();
+
+            System.out.println(result3.getUsername());
+            System.out.println(u);
+
+            if (result3 != null){
+                if (result2.getUsername().equals(u)){
+//                    makes it so that user can set same username for themselves
+                    realm.beginTransaction();
+                    result2.setUsername(u);
+                    result2.setPassword(p);
+                    result2.setContactNumber(cN);
+                    result2.setAddress(a);
+                    result2.setFullName(fN);
+                    result2.setFirstTime(false);
+                    edit.putString("contactNumber", cN);
+                    edit.putString("address", a);
+                    edit.putString("fullName", fN);
+                    edit.apply();
+                    realm.commitTransaction();
+                    Toast t = Toast.makeText(this, "Successfully updated account details!", Toast.LENGTH_LONG);
+                    t.show();
+                    CustomerHome_.intent(this).start();
+                }
+                else{
+                    Toast t = Toast.makeText(this, "This username has already been taken! Please choose a new one.", Toast.LENGTH_LONG);
+                    t.show();
+                }
+            }
+            else{
+                realm.beginTransaction();
+                result2.setUsername(u);
+                result2.setPassword(p);
+                result2.setContactNumber(cN);
+                result2.setAddress(a);
+                result2.setFullName(fN);
+                result2.setFirstTime(false);
+                edit.putString("contactNumber", cN);
+                edit.putString("address", a);
+                edit.putString("fullName", fN);
+                edit.apply();
+                realm.commitTransaction();
+                Toast t = Toast.makeText(this, "Successfully updated account details!", Toast.LENGTH_LONG);
+                t.show();
+                CustomerHome_.intent(this).start();
+            }
 
         }
         else{
