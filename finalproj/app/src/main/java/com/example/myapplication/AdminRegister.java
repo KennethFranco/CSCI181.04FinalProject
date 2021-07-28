@@ -29,7 +29,7 @@ public class AdminRegister extends AppCompatActivity {
     @ViewById(R.id.editText_AdminRegisterConfirm)
     EditText confirm;
 
-    @ViewById(R.id.adminRegisterButton)
+    @ViewById(R.id.adminConfirmRegister)
     Button register;
 
     @ViewById(R.id.adminRegisterCancel)
@@ -40,8 +40,9 @@ public class AdminRegister extends AppCompatActivity {
 
     }
 
-    @Click(R.id.adminRegisterButton)
+    @Click(R.id.adminConfirmRegister)
     public void Register() {
+        realm = Realm.getDefaultInstance();
         String checkUname = uname.getText().toString();
         String checkPassword = pword.getText().toString();
         String checkConfirm = confirm.getText().toString();
