@@ -88,7 +88,7 @@ public class ViewCart extends AppCompatActivity {
     }
 
     @Click(R.id.viewCartAddButton)
-    public void finish(){
+    public void submit(){
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         String uuid = prefs.getString("uuid", null);

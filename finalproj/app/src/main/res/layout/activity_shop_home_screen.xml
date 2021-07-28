@@ -23,32 +23,21 @@
         android:id="@+id/ViewProducts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="288dp"
         android:text="View Products"
         app:layout_constraintEnd_toEndOf="@+id/ShopHomeWelcome"
         app:layout_constraintStart_toStartOf="@+id/ShopHomeWelcome"
         app:layout_constraintTop_toBottomOf="@+id/ShopHomeWelcome" />
 
     <Button
-        android:id="@+id/ViewAccountDetails_Shop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="View Account Details"
-        app:layout_constraintEnd_toEndOf="@+id/ViewProducts"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/ViewProducts"
-        app:layout_constraintTop_toBottomOf="@+id/ViewProducts" />
-
-    <Button
         android:id="@+id/shopsAccountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="View Account "
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintEnd_toEndOf="@+id/ViewProducts"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ViewProducts"
+        app:layout_constraintTop_toBottomOf="@+id/ViewProducts"
+        app:layout_constraintVertical_bias="0.202" />
 </androidx.constraintlayout.widget.ConstraintLayout>
