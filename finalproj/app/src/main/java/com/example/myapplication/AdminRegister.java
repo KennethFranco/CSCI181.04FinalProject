@@ -75,9 +75,9 @@ public class AdminRegister extends AppCompatActivity {
             realm.copyToRealmOrUpdate(newAdmin);
             realm.commitTransaction();
 
-            count = realm.where(Shops.class).count();
+            count = realm.where(Admin.class).count();
 
-            Toast t = Toast.makeText(this, "Login Saved, Total: " + count, Toast.LENGTH_LONG);
+            Toast t = Toast.makeText(this, "Login Saved, Total Admins: " + count, Toast.LENGTH_LONG);
             t.show();
 
             finish();

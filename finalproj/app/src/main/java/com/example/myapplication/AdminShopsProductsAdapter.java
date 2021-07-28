@@ -1,7 +1,11 @@
 package com.example.myapplication;
 
+import android.media.Image;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -13,13 +17,13 @@ import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
 
 // the parameterization <type of the RealmObject, ViewHolder type)
-public class UsersAdapter extends RealmRecyclerViewAdapter<Users, UsersAdapter.ViewHolder> {
+public class AdminShopsProductsAdapter extends RealmRecyclerViewAdapter<Products, AdminShopsProductsAdapter.ViewHolder> {
 
     // IMPORTANT
     // THE CONTAINING ACTIVITY NEEDS TO BE PASSED SO YOU CAN GET THE LayoutInflator(see below)
-    AdminViewCustomers activity;
+    AdminShopsProducts activity;
 
-    public UsersAdapter(AdminViewCustomers activity, @Nullable OrderedRealmCollection<Users> data, boolean autoUpdate) {
+    public AdminShopsProductsAdapter(AdminShopsProducts activity, @Nullable OrderedRealmCollection<Products> data, boolean autoUpdate) {
         super(data, autoUpdate);
 
         // THIS IS TYPICALLY THE ACTIVITY YOUR RECYCLERVIEW IS IN
@@ -30,17 +34,16 @@ public class UsersAdapter extends RealmRecyclerViewAdapter<Users, UsersAdapter.V
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // have a field for each one
-        TextView username;
-        TextView password;
-        ImageButton clear_user;
+        TextView product_name;
+        TextView product_price;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             // initialize them from the itemView using standard style
-            username = itemView.findViewById(R.id.admin_CustomerUname);
-            password = itemView.findViewById(R.id.admin_CustomerPword);
-            clear_user = itemView.findViewById(R.id.admin_ClearUser);
+            product_name = itemView.findViewById(R.id.admin_shopProductName);
+            product_price = itemView.findViewById(R.id.admin_shopProductPrice);
+
         }
     }
 
@@ -50,7 +53,7 @@ public class UsersAdapter extends RealmRecyclerViewAdapter<Users, UsersAdapter.V
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         // create the raw view for this ViewHolder
-        View v = activity.getLayoutInflater().inflate(R.layout.row_layout_admin_view_customers, parent, false);  // VERY IMPORTANT TO USE THIS STYLE
+        View v = activity.getLayoutInflater().inflate(R.layout.row_layout_admin_shop_products, parent, false);  // VERY IMPORTANT TO USE THIS STYLE
 
         // assign view to the viewholder
         ViewHolder vh = new ViewHolder(v);
@@ -61,26 +64,14 @@ public class UsersAdapter extends RealmRecyclerViewAdapter<Users, UsersAdapter.V
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         // gives you the data object at the given position
-        Users u = getItem(position);
+        Products u = getItem(position);
 
 
         // copy all the values needed to the appropriate views
-        holder.username.setText("Username: " + u.getUsername());
-        holder.password.setText("Password: " + u.getPassword());
+        holder.product_name.setText(u.getProduct_name());
 
-        // NOTE: MUST BE A STRING NOT INTs, etc.
-        // String.valueOf() converts most types to a string
-        // holder.age.setText(String.valueOf(u.getAge()));
-
-        // do any other initializations here as well,  e.g. Button listeners
-        holder.clear_user.setTag(u);
-        holder.clear_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                activity.ClearUser((Users) view.getTag());
-            }
-        });
-
+        String price = u.getProduct_price();
+        holder.product_price.setText("PHP "+price);
 
 
     }

@@ -38,7 +38,6 @@ public class AdminViewCustomers extends AppCompatActivity {
     }
 
     public void ClearUser(Users u) {
-        realm = Realm.getDefaultInstance();
 
         if (u.isValid())
         {
