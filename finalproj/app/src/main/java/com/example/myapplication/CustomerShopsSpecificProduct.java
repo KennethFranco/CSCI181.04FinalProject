@@ -11,12 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 import org.w3c.dom.Text;
 
+import java.io.File;
 import java.util.UUID;
 
 import io.realm.Realm;
@@ -57,6 +62,9 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
 
     @AfterViews
     public void init(){
+
+
+
         realm = Realm.getDefaultInstance();
 
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -77,6 +85,17 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
         pName.setText(name);
         pPrice.setText(pricePHP);
         pDescription.setText(description);
+
+        File getImageDir = getExternalCacheDir();
+
+        File file = new File(getImageDir, result.getImagePath());
+
+        Picasso.get()
+                .load(file)
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .memoryPolicy(MemoryPolicy.NO_CACHE)
+                .into(pPhoto);
+
     }
 
     @Click(R.id.specificProductAddButton)

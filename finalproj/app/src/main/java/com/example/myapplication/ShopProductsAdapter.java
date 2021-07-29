@@ -7,11 +7,18 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
@@ -36,6 +43,7 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         // have a field for each one
         TextView product_name;
         TextView product_price;
+        ImageView product_image;
         Button add;
 
         public ViewHolder(@NonNull View itemView) {
@@ -44,6 +52,7 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
             // initialize them from the itemView using standard style
             product_name = itemView.findViewById(R.id.shopProductName);
             product_price = itemView.findViewById(R.id.shopProductPrice);
+            product_image = itemView.findViewById(R.id.specificProductImage);
             add = itemView.findViewById(R.id.shopAdd);
 
         }
@@ -68,6 +77,15 @@ public class ShopProductsAdapter extends RealmRecyclerViewAdapter<Products, Shop
         // gives you the data object at the given position
         Products u = getItem(position);
 
+        File getImageDir = activity.getExternalCacheDir();
+
+        File file = new File(getImageDir, u.getImagePath());
+
+        Picasso.get()
+                .load(file)
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .memoryPolicy(MemoryPolicy.NO_CACHE)
+                .into(holder.product_image);
 
         // copy all the values needed to the appropriate views
         holder.product_name.setText(u.getProduct_name());

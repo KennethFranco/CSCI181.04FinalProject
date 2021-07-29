@@ -14,6 +14,8 @@ public class Products extends RealmObject {
 
     private String shop_name;
 
+    private String imagePath;
+
     public String getProduct_description() {
         return product_description;
     }
@@ -28,6 +30,14 @@ public class Products extends RealmObject {
                 ", shop_name='" + shop_name + '\'' +
                 ", shop_uuid='" + shop_uuid + '\'' +
                 '}';
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public void setProduct_description(String product_description) {

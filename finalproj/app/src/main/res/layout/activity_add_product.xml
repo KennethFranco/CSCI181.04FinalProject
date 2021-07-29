@@ -22,12 +22,12 @@
         android:id="@+id/editText_ProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintEnd_toEndOf="@+id/product_ImageView"
+        app:layout_constraintStart_toStartOf="@+id/product_ImageView"
+        app:layout_constraintTop_toBottomOf="@+id/product_ImageView" />
 
     <EditText
         android:id="@+id/editText_ProductNumber"
@@ -45,8 +45,8 @@
         android:id="@+id/addproduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="GO GAGO"
+        android:layout_marginTop="60dp"
+        android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,5 +61,28 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/editText_ProductName"
         app:layout_constraintTop_toBottomOf="@+id/editText_ProductName" />
+
+    <ImageView
+        android:id="@+id/product_ImageView"
+        android:layout_width="175dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageButton
+        android:id="@+id/product_selectPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/product_ImageView"
+        app:layout_constraintStart_toEndOf="@+id/product_ImageView"
+        app:layout_constraintTop_toTopOf="@+id/product_ImageView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
