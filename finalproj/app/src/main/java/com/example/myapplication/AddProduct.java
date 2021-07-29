@@ -6,6 +6,8 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -96,6 +98,7 @@ public class AddProduct extends AppCompatActivity {
         realm = Realm.getDefaultInstance();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
+
         // check if savedImage.jpeg exists in path
         // load via picasso if exists
 
@@ -110,6 +113,78 @@ public class AddProduct extends AppCompatActivity {
                     .load(R.drawable.ic_launcher_background)
                     .into(productImage);
         }
+      
+      if (prod_name.getText().toString().equals("") || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+            addproduct.setEnabled(false);
+        } else{
+            addproduct.setEnabled(true);
+        }
+
+        prod_name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+                    addproduct.setEnabled(false);
+                } else
+                {
+                    addproduct.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        prod_num.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || prod_name.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+                    addproduct.setEnabled(false);
+                } else
+                {
+                    addproduct.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        addProductD.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || prod_num.getText().toString().equals("") || prod_name.getText().toString().equals("")){
+                    addproduct.setEnabled(false);
+                } else
+                {
+                    addproduct.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
 
@@ -117,7 +192,7 @@ public class AddProduct extends AppCompatActivity {
 
     @Click(R.id.product_selectPhoto)
     public void SelectPhoto() {
-        AddProductPhoto_.intent(this).startForResult(REQUEST_CODE_IMAGE_SCREEN);
+        AddProductPhoto_.intent(this).startForResult(REQUEST_CODE_IMAGE_SCREEN); 
     }
 
     // SINCE WE USE startForResult(), code will trigger this once the next screen calls finish()
@@ -218,7 +293,8 @@ public class AddProduct extends AppCompatActivity {
             newProduct.setProduct_name(name);
             newProduct.setProduct_price(price);
             newProduct.setProduct_description(description);
-
+            newProduct.setTotalQty(0);
+            newProduct.setTotalPrice(0.0);
             newProduct.setShop_name(valueUUID.getShopName());
             newProduct.setShop_uuid(valueUUID.getUuid());
 
@@ -243,11 +319,18 @@ public class AddProduct extends AppCompatActivity {
             Toast t = Toast.makeText(this, "Product Saved", Toast.LENGTH_LONG);
             t.show();
 
-            finish();
-        } else {
+            ViewProducts_.intent(this).start();
+        else{
+
             Toast t = Toast.makeText(this, "Product already exists", Toast.LENGTH_LONG);
             t.show();
         }
 
+    }
+
+    @Click(R.id.addProductBackButton)
+    public void back(){
+        finish();
+        ViewProducts_.intent(this).start();
     }
 }

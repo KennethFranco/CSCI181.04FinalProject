@@ -13,9 +13,21 @@ public class Cart  extends RealmObject {
     private Double individual_price;
     private Double total_price;
     private String user_uuid;
+    private String product_uuid;
 
-    public String getUser_uuid() {
-        return user_uuid;
+    public Cart(String uuid, String product_name, String shop_name, int quantity, Double individual_price, Double total_price, String user_uuid, String product_uuid) {
+        this.uuid = uuid;
+        this.product_name = product_name;
+        this.shop_name = shop_name;
+        this.quantity = quantity;
+        this.individual_price = individual_price;
+        this.total_price = total_price;
+        this.user_uuid = user_uuid;
+        this.product_uuid = product_uuid;
+    }
+
+    public String getProduct_uuid() {
+        return product_uuid;
     }
 
     @Override
@@ -28,7 +40,16 @@ public class Cart  extends RealmObject {
                 ", individual_price=" + individual_price +
                 ", total_price=" + total_price +
                 ", user_uuid='" + user_uuid + '\'' +
+                ", product_uuid='" + product_uuid + '\'' +
                 '}';
+    }
+
+    public void setProduct_uuid(String product_uuid) {
+        this.product_uuid = product_uuid;
+    }
+
+    public String getUser_uuid() {
+        return user_uuid;
     }
 
     public void setUser_uuid(String user_uuid) {

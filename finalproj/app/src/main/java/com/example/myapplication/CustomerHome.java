@@ -25,11 +25,13 @@ public class CustomerHome extends AppCompatActivity {
 
     @Click(R.id.customerHomeAccountButton)
     public void account(){
+        finish();
         CustomerAccount_.intent(this).start();
     }
 
     @Click(R.id.customerHomeShopsButton)
     public void shops(){
+        finish();
         String address = prefs.getString("address", "");
         String fullName = prefs.getString("fullName", "");
         String contactNumber = prefs.getString("contactNumber", "");
@@ -46,12 +48,22 @@ public class CustomerHome extends AppCompatActivity {
 
     @Click(R.id.customerHomeCartButton)
     public void cart(){
+        finish();
         ViewCart_.intent(this).start();
     }
 
     @Click(R.id.customerHomeOrdersHistoryButton)
     public void history(){
+        finish();
         CustomerOrders_.intent(this).start();
+    }
+
+    @Click(R.id.customerHomeSignOutButton)
+    public void exit(){
+        finish();
+        MainActivity_.intent(this).start();
+        Toast t = Toast.makeText(this, "Thank you for shopping with us! Come again!", Toast.LENGTH_LONG);
+        t.show();
     }
 
 }

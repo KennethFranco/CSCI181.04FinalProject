@@ -3,6 +3,8 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -42,6 +44,79 @@ public class CustomerRegister extends AppCompatActivity {
         realm = Realm.getDefaultInstance();
         prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
+        if (customerRegisterU.getText().toString().equals("") || customerRegisterP.getText().toString().equals("") || customerRegisterCP.getText().toString().equals(""))
+        {
+            customerRegisterSigninB.setEnabled(false);
+        }
+        else{
+            customerRegisterSigninB.setEnabled(true);
+        }
+
+        customerRegisterU.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerRegisterP.getText().toString().equals("") || customerRegisterCP.getText().toString().equals("")){
+                    customerRegisterSigninB.setEnabled(false);
+                } else {
+                    customerRegisterSigninB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerRegisterP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerRegisterU.getText().toString().equals("") || customerRegisterCP.getText().toString().equals("")){
+                    customerRegisterSigninB.setEnabled(false);
+                } else
+                {
+                    customerRegisterSigninB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerRegisterCP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerRegisterU.getText().toString().equals("") || customerRegisterP.getText().toString().equals("")){
+                    customerRegisterSigninB.setEnabled(false);
+                } else
+                {
+                    customerRegisterSigninB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
     @Click(R.id.customerRegisterSigninButton)
@@ -65,11 +140,12 @@ public class CustomerRegister extends AppCompatActivity {
                 u.setFullName("");
                 u.setContactNumber("");
 
-//                SharedPreferences.Editor edit = prefs.edit();
-//                edit.putString("contactNumber", "");
-//                edit.putString("address", "");
-//                edit.putString("fullName", "");
-//                edit.apply();
+                u.setFirstTime(true);
+                prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                SharedPreferences.Editor edit = prefs.edit();
+                edit.putBoolean("userFT", true);
+                edit.putString("uuid", u.getUuid());
+                edit.apply();
 
                 realm.beginTransaction();
                 realm.copyToRealmOrUpdate(u);
@@ -93,6 +169,8 @@ public class CustomerRegister extends AppCompatActivity {
 
     @Click(R.id.customerRegisterCancelButton)
     public void cancel(){
+
         finish();
+        CustomerLogin_.intent(this).start();
     }
 }

@@ -14,6 +14,38 @@ public class Shops extends RealmObject {
     private String shop;
     private String shopDescription;
     private String shopName;
+    private Boolean firstTime;
+
+    @Override
+    public String toString() {
+        return "Shops{" +
+                "uuid='" + uuid + '\'' +
+                ", shopUsername='" + shopUsername + '\'' +
+                ", shopPassword='" + shopPassword + '\'' +
+                ", shop='" + shop + '\'' +
+                ", shopDescription='" + shopDescription + '\'' +
+                ", shopName='" + shopName + '\'' +
+                ", firstTime=" + firstTime +
+                '}';
+    }
+
+    public Boolean getFirstTime() {
+        return firstTime;
+    }
+
+    public void setFirstTime(Boolean firstTime) {
+        this.firstTime = firstTime;
+    }
+
+    public Shops(String uuid, String shopUsername, String shopPassword, String shop, String shopDescription, String shopName, Boolean firstTime) {
+        this.uuid = uuid;
+        this.shopUsername = shopUsername;
+        this.shopPassword = shopPassword;
+        this.shop = shop;
+        this.shopDescription = shopDescription;
+        this.shopName = shopName;
+        this.firstTime = firstTime;
+    }
 
     public String getShopDescription() {
         return shopDescription;
@@ -27,18 +59,6 @@ public class Shops extends RealmObject {
         return shopName;
     }
 
-
-    @Override
-    public String toString() {
-        return "Shops{" +
-                "uuid='" + uuid + '\'' +
-                ", shopUsername='" + shopUsername + '\'' +
-                ", shopPassword='" + shopPassword + '\'' +
-                ", shop='" + shop + '\'' +
-                ", shopDescription='" + shopDescription + '\'' +
-                ", shopName='" + shopName + '\'' +
-                '}';
-    }
 
     public void setShopName(String shopName) {
         this.shopName = shopName;

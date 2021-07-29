@@ -35,6 +35,8 @@ public class ProductsAdapter extends RealmRecyclerViewAdapter<Products, Products
         TextView product_name;
         TextView product_price;
         TextView product_description;
+        TextView product_total_qty;
+        TextView product_earnings;
         ImageButton delete;
         ImageButton edit;
 
@@ -45,6 +47,8 @@ public class ProductsAdapter extends RealmRecyclerViewAdapter<Products, Products
             product_name = itemView.findViewById(R.id.display_productName);
             product_price = itemView.findViewById(R.id.display_productPrice);
             product_description = itemView.findViewById(R.id.display_productDescription);
+            product_total_qty = itemView.findViewById(R.id.productTotalQuantitySold);
+            product_earnings = itemView.findViewById(R.id.productTotalEarnings);
 
             // initialize the buttons in the layout
             delete = itemView.findViewById(R.id.deleteButton);
@@ -74,8 +78,13 @@ public class ProductsAdapter extends RealmRecyclerViewAdapter<Products, Products
 
         // copy all the values needed to the appropriate views
         holder.product_name.setText(u.getProduct_name());
-        holder.product_price.setText(u.getProduct_price());
+
+
+        holder.product_price.setText(String.valueOf(u.getProduct_price()));
         holder.product_description.setText(u.getProduct_description());
+
+        holder.product_total_qty.setText("Total Quantity Sold: "+String.valueOf(u.getTotalQty()));
+        holder.product_earnings.setText("Total Earned: PHP "+String.valueOf(u.getTotalPrice()));
 
         // NOTE: MUST BE A STRING NOT INTs, etc.
         // String.valueOf() converts most types to a string

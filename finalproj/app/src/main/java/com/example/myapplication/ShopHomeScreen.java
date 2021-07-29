@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -22,8 +23,10 @@ public class ShopHomeScreen extends AppCompatActivity {
     @ViewById(R.id.ViewProducts)
     Button viewProducts;
 
+
     @ViewById(R.id.shopsAccountButton)
     Button account;
+
 
     @ViewById(R.id.ShopHomeWelcome)
     TextView welcome_msg;
@@ -44,13 +47,22 @@ public class ShopHomeScreen extends AppCompatActivity {
         }
     }
 
+    @Click(R.id.shopHomeScreenBackButton)
+    public void back(){
+        Toast t = Toast.makeText(this, "Thank you for transacting with us! Come again", Toast.LENGTH_LONG);
+        t.show();
+        finish();
+        MainActivity_.intent(this).start();
+    }
     @Click(R.id.ViewProducts)
     public void ViewProducts() {
+        finish();
         ViewProducts_.intent(this).start();
     }
 
     @Click(R.id.shopsAccountButton)
     public void account(){
+        finish();
         ShopAccount_.intent(this).start();
     }
 }

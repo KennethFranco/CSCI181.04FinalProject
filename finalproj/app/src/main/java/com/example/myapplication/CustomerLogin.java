@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -22,6 +24,11 @@ public class CustomerLogin extends AppCompatActivity {
     SharedPreferences prefs;
 
     Realm realm;
+    int buttonCounter;
+    Boolean firstTime = false;
+
+    String field1;
+    String field2;
     @ViewById(R.id.customerLoginUsername)
     EditText customerLoginU;
 
@@ -60,11 +67,63 @@ public class CustomerLogin extends AppCompatActivity {
             }
 
         }
+
+        if (customerLoginU.getText().toString().equals("") || customerLoginP.getText().toString().equals("")){
+            customerLoginSigninB.setEnabled(false);
+        } else{
+            customerLoginSigninB.setEnabled(true);
+        }
+
+        customerLoginU.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || (customerLoginP.getText().toString().equals(""))){
+                    customerLoginSigninB.setEnabled(false);
+                } else {
+                    customerLoginSigninB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        customerLoginP.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || customerLoginU.getText().toString().equals("")){
+                    customerLoginSigninB.setEnabled(false);
+                } else
+                    {
+                    customerLoginSigninB.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
     @Click(R.id.customerLoginSigninButton)
     public void signin(){
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();
+
         String u = customerLoginU.getText().toString();
         String p = customerLoginP.getText().toString();
         boolean rememberValue = customerLoginRemember.isChecked();
@@ -81,7 +140,19 @@ public class CustomerLogin extends AppCompatActivity {
             edit.putString("uuid", result.getUuid());
             edit.putBoolean("rV", rememberValue);
             edit.apply();
-            CustomerHome_.intent(this).start();
+
+            Boolean checker =  result.getFirstTime();
+
+            if (checker == true){
+                finish();
+                CustomerAccount_.intent(this).start();
+                Toast t = Toast.makeText(this, "Thank you for registering with us! Please fill up your account details to begin shopping!", Toast.LENGTH_LONG);
+                t.show();
+            } else{
+                finish();
+                CustomerHome_.intent(this).start();
+            }
+
         }
         else{
             Toast t = Toast.makeText(this, "Invalid password given.", Toast.LENGTH_LONG);
@@ -93,6 +164,13 @@ public class CustomerLogin extends AppCompatActivity {
     @Click(R.id.customerLoginCancelButton)
     public void cancel(){
         finish();
+        CustomerRegister_.intent(this).start();
+    }
+
+    @Click(R.id.customerLoginBackButton)
+    public void back(){
+        finish();
+        MainActivity_.intent(this).start();
     }
 
 }
