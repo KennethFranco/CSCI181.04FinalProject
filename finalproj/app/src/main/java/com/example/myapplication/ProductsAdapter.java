@@ -5,11 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
@@ -39,6 +46,7 @@ public class ProductsAdapter extends RealmRecyclerViewAdapter<Products, Products
         TextView product_earnings;
         ImageButton delete;
         ImageButton edit;
+        ImageView product_image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -49,6 +57,7 @@ public class ProductsAdapter extends RealmRecyclerViewAdapter<Products, Products
             product_description = itemView.findViewById(R.id.display_productDescription);
             product_total_qty = itemView.findViewById(R.id.productTotalQuantitySold);
             product_earnings = itemView.findViewById(R.id.productTotalEarnings);
+            product_image = itemView.findViewById(R.id.viewProducts_ProductImage);
 
             // initialize the buttons in the layout
             delete = itemView.findViewById(R.id.deleteButton);
@@ -74,6 +83,16 @@ public class ProductsAdapter extends RealmRecyclerViewAdapter<Products, Products
 
         // gives you the data object at the given position
         Products u = getItem(position);
+
+        File getImageDir = activity.getExternalCacheDir();
+
+        File file = new File(getImageDir, u.getImagePath());
+
+        Picasso.get()
+                .load(file)
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .memoryPolicy(MemoryPolicy.NO_CACHE)
+                .into(holder.product_image);
 
 
         // copy all the values needed to the appropriate views

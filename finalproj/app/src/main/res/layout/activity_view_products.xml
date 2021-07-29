@@ -8,8 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_recyclerView"
-        android:layout_width="335dp"
-        android:layout_height="289dp"
+        android:layout_width="408dp"
+        android:layout_height="369dp"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/textView7"
@@ -30,10 +30,10 @@
         android:id="@+id/Products_clearall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:text="Clear All"
         app:layout_constraintEnd_toEndOf="@+id/products_recyclerView"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/products_recyclerView"
         app:layout_constraintTop_toBottomOf="@+id/products_recyclerView" />
 
@@ -41,14 +41,13 @@
         android:id="@+id/Products_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Add Products"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Products_clearall"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="@+id/Products_clearall"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.835" />
+        app:layout_constraintTop_toBottomOf="@+id/Products_clearall"
+        app:layout_constraintVertical_bias="0.096" />
 
     <Button
         android:id="@+id/shopViewProductsBackButton"
@@ -56,9 +55,8 @@
         android:layout_height="wrap_content"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintEnd_toEndOf="@+id/Products_add"
+        app:layout_constraintStart_toStartOf="@+id/Products_add"
+        app:layout_constraintTop_toBottomOf="@+id/Products_add"
+        app:layout_constraintVertical_bias="0.153" />
 </androidx.constraintlayout.widget.ConstraintLayout>
