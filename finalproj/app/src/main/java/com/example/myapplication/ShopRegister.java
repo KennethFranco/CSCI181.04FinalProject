@@ -170,6 +170,7 @@ public class ShopRegister extends AppCompatActivity {
             t.show();
 
             finish();
+            ShopOwnerWelcomePage_.intent(this).start();
 
         }
         else {
@@ -181,5 +182,6 @@ public class ShopRegister extends AppCompatActivity {
     @Click(R.id.ShopRegisterCancel)
     public void CancelRegister() {
         finish();
+        ShopOwnerWelcomePage_.intent(this).start();
     }
 }

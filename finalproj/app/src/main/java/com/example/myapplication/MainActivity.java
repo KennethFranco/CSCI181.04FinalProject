@@ -31,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Click(R.id.customerButton)
     public void customer(){
+        finish();
         CustomerLogin_.intent(this).start();
     }
 
     @Click(R.id.shopButton)
     public void shopOwner() {
+        finish();
         ShopOwnerWelcomePage_.intent(this).start();
     }
 }

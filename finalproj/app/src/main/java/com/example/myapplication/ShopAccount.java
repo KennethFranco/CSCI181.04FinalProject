@@ -37,6 +37,8 @@ public class ShopAccount extends AppCompatActivity {
     @ViewById(R.id.shopAccountSaveButton)
     Button shopAccountSaveB;
 
+    @ViewById(R.id.shopAccountBackButton)
+    Button shopAccountBackB;
     
     @AfterViews
     public void init(){
@@ -203,5 +205,23 @@ public class ShopAccount extends AppCompatActivity {
             ShopHomeScreen_.intent(this).start();
         }
 
+    }
+
+    @Click(R.id.shopAccountBackButton)
+    public void back(){
+        String uuid = prefs.getString("shopUUID", null);
+        Shops result2 = realm.where(Shops.class)
+                .equalTo("uuid", ""+uuid)
+                .findFirst();
+
+        Boolean checker = result2.getFirstTime();
+
+        if (checker==true){
+            finish();
+            ShopOwnerWelcomePage_.intent(this).start();
+        } else{
+            finish();
+            ShopHomeScreen_.intent(this).start();
+        }
     }
 }

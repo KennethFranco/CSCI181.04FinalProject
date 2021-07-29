@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -45,6 +46,12 @@ public class CustomerShopsProducts extends AppCompatActivity {
 
     }
 
+    @Click(R.id.customerShopsProductsBackButton)
+    public void back(){
+        finish();
+        CustomerShops_.intent(this).start();
+    }
+
     public void add(Products u){
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();
@@ -54,6 +61,7 @@ public class CustomerShopsProducts extends AppCompatActivity {
         edit.putString("productUUID", uuid);
         edit.apply();
 
+        finish();
         CustomerShopsSpecificProduct_.intent(this).start();
     }
 

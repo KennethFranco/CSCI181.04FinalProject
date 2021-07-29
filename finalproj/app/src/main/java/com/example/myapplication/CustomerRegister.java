@@ -169,6 +169,8 @@ public class CustomerRegister extends AppCompatActivity {
 
     @Click(R.id.customerRegisterCancelButton)
     public void cancel(){
+
         finish();
+        CustomerLogin_.intent(this).start();
     }
 }

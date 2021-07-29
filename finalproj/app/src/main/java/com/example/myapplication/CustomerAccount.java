@@ -47,6 +47,9 @@ public class CustomerAccount extends AppCompatActivity {
     @ViewById(R.id.customerAccountSaveButton)
     Button customerAccountSaveB;
 
+    @ViewById(R.id.customerAccountBackButton)
+    Button customerAccountBackB;
+
     @AfterViews
     public void init(){
         realm = Realm.getDefaultInstance();
@@ -78,6 +81,20 @@ public class CustomerAccount extends AppCompatActivity {
         customerAccountA.setText(address);
         customerAccountCN.setText(contactNumber);
         customerAccountFN.setText(fullName);
+
+        Users checker2 = realm.where(Users.class)
+                .equalTo("uuid", ""+uuid)
+                .findFirst();
+
+        Boolean checker3 = checker2.getFirstTime();
+
+        if (checker3==true){
+            customerAccountBackB.setEnabled(false);
+        }
+        else{
+            customerAccountBackB.setEnabled(true);
+
+        }
 
         if (customerAccountFN.getText().toString().equals("") || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals(""))
         {
@@ -260,6 +277,8 @@ public class CustomerAccount extends AppCompatActivity {
                     Toast t = Toast.makeText(this, "Successfully updated account details!", Toast.LENGTH_LONG);
                     t.show();
                     CustomerHome_.intent(this).start();
+
+                    customerAccountBackB.setEnabled(true);
                 }
                 else{
                     Toast t = Toast.makeText(this, "This username has already been taken! Please choose a new one.", Toast.LENGTH_LONG);
@@ -282,6 +301,7 @@ public class CustomerAccount extends AppCompatActivity {
                 Toast t = Toast.makeText(this, "Successfully updated account details!", Toast.LENGTH_LONG);
                 t.show();
                 CustomerHome_.intent(this).start();
+                customerAccountBackB.setEnabled(true);
             }
 
         }
@@ -293,5 +313,11 @@ public class CustomerAccount extends AppCompatActivity {
 
 
 
+    }
+
+    @Click(R.id.customerAccountBackButton)
+    public void back(){
+        finish();
+        CustomerHome_.intent(this).start();
     }
 }

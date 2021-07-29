@@ -30,7 +30,7 @@
         android:id="@+id/Products_clearall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="48dp"
         android:text="Clear All"
         app:layout_constraintEnd_toEndOf="@+id/products_recyclerView"
         app:layout_constraintHorizontal_bias="0.495"
@@ -43,8 +43,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Add Products"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Products_clearall"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="@+id/Products_clearall"
-        app:layout_constraintTop_toBottomOf="@+id/Products_clearall" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.835" />
+
+    <Button
+        android:id="@+id/shopViewProductsBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
 </androidx.constraintlayout.widget.ConstraintLayout>

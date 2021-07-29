@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -45,6 +46,13 @@ public class CustomerShops extends AppCompatActivity {
         edit.putString("viewShopUUID", uuid);
         edit.apply();
 
+        finish();
         CustomerShopsProducts_.intent(this).start();
+    }
+
+    @Click(R.id.customerShopsBackButton)
+    public void back(){
+        finish();
+        CustomerHome_.intent(this).start();
     }
 }

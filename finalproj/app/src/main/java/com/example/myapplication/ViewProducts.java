@@ -32,6 +32,9 @@ public class ViewProducts extends AppCompatActivity {
     @ViewById(R.id.Products_add)
     Button add;
 
+    @ViewById(R.id.Products_clearall)
+    Button clearAll;
+
     @AfterViews
     public void init() {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
@@ -43,13 +46,20 @@ public class ViewProducts extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         String prefsID = prefs.getString("shopUUID", null);
 
-        // query by shop UUID
         RealmResults<Products> list = realm.where(Products.class).equalTo("shop_uuid", prefsID).findAll();
+
 
         System.out.println(list);
         System.out.println(prefsID);
         System.out.println(realm.where(Products.class).findAll());
 
+
+        Boolean checker = list.isEmpty();
+        if (checker==true){
+            clearAll.setEnabled(false);
+        } else{
+            clearAll.setEnabled(true);
+        }
 
         ProductsAdapter adapter = new ProductsAdapter(this, list, true);
         products_recyclerView.setAdapter(adapter);
@@ -58,19 +68,56 @@ public class ViewProducts extends AppCompatActivity {
 
     }
 
+    @Click(R.id.Products_clearall)
+    public void clear(){
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Confirmation");
+        alert.setMessage("Are you sure you want to clear all your products?");
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                String prefsID = prefs.getString("shopUUID", null);
+                RealmResults<Products> list = realm.where(Products.class).equalTo("shop_uuid", prefsID).findAll();
+                realm.beginTransaction();
+                list.deleteAllFromRealm();
+                realm.commitTransaction();
+                Toast.makeText(ViewProducts.this, "Deleted all products in Shop.", Toast.LENGTH_SHORT).show();
+                clearAll.setEnabled(false);
+            }
+        });
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(ViewProducts.this, "Deletion cancelled", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alert.create().show();
+    }
+
     @Click(R.id.Products_add)
     public void AddProduct() {
+        finish();
         AddProduct_.intent(this).start();
     }
 
     public void edit (Products u){
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-
         SharedPreferences.Editor edit = prefs.edit();
-        edit.putString("uuid", u.getUuid());
-        edit.apply();
+        edit.putString("productUUID", u.getUuid());
 
-//        Edit_.intent(this).start();
+        System.out.println(u.getUuid());
+
+        edit.apply();
+        finish();
+        EditProduct_.intent(this).start();
+    }
+
+    @Click(R.id.shopViewProductsBackButton)
+    public void back(){
+        finish();
+        ShopHomeScreen_.intent(this).start();
     }
 
     public void delete (Products u){
@@ -86,7 +133,25 @@ public class ViewProducts extends AppCompatActivity {
                     realm.beginTransaction();
                     u.deleteFromRealm();
                     realm.commitTransaction();
-                    Toast.makeText(ViewProducts.this, "User deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewProducts.this, "Product deleted", Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                    String prefsID = prefs.getString("shopUUID", null);
+
+                    RealmResults<Products> list = realm.where(Products.class).equalTo("shop_uuid", prefsID).findAll();
+
+
+                    System.out.println(list);
+                    System.out.println(prefsID);
+                    System.out.println(realm.where(Products.class).findAll());
+
+
+                    Boolean checker = list.isEmpty();
+                    if (checker==true){
+                        clearAll.setEnabled(false);
+                    } else{
+                        clearAll.setEnabled(true);
+                    }
                 }
             });
             alert.setNegativeButton("No", new DialogInterface.OnClickListener() {

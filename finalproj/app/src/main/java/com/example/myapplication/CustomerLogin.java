@@ -41,8 +41,6 @@ public class CustomerLogin extends AppCompatActivity {
     @ViewById(R.id.customerLoginSigninButton)
     Button customerLoginSigninB;
 
-
-
     @ViewById(R.id.customerLoginCancelButton)
     Button customerLoginCancelB;
 
@@ -146,10 +144,12 @@ public class CustomerLogin extends AppCompatActivity {
             Boolean checker =  result.getFirstTime();
 
             if (checker == true){
+                finish();
                 CustomerAccount_.intent(this).start();
                 Toast t = Toast.makeText(this, "Thank you for registering with us! Please fill up your account details to begin shopping!", Toast.LENGTH_LONG);
                 t.show();
             } else{
+                finish();
                 CustomerHome_.intent(this).start();
             }
 
@@ -163,7 +163,14 @@ public class CustomerLogin extends AppCompatActivity {
 
     @Click(R.id.customerLoginCancelButton)
     public void cancel(){
+        finish();
         CustomerRegister_.intent(this).start();
+    }
+
+    @Click(R.id.customerLoginBackButton)
+    public void back(){
+        finish();
+        MainActivity_.intent(this).start();
     }
 
 }

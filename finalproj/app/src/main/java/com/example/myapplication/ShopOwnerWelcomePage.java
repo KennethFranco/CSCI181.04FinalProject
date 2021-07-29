@@ -148,8 +148,10 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
                 if (result.getFirstTime()==true){
                     Toast t = Toast.makeText(this, "Thank you for signing up with us! Please fill up these account details in order to start adding products!", Toast.LENGTH_LONG);
                     t.show();
+                    finish();
                     ShopAccount_.intent(this).start();
                 } else{
+                    finish();
                     ShopHomeScreen_.intent(this).start();
                 }
 
@@ -166,6 +168,13 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
     }
     @Click(R.id.shopOwner_register)
     public void ShopRegister() {
+        finish();
         ShopRegister_.intent(this).start();
+    }
+
+    @Click(R.id.shopOwnerWelcomePageBackButton)
+    public void back(){
+        finish();
+        MainActivity_.intent(this).start();
     }
 }

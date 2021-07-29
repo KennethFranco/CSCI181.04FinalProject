@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -41,6 +43,79 @@ public class AddProduct extends AppCompatActivity {
     public void init() {
         realm = Realm.getDefaultInstance();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+
+        if (prod_name.getText().toString().equals("") || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+            addproduct.setEnabled(false);
+        } else{
+            addproduct.setEnabled(true);
+        }
+
+        prod_name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+                    addproduct.setEnabled(false);
+                } else
+                {
+                    addproduct.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        prod_num.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || prod_name.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+                    addproduct.setEnabled(false);
+                } else
+                {
+                    addproduct.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        addProductD.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || prod_num.getText().toString().equals("") || prod_name.getText().toString().equals("")){
+                    addproduct.setEnabled(false);
+                } else
+                {
+                    addproduct.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
     }
 
@@ -92,11 +167,18 @@ public class AddProduct extends AppCompatActivity {
             t.show();
 
             finish();
+            ViewProducts_.intent(this).start();
         }
         else{
             Toast t = Toast.makeText(this, "Product already exists", Toast.LENGTH_LONG);
             t.show();
         }
 
+    }
+
+    @Click(R.id.addProductBackButton)
+    public void back(){
+        finish();
+        ViewProducts_.intent(this).start();
     }
 }

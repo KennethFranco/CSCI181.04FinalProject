@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -50,9 +51,6 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
     @ViewById(R.id.specificProductPhoto)
     ImageView pPhoto;
 
-    @ViewById(R.id.specificProductExitButton)
-    ImageButton pExitButton;
-
     @ViewById(R.id.specificProductAddToCartButton)
     Button pAddCartButton;
 
@@ -63,7 +61,7 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         String uuid = prefs.getString("productUUID", null);
 
-        System.out.println(uuid);
+//        System.out.println(uuid);
 
         Products result= realm.where(Products.class)
                 .equalTo("uuid", uuid)
@@ -78,6 +76,7 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
         pName.setText(name);
         pPrice.setText(pricePHP);
         pDescription.setText(description);
+        pAddCartButton.setEnabled(false);
     }
 
     @Click(R.id.specificProductAddButton)
@@ -85,6 +84,9 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
         count  +=1;
         String newCount = ""+count;
         pQuantity.setText(newCount);
+        if (count==1){
+            pAddCartButton.setEnabled(true);
+        }
     }
 
     @Click(R.id.specificProductMinusButton)
@@ -93,13 +95,19 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
             count-=1;
             String newCount = ""+count;
             pQuantity.setText(newCount);
+
+            if (count==0){
+                pAddCartButton.setEnabled(false);
+            }
         }
     }
 
-    @Click(R.id.specificProductExitButton)
-    public void exit(){
+    @Click(R.id.customerShopsSpecificProductBackButton)
+    public void back(){
         finish();
+        CustomerShopsProducts_.intent(this).start();
     }
+
 
     @Click(R.id.specificProductAddToCartButton)
     public void cart(){
@@ -124,7 +132,7 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
 
             String productName = result.getProduct_name();
             String product_uuid = result.getUuid();
-            System.out.println(product_uuid);
+
 
             Double individiualPrice = Double.parseDouble(price);
             String qtyvalue= pQuantity.getText().toString();
@@ -132,14 +140,8 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
             Double totalProductPrice = qty*individiualPrice;
             String randomUUID = UUID.randomUUID().toString();
 
-            System.out.println(individiualPrice);
-            System.out.println(qty);
-            System.out.println(totalProductPrice);
-            System.out.println(shopName);
-            System.out.println(productName);
 
             String userUUID = prefs.getString("uuid", null);
-            System.out.println(userUUID);
 
             RealmResults<Cart> list2 = realm.where(Cart.class)
                     .equalTo("user_uuid",userUUID)
@@ -147,9 +149,11 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
                     .where()
                     .equalTo("product_uuid",product_uuid)
                     .findAll();
-            System.out.println(list2);
 
-            if (list2==null){
+            System.out.println("Printing list2");
+            System.out.println(list2);
+            if (list2.isEmpty()){
+                System.out.println("List2 is null");
                 Cart newCart = new Cart();
                 newCart.setIndividual_price(individiualPrice);
                 newCart.setProduct_name(productName);
@@ -161,7 +165,7 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
                 newCart.setUuid(randomUUID);
                 newCart.setProduct_uuid(product_uuid);
 
-                System.out.println(newCart);
+//                System.out.println(newCart);
 
                 realm.beginTransaction();
                 realm.copyToRealmOrUpdate(newCart);
@@ -172,6 +176,7 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
                 t.show();
 
                 finish();
+                CustomerShops_.intent(this).start();
             }
             else{
                 for (Cart c: list2){
@@ -180,8 +185,8 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
                     int initialQty = c.getQuantity();
                     int newQty = initialQty+qty;
 
-                    System.out.println(newQty);
-                    System.out.println(newPrice);
+//                    System.out.println(newQty);
+//                    System.out.println(newPrice);
 
                     realm.beginTransaction();
                     c.setTotal_price(newPrice);
@@ -192,33 +197,9 @@ public class CustomerShopsSpecificProduct extends AppCompatActivity {
                     t.show();
 
                     finish();
+                    CustomerShops_.intent(this).start();
                 }
             }
-
-            Cart newCart = new Cart();
-            newCart.setIndividual_price(individiualPrice);
-            newCart.setProduct_name(productName);
-            newCart.setShop_name(shopName);
-            newCart.setQuantity(qty);
-            newCart.setTotal_price(totalProductPrice);
-            String uuid2 = prefs.getString("uuid", null);
-            newCart.setUser_uuid(uuid2);
-            newCart.setUuid(randomUUID);
-            newCart.setProduct_uuid(product_uuid);
-
-            System.out.println(newCart);
-
-            realm.beginTransaction();
-            realm.copyToRealmOrUpdate(newCart);
-            realm.commitTransaction();
-
-            String a = "Added "+productName + " x"+qty + " to Cart.";
-            Toast t = Toast.makeText(this, ""+a, Toast.LENGTH_LONG);
-            t.show();
-
-            finish();
-
-
         }
     }
 }
