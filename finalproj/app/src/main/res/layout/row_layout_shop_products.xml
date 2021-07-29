@@ -46,4 +46,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/specificProductImage"
+        android:layout_width="65dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginLeft="280dp"
+        app:layout_constraintBottom_toBottomOf="@+id/shopProductPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/shopAdd"
+        app:layout_constraintTop_toTopOf="@+id/shopProductName"
+        app:layout_constraintVertical_bias="0.576"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

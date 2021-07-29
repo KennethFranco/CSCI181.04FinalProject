@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -11,7 +17,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
 
-        <activity android:name=".CustomerOrders_"></activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/fileAuthority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- there must be a res/xml/file_provider_path.xml or this will fail -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_path" />
+        </provider>
+
+        <activity android:name=".AddProductPhoto_"></activity>
+        <activity android:name=".AdminShopsProducts_" />
+        <activity android:name=".AdminViewShops_" />
+        <activity android:name=".AdminViewCustomers_" />
+        <activity android:name=".AdminRegister_" />
+        <activity android:name=".AdminLogin_" />
+        <activity android:name=".AdminWelcome_" />
+        <activity android:name=".CustomerOrders_" />
         <activity android:name=".ViewCart_" />
         <activity android:name=".CustomerShopsSpecificProduct_" />
         <activity android:name=".EditProduct_" />

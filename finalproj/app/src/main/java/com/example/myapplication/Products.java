@@ -14,8 +14,16 @@ public class Products extends RealmObject {
 
     private String shop_name;
 
+
+    private String imagePath;
+
+    public String getProduct_description() {
+        return product_description;
+    }
+
     private int totalQty;
     private Double totalPrice;
+
 
     @Override
     public String toString() {
@@ -30,6 +38,14 @@ public class Products extends RealmObject {
                 ", shop_uuid='" + shop_uuid + '\'' +
                 '}';
     }
+
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
 
     public int getTotalQty() {
         return totalQty;
@@ -60,6 +76,7 @@ public class Products extends RealmObject {
 
     public String getProduct_description() {
         return product_description;
+
     }
 
     public void setProduct_description(String product_description) {

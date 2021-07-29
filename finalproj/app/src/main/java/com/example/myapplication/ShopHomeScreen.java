@@ -23,6 +23,11 @@ public class ShopHomeScreen extends AppCompatActivity {
     @ViewById(R.id.ViewProducts)
     Button viewProducts;
 
+
+    @ViewById(R.id.shopsAccountButton)
+    Button account;
+
+
     @ViewById(R.id.ShopHomeWelcome)
     TextView welcome_msg;
 
