@@ -13,7 +13,7 @@ public class Products extends RealmObject {
     private String product_description;
 
     private String shop_name;
-
+    private String shop_uuid;
 
     private String imagePath;
 
@@ -47,7 +47,10 @@ public class Products extends RealmObject {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
 
-    public int getTotalQty() {
+
+    }
+
+    public int getTotalQty () {
         return totalQty;
     }
 
@@ -74,18 +77,14 @@ public class Products extends RealmObject {
         this.shop_uuid = shop_uuid;
     }
 
-    public String getProduct_description() {
-        return product_description;
 
-    }
 
     public void setProduct_description(String product_description) {
         this.product_description = product_description;
     }
 
-    private String shop_uuid;
-
-    public Products() {}
+    public Products() {
+    }
 
     public String getUuid() {
         return uuid;

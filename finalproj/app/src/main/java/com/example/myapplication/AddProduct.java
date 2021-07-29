@@ -107,16 +107,15 @@ public class AddProduct extends AppCompatActivity {
 
         if (savedImage.exists()) {
 //            refreshImageView(savedImage);
-        }
-        else {
+        } else {
             Picasso.get()
                     .load(R.drawable.ic_launcher_background)
                     .into(productImage);
         }
-      
-      if (prod_name.getText().toString().equals("") || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+
+        if (prod_name.getText().toString().equals("") || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")) {
             addproduct.setEnabled(false);
-        } else{
+        } else {
             addproduct.setEnabled(true);
         }
 
@@ -128,10 +127,9 @@ public class AddProduct extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.toString().trim().length()==0 || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+                if (s.toString().trim().length() == 0 || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")) {
                     addproduct.setEnabled(false);
-                } else
-                {
+                } else {
                     addproduct.setEnabled(true);
                 }
             }
@@ -150,10 +148,9 @@ public class AddProduct extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.toString().trim().length()==0 || prod_name.getText().toString().equals("") || addProductD.getText().toString().equals("")){
+                if (s.toString().trim().length() == 0 || prod_name.getText().toString().equals("") || addProductD.getText().toString().equals("")) {
                     addproduct.setEnabled(false);
-                } else
-                {
+                } else {
                     addproduct.setEnabled(true);
                 }
             }
@@ -172,10 +169,9 @@ public class AddProduct extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.toString().trim().length()==0 || prod_num.getText().toString().equals("") || prod_name.getText().toString().equals("")){
+                if (s.toString().trim().length() == 0 || prod_num.getText().toString().equals("") || prod_name.getText().toString().equals("")) {
                     addproduct.setEnabled(false);
-                } else
-                {
+                } else {
                     addproduct.setEnabled(true);
                 }
             }
@@ -192,7 +188,7 @@ public class AddProduct extends AppCompatActivity {
 
     @Click(R.id.product_selectPhoto)
     public void SelectPhoto() {
-        AddProductPhoto_.intent(this).startForResult(REQUEST_CODE_IMAGE_SCREEN); 
+        AddProductPhoto_.intent(this).startForResult(REQUEST_CODE_IMAGE_SCREEN);
     }
 
     // SINCE WE USE startForResult(), code will trigger this once the next screen calls finish()
@@ -221,8 +217,7 @@ public class AddProduct extends AppCompatActivity {
         }
     }
 
-    private File refreshFile(byte[] jpeg) throws IOException
-    {
+    private File refreshFile(byte[] jpeg) throws IOException {
         // this is the root directory for the images
         File getImageDir = getExternalCacheDir();
 
@@ -235,8 +230,7 @@ public class AddProduct extends AppCompatActivity {
         return savedImage;
     }
 
-    private File saveFile(byte[] jpeg, String name) throws IOException
-    {
+    private File saveFile(byte[] jpeg, String name) throws IOException {
         // this is the root directory for the images
         File getImageDir = getExternalCacheDir();
 
@@ -248,7 +242,6 @@ public class AddProduct extends AppCompatActivity {
         fos.close();
         return savedImage;
     }
-
 
 
     private void refreshImageView(File savedImage) {
@@ -299,16 +292,11 @@ public class AddProduct extends AppCompatActivity {
             newProduct.setShop_uuid(valueUUID.getUuid());
 
 
-
-
-
             try {
-                newProduct.setImagePath(System.currentTimeMillis()+".jpeg");
+                newProduct.setImagePath(System.currentTimeMillis() + ".jpeg");
 
                 File image = saveFile(product_image, newProduct.getImagePath());
-            }
-            catch(Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -320,16 +308,19 @@ public class AddProduct extends AppCompatActivity {
             t.show();
 
             ViewProducts_.intent(this).start();
-        else{
+
+
+        } else {
 
             Toast t = Toast.makeText(this, "Product already exists", Toast.LENGTH_LONG);
             t.show();
         }
 
+
     }
 
     @Click(R.id.addProductBackButton)
-    public void back(){
+    public void back() {
         finish();
         ViewProducts_.intent(this).start();
     }

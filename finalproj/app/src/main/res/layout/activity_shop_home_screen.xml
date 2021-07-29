@@ -23,12 +23,11 @@
         android:id="@+id/ViewProducts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="288dp"
         android:text="View Products"
-        app:layout_constraintBottom_toTopOf="@+id/shopHomeScreenBackButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ShopHomeWelcome"
         app:layout_constraintStart_toStartOf="@+id/ShopHomeWelcome"
-        app:layout_constraintTop_toBottomOf="@+id/ShopHomeWelcome" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/shopsAccountButton"
@@ -40,8 +39,8 @@
         app:layout_constraintEnd_toEndOf="@+id/ViewProducts"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/ViewProducts"
-        app:layout_constraintTop_toBottomOf="@+id/ViewProducts"
-        app:layout_constraintVertical_bias="0.202" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584" />
 
     <Button
         android:id="@+id/shopHomeScreenBackButton"
@@ -49,10 +48,10 @@
         android:layout_height="wrap_content"
         android:text="Sign Out"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/shopsAccountButton"
         app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/shopsAccountButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.713" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
