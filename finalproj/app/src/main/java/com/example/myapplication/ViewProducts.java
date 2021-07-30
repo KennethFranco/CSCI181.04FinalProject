@@ -107,11 +107,20 @@ public class ViewProducts extends AppCompatActivity {
         SharedPreferences.Editor edit = prefs.edit();
         edit.putString("productUUID", u.getUuid());
 
-        System.out.println(u.getUuid());
+        RealmResults<Cart> list = realm.where(Cart.class).equalTo("product_uuid", u.getUuid()).findAll();
+        System.out.println(list);
 
-        edit.apply();
-        finish();
-        EditProduct_.intent(this).start();
+        Boolean checker = list.isEmpty();
+
+        if (checker == true){
+            System.out.println(u.getUuid());
+            edit.apply();
+            finish();
+            EditProduct_.intent(this).start();
+        } else{
+            Toast.makeText(ViewProducts.this, "You cannot edit this product for it is currently present in some customers' carts! Please wait until they do not have this in their carts anymore.", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     @Click(R.id.shopViewProductsBackButton)
@@ -121,46 +130,56 @@ public class ViewProducts extends AppCompatActivity {
     }
 
     public void delete (Products u){
-        if (u.isValid())
-        {
+        RealmResults<Cart> list = realm.where(Cart.class).equalTo("product_uuid", u.getUuid()).findAll();
+        System.out.println(list);
 
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setTitle("Confirmation");
-            alert.setMessage("Are you sure?");
-            alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    realm.beginTransaction();
-                    u.deleteFromRealm();
-                    realm.commitTransaction();
-                    Toast.makeText(ViewProducts.this, "Product deleted", Toast.LENGTH_SHORT).show();
+        Boolean checker = list.isEmpty();
 
-                    SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-                    String prefsID = prefs.getString("shopUUID", null);
+        if (checker == true){
+            if (u.isValid())
+            {
 
-                    RealmResults<Products> list = realm.where(Products.class).equalTo("shop_uuid", prefsID).findAll();
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.setTitle("Confirmation");
+                alert.setMessage("Are you sure?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        realm.beginTransaction();
+                        u.deleteFromRealm();
+                        realm.commitTransaction();
+                        Toast.makeText(ViewProducts.this, "Product deleted", Toast.LENGTH_SHORT).show();
+
+                        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                        String prefsID = prefs.getString("shopUUID", null);
+
+                        RealmResults<Products> list = realm.where(Products.class).equalTo("shop_uuid", prefsID).findAll();
 
 
-                    System.out.println(list);
-                    System.out.println(prefsID);
-                    System.out.println(realm.where(Products.class).findAll());
+                        System.out.println(list);
+                        System.out.println(prefsID);
+                        System.out.println(realm.where(Products.class).findAll());
 
 
-                    Boolean checker = list.isEmpty();
-                    if (checker==true){
-                        clearAll.setEnabled(false);
-                    } else{
-                        clearAll.setEnabled(true);
+                        Boolean checker = list.isEmpty();
+                        if (checker==true){
+                            clearAll.setEnabled(false);
+                        } else{
+                            clearAll.setEnabled(true);
+                        }
                     }
-                }
-            });
-            alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(ViewProducts.this, "Deletion cancelled", Toast.LENGTH_SHORT).show();
-                }
-            });
-            alert.create().show();
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(ViewProducts.this, "Deletion cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.create().show();
+            }
+        } else{
+            Toast.makeText(ViewProducts.this, "You cannot delete this product for it is currently present in some customers' carts! Please wait until they do not have this in their carts anymore.", Toast.LENGTH_LONG).show();
         }
+
     }
 }

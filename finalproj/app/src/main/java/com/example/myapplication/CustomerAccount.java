@@ -276,6 +276,7 @@ public class CustomerAccount extends AppCompatActivity {
                     realm.commitTransaction();
                     Toast t = Toast.makeText(this, "Successfully updated account details!", Toast.LENGTH_LONG);
                     t.show();
+                    finish();
                     CustomerHome_.intent(this).start();
 
                     customerAccountBackB.setEnabled(true);
@@ -300,6 +301,7 @@ public class CustomerAccount extends AppCompatActivity {
                 realm.commitTransaction();
                 Toast t = Toast.makeText(this, "Successfully updated account details!", Toast.LENGTH_LONG);
                 t.show();
+                finish();
                 CustomerHome_.intent(this).start();
                 customerAccountBackB.setEnabled(true);
             }
