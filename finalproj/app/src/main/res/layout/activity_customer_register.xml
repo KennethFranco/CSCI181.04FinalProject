@@ -18,68 +18,41 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.129" />
 
-    <TextView
-        android:id="@+id/customerRegisterUsernameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
-
     <EditText
         android:id="@+id/customerRegisterUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:hint="Username"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/customerRegisterUsernameTitle"
-        app:layout_constraintTop_toBottomOf="@+id/customerRegisterUsernameTitle" />
-
-    <TextView
-        android:id="@+id/customerRegisterPasswordTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        android:paddingLeft="30px"
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="215dp" />
 
     <EditText
         android:id="@+id/customerRegisterPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/customerRegisterPasswordTitle"
-        app:layout_constraintTop_toBottomOf="@+id/customerRegisterPasswordTitle" />
-
-    <TextView
-        android:id="@+id/customerRegisterConfirmPasswordTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirm Password:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476" />
+        android:paddingLeft="30px"
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="275dp" />
 
     <EditText
         android:id="@+id/customerRegisterConfirmPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:hint="Confirm Password"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/customerRegisterConfirmPasswordTitle"
-        app:layout_constraintTop_toBottomOf="@+id/customerRegisterConfirmPasswordTitle" />
+        android:paddingLeft="30px"
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="333dp" />
 
     <Button
         android:id="@+id/customerRegisterSigninButton"
