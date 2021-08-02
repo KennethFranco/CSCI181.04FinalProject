@@ -10,7 +10,7 @@
         android:id="@+id/customerAccountPasswordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="Password:"
         app:layout_constraintStart_toStartOf="@+id/customerAccountUsername"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountUsername" />
@@ -21,36 +21,28 @@
         android:layout_height="133dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075"
-        app:srcCompat="@android:drawable/btn_star" />
+        app:layout_constraintVertical_bias="0.026"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <Button
         android:id="@+id/customerAccountSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:enabled="true"
-        android:text="SAVE"
+        android:layout_width="184dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_button"
+        android:includeFontPadding="false"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#3B8AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036" />
-
-    <ImageButton
-        android:id="@+id/customerAccountCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@android:drawable/btn_dialog" />
+        app:layout_constraintVertical_bias="0.848" />
 
     <TextView
         android:id="@+id/customerAccountFullNameTitle"
@@ -59,94 +51,124 @@
         android:text="Full Name:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.237"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.237" />
 
     <EditText
         android:id="@+id/customerAccountFullName"
-        android:layout_width="341dp"
-        android:layout_height="43dp"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:hint="Full Name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/customerAccountFullNameTitle"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountFullNameTitle" />
 
     <TextView
         android:id="@+id/customerAccountContactNumberTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="Contact Number (Please enter only numbers):"
         app:layout_constraintStart_toStartOf="@+id/customerAccountFullName"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountFullName" />
 
     <EditText
         android:id="@+id/customerAccountContactNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
-        android:hint="0908123456"
-        android:inputType="phone"
-        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumberTitle"
+        android:hint="Contact Number"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumberTitle" />
 
     <TextView
         android:id="@+id/customerAccountAddressTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="Address:"
         app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumber"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumber" />
 
     <EditText
         android:id="@+id/customerAccountAddress"
-        android:layout_width="340dp"
-        android:layout_height="47dp"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:hint="Address"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/customerAccountAddressTitle"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountAddressTitle" />
 
     <TextView
         android:id="@+id/customerAccountUsernameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="Username:"
         app:layout_constraintStart_toStartOf="@+id/customerAccountAddress"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountAddress" />
 
     <EditText
         android:id="@+id/customerAccountUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:hint="Username"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/customerAccountUsernameTitle"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountUsernameTitle" />
 
     <EditText
         android:id="@+id/customerAccountPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:hint="Username"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/customerAccountPasswordTitle"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountPasswordTitle" />
 
     <Button
         android:id="@+id/customerAccountBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="184dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_button"
+        android:includeFontPadding="false"
         android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#3B8AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948" />
+        app:layout_constraintVertical_bias="0.926" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

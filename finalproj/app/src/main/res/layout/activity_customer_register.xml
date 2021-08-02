@@ -10,71 +10,91 @@
         android:id="@+id/customerRegisterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
+        android:fontFamily="sans-serif-black"
+        android:text="Customer Register"
+        android:textColor="#000000"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.165" />
 
     <EditText
         android:id="@+id/customerRegisterUsername"
         android:layout_width="246dp"
         android:layout_height="38dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="215dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerRegisterTitle" />
 
     <EditText
         android:id="@+id/customerRegisterPassword"
         android:layout_width="246dp"
         android:layout_height="38dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerRegisterUsername" />
 
     <EditText
         android:id="@+id/customerRegisterConfirmPassword"
         android:layout_width="246dp"
         android:layout_height="38dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerRegisterPassword" />
 
     <Button
         android:id="@+id/customerRegisterSigninButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SIGNUP"
+        android:layout_width="184dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_button"
+        android:includeFontPadding="false"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#3B8AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
+        app:layout_constraintVertical_bias="0.658" />
 
     <Button
         android:id="@+id/customerRegisterCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CANCEL"
+        android:layout_width="184dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_button"
+        android:includeFontPadding="false"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#3B8AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintTop_toBottomOf="@+id/customerRegisterSigninButton"
+        app:layout_constraintVertical_bias="0.06" />
 </androidx.constraintlayout.widget.ConstraintLayout>

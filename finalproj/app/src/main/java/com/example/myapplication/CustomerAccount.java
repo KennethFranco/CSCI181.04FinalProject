@@ -41,9 +41,6 @@ public class CustomerAccount extends AppCompatActivity {
     @ViewById(R.id.customerAccountAddress)
     EditText customerAccountA;
 
-    @ViewById(R.id.customerAccountCancelButton)
-    ImageButton customerAccountCancelB;
-
     @ViewById(R.id.customerAccountSaveButton)
     Button customerAccountSaveB;
 

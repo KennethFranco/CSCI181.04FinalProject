@@ -24,25 +24,31 @@
         android:id="@+id/customerLoginPassword"
         android:layout_width="246dp"
         android:layout_height="38dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerLoginUsername" />
 
     <EditText
         android:id="@+id/customerLoginUsername"
         android:layout_width="246dp"
         android:layout_height="38dp"
+        android:layout_marginTop="68dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="215dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerLoginTitle" />
 
     <CheckBox
         android:id="@+id/customerLoginRememerMe"
@@ -51,10 +57,10 @@
         android:text="Remember Me"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/customerLoginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/customerLoginPassword"
+        app:layout_constraintVertical_bias="0.045" />
 
     <Button
         android:id="@+id/customerLoginSigninButton"
@@ -89,8 +95,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734" />
+        app:layout_constraintTop_toBottomOf="@+id/customerLoginSigninButton"
+        app:layout_constraintVertical_bias="0.06" />
 
     <Button
         android:id="@+id/customerLoginBackButton"
@@ -107,6 +113,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintTop_toBottomOf="@+id/customerLoginCancelButton"
+        app:layout_constraintVertical_bias="0.073" />
 </androidx.constraintlayout.widget.ConstraintLayout>
