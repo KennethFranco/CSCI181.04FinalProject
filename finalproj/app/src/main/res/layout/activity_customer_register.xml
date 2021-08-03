@@ -7,11 +7,48 @@
     tools:context=".CustomerRegister">
 
     <TextView
+        android:id="@+id/customerLoginMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Already have an account?"
+        android:textColor="#A19999"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerRegisterSigninButton" />
+
+    <TextView
+        android:id="@+id/customerRegisterLoginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/customerRegisterBackLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerLoginMessage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/customerRegisterBackLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:text="Back to start"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/customerRegisterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
         android:text="Customer Register"
+        android:fontFamily="sans-serif-black"
         android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,13 +61,16 @@
         android:id="@+id/customerRegisterUsername"
         android:layout_width="246dp"
         android:layout_height="38dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerRegisterTitle" />
 
@@ -44,7 +84,10 @@
         android:hint="Password"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerRegisterUsername" />
 
@@ -58,7 +101,10 @@
         android:hint="Confirm Password"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerRegisterPassword" />
 
@@ -66,35 +112,20 @@
         android:id="@+id/customerRegisterSigninButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="sans-serif-light"
         android:includeFontPadding="false"
-        android:text="Sign Up"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Register"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:backgroundTint="#3B8AFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
-
-    <Button
-        android:id="@+id/customerRegisterCancelButton"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
-        android:background="@drawable/standard_button"
-        android:includeFontPadding="false"
-        android:text="Cancel"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:backgroundTint="#3B8AFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerRegisterSigninButton"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toBottomOf="@+id/customerRegisterConfirmPassword" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

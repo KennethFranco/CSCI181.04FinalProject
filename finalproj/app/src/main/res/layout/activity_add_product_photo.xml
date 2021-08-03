@@ -23,10 +23,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="20sp"
+            android:fontFamily="sans-serif-black"
             android:gravity="center_horizontal"
             android:text="Image Capture"
-            android:textSize="36dp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="28sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,20 +92,33 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="163dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingTop="30dp"
             android:paddingBottom="30dp">
 
             <Button
-                android:layout_margin="5dp"
                 android:id="@+id/cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="184dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80sp"
+                android:layout_marginLeft="80sp"
+                android:layout_marginEnd="80sp"
+                android:layout_marginRight="80sp"
                 android:layout_weight="1"
-                android:text="Cancel" />
-
+                android:fontFamily="sans-serif-light"
+                android:includeFontPadding="false"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint="#ffffff"
+                app:strokeColor="#000000"
+                app:strokeWidth="0.5dp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

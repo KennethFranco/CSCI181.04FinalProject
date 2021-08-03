@@ -7,12 +7,27 @@
     tools:context=".AddProduct">
 
     <TextView
+        android:id="@+id/product_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Return to product screen"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addproduct" />
+
+    <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="sans-serif-black"
         android:text="Add Product"
-        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,22 +35,33 @@
 
     <EditText
         android:id="@+id/editText_ProductName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/product_ImageView"
-        app:layout_constraintStart_toStartOf="@+id/product_ImageView"
-        app:layout_constraintTop_toBottomOf="@+id/product_ImageView" />
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
+        android:hint="Product Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_selectPhoto" />
 
     <EditText
         android:id="@+id/editText_ProductNumber"
-        android:layout_width="60dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
         android:inputType="number"
+        android:hint="0.0"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
         app:layout_constraintEnd_toEndOf="@+id/editText_ProductName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editText_ProductName"
@@ -43,25 +69,40 @@
 
     <Button
         android:id="@+id/addproduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="184dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif-light"
+        android:includeFontPadding="false"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
         android:text="Add"
-        app:layout_constraintBottom_toTopOf="@+id/addProductBackButton"
-
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_ProductNumber"
-        app:layout_constraintVertical_bias="0.451" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855"
+        app:strokeColor="#000000"
+        app:strokeWidth="0.5dp" />
 
     <EditText
         android:id="@+id/addProductDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/standard_textfield"
         android:ems="10"
         android:inputType="textPersonName"
+        android:hint="Product Description"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
         app:layout_constraintStart_toStartOf="@+id/editText_ProductName"
         app:layout_constraintTop_toBottomOf="@+id/editText_ProductName" />
 
@@ -69,36 +110,22 @@
         android:id="@+id/product_ImageView"
         android:layout_width="175dp"
         android:layout_height="177dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/ic_launcher_background"/>
 
     <ImageButton
         android:id="@+id/product_selectPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/product_ImageView"
-        app:layout_constraintStart_toEndOf="@+id/product_ImageView"
-        app:layout_constraintTop_toTopOf="@+id/product_ImageView"
-        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_ImageView"
         app:srcCompat="@android:drawable/ic_menu_camera" />
-
-    <Button
-        android:id="@+id/addProductBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/addproduct"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/addproduct"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

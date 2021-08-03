@@ -6,13 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".AdminShopsProducts">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/admin_ViewShopsProductsRV"
-        android:layout_width="407dp"
-        android:layout_height="658dp"
+    <TextView
+        android:id="@+id/adminMenuHomeLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Return to shops"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_ViewShopsProductsRV" />
+
+    <TextView
+        android:id="@+id/adminMenuTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Product List"
+        android:textColor="#000000"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.051" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/admin_ViewShopsProductsRV"
+        android:layout_width="329dp"
+        android:layout_height="549dp"
+        android:background="@drawable/recyclerbg"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
