@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProduct">
+
+    <TextView
+        android:id="@+id/product_back3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Return to products screen"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProductSubmitChangesButton" />
+
+    <EditText
+        android:id="@+id/editProductName"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:hint="Product Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProduct_EditImage" />
+
+
+    <EditText
+        android:id="@+id/editProductDescription"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
+        app:layout_constraintStart_toStartOf="@+id/editProductName"
+        app:layout_constraintTop_toBottomOf="@+id/editProductName" />
+
+    <Button
+        android:id="@+id/editProductSubmitChangesButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="184dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif-light"
+        android:includeFontPadding="false"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855"
+        app:strokeColor="#000000"
+        app:strokeWidth="0.5dp" />
+
+    <EditText
+        android:id="@+id/editProductPrice"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:hint="0.0"
+        android:inputType="number"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
+        app:layout_constraintEnd_toEndOf="@+id/editProductName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editProductName"
+        app:layout_constraintTop_toBottomOf="@+id/editProductDescription" />"
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Edit Product"
+        android:textSize="28sp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/editProduct_ProductImage"
+        android:layout_width="175dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageButton
+        android:id="@+id/editProduct_EditImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProduct_ProductImage"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

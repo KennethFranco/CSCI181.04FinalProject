@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerAccount">
+
+    <TextView
+        android:id="@+id/customerAccountHomeLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Return to home screen"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountSaveButton" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="103dp"
+        android:layout_height="133dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        app:srcCompat="@android:drawable/btn_star" />
+
+    <Button
+        android:id="@+id/customerAccountSaveButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="184dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif-light"
+        android:includeFontPadding="false"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855"
+        app:strokeColor="#000000"
+        app:strokeWidth="0.5dp" />
+
+    <EditText
+        android:id="@+id/customerAccountFullName"
+        android:layout_width="341dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountFullNameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountFullNameTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountPasswordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Password:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountUsername"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountUsername" />
+
+    <TextView
+        android:id="@+id/customerAccountFullNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Full Name:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.224" />
+
+    <EditText
+        android:id="@+id/customerAccountContactNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="phone"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumberTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumberTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Address:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumber"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumber" />
+
+    <EditText
+        android:id="@+id/customerAccountAddress"
+        android:layout_width="340dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountAddressTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountAddressTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountUsernameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Username:"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountAddress"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountAddress" />
+
+    <EditText
+        android:id="@+id/customerAccountUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountUsernameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountUsernameTitle" />
+
+    <EditText
+        android:id="@+id/customerAccountPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountPasswordTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountPasswordTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountContactNumberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Contact Number (Please enter only numbers):"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountFullName"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountFullName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

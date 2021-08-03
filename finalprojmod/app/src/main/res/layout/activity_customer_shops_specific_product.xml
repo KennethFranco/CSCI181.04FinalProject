@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerShopsSpecificProduct">
+
+    <TextView
+        android:id="@+id/specificProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:text="TextView"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/specificProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.646" />
+
+    <TextView
+        android:id="@+id/specificProductDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#7A7A7A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/specificProductAddToCartButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="184dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif-light"
+        android:includeFontPadding="false"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Add to Cart"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855"
+        app:strokeColor="#000000"
+        app:strokeWidth="0.5dp" />
+
+    <TextView
+        android:id="@+id/specificProductQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#474747"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.721" />
+
+    <ImageView
+        android:id="@+id/specificProductPhoto"
+        android:layout_width="212dp"
+        android:layout_height="217dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <ImageButton
+        android:id="@+id/specificProductAddButton"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:background="#A1A1A1"
+        app:layout_constraintBottom_toBottomOf="@+id/specificProductQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/specificProductQuantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/specificProductQuantity"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/specificProductMinusButton"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="#A1A1A1"
+        android:cropToPadding="true"
+        android:paddingLeft="10dp"
+        android:paddingTop="17dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/specificProductQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/specificProductQuantity"
+        app:layout_constraintTop_toTopOf="@+id/specificProductQuantity"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/button_onoff_indicator_on" />
+
+    <TextView
+        android:id="@+id/product_back2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Return to shop screen"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/specificProductAddToCartButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

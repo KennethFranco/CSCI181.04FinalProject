@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/viewCartProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewCartShopName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/viewCartShopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/viewCartQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="1"
+        android:textColor="#878787"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCartProductName"
+        app:layout_constraintEnd_toStartOf="@+id/viewCartProductName"
+        app:layout_constraintTop_toTopOf="@+id/viewCartShopName" />
+
+    <TextView
+        android:id="@+id/viewCartTotalPrice"
+        android:layout_width="38dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="php"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/viewCartMinusQtyButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/viewCartMinusQtyButton"
+        app:layout_constraintTop_toBottomOf="@+id/viewCartMinusQtyButton" />
+
+    <ImageButton
+        android:id="@+id/viewCartAddQtyButton"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="#A1A1A1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <ImageButton
+        android:id="@+id/viewCartMinusQtyButton"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:background="#A1A1A1"
+        android:cropToPadding="true"
+        android:paddingLeft="10dp"
+        android:paddingTop="17dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="17dp"
+        app:layout_constraintStart_toEndOf="@+id/viewCartAddQtyButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/button_onoff_indicator_on" />
+
+    <ImageButton
+        android:id="@+id/viewCartDeleteButton"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:background="#A1A1A1"
+        app:layout_constraintStart_toEndOf="@+id/viewCartMinusQtyButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_delete" />
+</androidx.constraintlayout.widget.ConstraintLayout>
