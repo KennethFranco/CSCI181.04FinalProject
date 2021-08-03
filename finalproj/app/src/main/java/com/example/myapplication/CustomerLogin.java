@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -41,8 +42,8 @@ public class CustomerLogin extends AppCompatActivity {
     @ViewById(R.id.customerLoginSigninButton)
     Button customerLoginSigninB;
 
-    @ViewById(R.id.customerLoginCancelButton)
-    Button customerLoginCancelB;
+    @ViewById(R.id.customerLoginBackLink)
+    TextView customerLoginCancelB;
 
     @AfterViews
     public void init(){
@@ -161,13 +162,13 @@ public class CustomerLogin extends AppCompatActivity {
 
     }
 
-    @Click(R.id.customerLoginCancelButton)
+    @Click(R.id.customerLoginRegisterLink)
     public void cancel(){
         finish();
         CustomerRegister_.intent(this).start();
     }
 
-    @Click(R.id.customerLoginBackButton)
+    @Click(R.id.customerLoginBackLink)
     public void back(){
         finish();
         MainActivity_.intent(this).start();

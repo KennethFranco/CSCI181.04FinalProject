@@ -179,7 +179,7 @@ public class ShopRegister extends AppCompatActivity {
         }
     }
 
-    @Click(R.id.ShopRegisterCancel)
+    @Click(R.id.shopRegisterBackLink)
     public void CancelRegister() {
         finish();
         ShopOwnerWelcomePage_.intent(this).start();

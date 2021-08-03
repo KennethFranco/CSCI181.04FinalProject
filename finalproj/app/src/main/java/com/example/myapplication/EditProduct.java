@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karumi.dexter.Dexter;
@@ -47,8 +48,8 @@ public class EditProduct extends AppCompatActivity {
     @ViewById(R.id.editProductPrice)
     EditText editPP;
 
-    @ViewById(R.id.editProductBackButton)
-    Button editProductBackB;
+    @ViewById(R.id.product_back3)
+    TextView editProductBackB;
 
     @ViewById(R.id.editProductSubmitChangesButton)
     Button editProductSubmitB;
@@ -333,7 +334,7 @@ public class EditProduct extends AppCompatActivity {
         }
     }
 
-    @Click(R.id.editProductBackButton)
+    @Click(R.id.product_back3)
     public void back(){
         finish();
         ViewProducts_.intent(this).start();

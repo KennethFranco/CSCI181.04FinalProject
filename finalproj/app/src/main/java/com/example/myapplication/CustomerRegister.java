@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -36,8 +37,8 @@ public class CustomerRegister extends AppCompatActivity {
     @ViewById(R.id.customerRegisterSigninButton)
     Button customerRegisterSigninB;
 
-    @ViewById(R.id.customerRegisterCancelButton)
-    Button customerRegisterCancelB;
+    @ViewById(R.id.customerRegisterBackLink)
+    TextView customerRegisterCancelB;
 
     @AfterViews
     public void init(){
@@ -167,8 +168,15 @@ public class CustomerRegister extends AppCompatActivity {
         }
     }
 
-    @Click(R.id.customerRegisterCancelButton)
+    @Click(R.id.customerRegisterBackLink)
     public void cancel(){
+
+        finish();
+        MainActivity_.intent(this).start();
+    }
+
+    @Click(R.id.customerRegisterLoginLink)
+    public void Login(){
 
         finish();
         CustomerLogin_.intent(this).start();

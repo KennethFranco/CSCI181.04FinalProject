@@ -10,13 +10,12 @@
         android:id="@+id/customerAdminHomeLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:text="Return to home screen"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/admin_CustomerRecyclerView"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="@+id/admin_CustomerRecyclerView"
         app:layout_constraintTop_toBottomOf="@+id/admin_CustomerRecyclerView" />
 
     <TextView
@@ -31,16 +30,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/admin_CustomerRecyclerView"
         android:layout_width="329dp"
         android:layout_height="549dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/recyclerbg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/customersAdminTitle"
+        app:layout_constraintStart_toStartOf="@+id/customersAdminTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customersAdminTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

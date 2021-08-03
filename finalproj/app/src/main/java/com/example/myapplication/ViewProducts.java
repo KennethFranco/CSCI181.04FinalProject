@@ -123,7 +123,7 @@ public class ViewProducts extends AppCompatActivity {
 
     }
 
-    @Click(R.id.shopViewProductsBackButton)
+    @Click(R.id.shopProductsBackLink)
     public void back(){
         finish();
         ShopHomeScreen_.intent(this).start();

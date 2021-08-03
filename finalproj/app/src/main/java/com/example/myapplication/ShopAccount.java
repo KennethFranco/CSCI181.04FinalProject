@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -37,8 +38,8 @@ public class ShopAccount extends AppCompatActivity {
     @ViewById(R.id.shopAccountSaveButton)
     Button shopAccountSaveB;
 
-    @ViewById(R.id.shopAccountBackButton)
-    Button shopAccountBackB;
+    @ViewById(R.id.shopAccountHomeLink)
+    TextView shopAccountBackB;
     
     @AfterViews
     public void init(){
@@ -207,7 +208,7 @@ public class ShopAccount extends AppCompatActivity {
 
     }
 
-    @Click(R.id.shopAccountBackButton)
+    @Click(R.id.shopAccountHomeLink)
     public void back(){
         String uuid = prefs.getString("shopUUID", null);
         Shops result2 = realm.where(Shops.class)

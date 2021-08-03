@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karumi.dexter.Dexter;
@@ -45,6 +46,9 @@ public class AddProduct extends AppCompatActivity {
 
     @ViewById
     Button addproduct;
+
+    @ViewById(R.id.product_back)
+    TextView back;
 
     @ViewById(R.id.editText_ProductName)
     EditText prod_name;
@@ -319,7 +323,7 @@ public class AddProduct extends AppCompatActivity {
 
     }
 
-    @Click(R.id.addProductBackButton)
+    @Click(R.id.product_back)
     public void back() {
         finish();
         ViewProducts_.intent(this).start();

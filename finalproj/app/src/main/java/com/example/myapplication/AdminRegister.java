@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -32,8 +33,8 @@ public class AdminRegister extends AppCompatActivity {
     @ViewById(R.id.adminConfirmRegister)
     Button register;
 
-    @ViewById(R.id.adminRegisterCancel)
-    Button cancel;
+    @ViewById(R.id.adminRegisterBackLink)
+    TextView cancel;
 
     @AfterViews
     public void init() {
@@ -81,6 +82,7 @@ public class AdminRegister extends AppCompatActivity {
             t.show();
 
             finish();
+            AdminLogin_.intent(this).start();
 
         }
         else {
@@ -89,8 +91,15 @@ public class AdminRegister extends AppCompatActivity {
         }
     }
 
-    @Click(R.id.adminRegisterCancel)
+    @Click(R.id.adminRegisterBackLink)
     public void Cancel() {
         finish();
+        MainActivity_.intent(this).start();
+    }
+
+    @Click(R.id.adminRegisterLoginLink)
+    public void Login() {
+        finish();
+        AdminLogin_.intent(this).start();
     }
 }

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -42,5 +43,11 @@ public class AdminShopsProducts extends AppCompatActivity {
         AdminShopsProductsAdapter adapter = new AdminShopsProductsAdapter(this, list, true);
         rV.setAdapter(adapter);
 
+    }
+
+    @Click(R.id.adminMenuHomeLink)
+    public void exit(){
+        finish();
+        AdminViewShops_.intent(this).start();
     }
 }

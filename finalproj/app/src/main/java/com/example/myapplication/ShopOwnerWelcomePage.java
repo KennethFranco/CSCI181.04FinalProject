@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -24,8 +25,8 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
     Realm realm;
     SharedPreferences prefs;
 
-    @ViewById
-    Button shopOwner_register;
+    @ViewById(R.id.shopLoginRegisterLink)
+    TextView shopOwner_register;
 
     @ViewById(R.id.shopOwner_editUsername)
     EditText username;
@@ -166,13 +167,13 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
             t.show();
         }
     }
-    @Click(R.id.shopOwner_register)
+    @Click(R.id.shopLoginRegisterLink)
     public void ShopRegister() {
         finish();
         ShopRegister_.intent(this).start();
     }
 
-    @Click(R.id.shopOwnerWelcomePageBackButton)
+    @Click(R.id.shopLoginBackLink)
     public void back(){
         finish();
         MainActivity_.intent(this).start();

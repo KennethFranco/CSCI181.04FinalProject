@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -28,8 +29,8 @@ public class AdminLogin extends AppCompatActivity {
     @ViewById(R.id.adminLoginButton)
     Button login;
 
-    @ViewById(R.id.adminRegisterButton)
-    Button register;
+    @ViewById(R.id.adminLoginBackLink)
+    TextView back;
 
     @AfterViews
     public void init() {
@@ -66,9 +67,16 @@ public class AdminLogin extends AppCompatActivity {
         }
     }
 
-    @Click(R.id.adminRegisterButton)
+    @Click(R.id.adminLoginRegisterLink)
     public void register() {
+        finish();
         AdminRegister_.intent(this).start();
+    }
+
+    @Click(R.id.adminLoginBackLink)
+    public void CancelRegister() {
+        finish();
+        MainActivity_.intent(this).start();
     }
 
 }
