@@ -7,6 +7,7 @@
     tools:context=".CustomerRegister">
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerLoginMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,9 +23,11 @@
         android:id="@+id/customerRegisterLoginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
         android:text="Login"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/customerRegisterBackLink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +35,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerRegisterBackLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
         android:text="Back to start"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -48,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Customer Register"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,6 +63,9 @@
         app:layout_constraintVertical_bias="0.165" />
 
     <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerRegisterUsername"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -75,6 +83,9 @@
         app:layout_constraintTop_toBottomOf="@+id/customerRegisterTitle" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerRegisterPassword"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -92,6 +103,9 @@
         app:layout_constraintTop_toBottomOf="@+id/customerRegisterUsername" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerRegisterConfirmPassword"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -109,12 +123,12 @@
         app:layout_constraintTop_toBottomOf="@+id/customerRegisterPassword" />
 
     <Button
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerRegisterSigninButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/standard_button"
-        android:fontFamily="sans-serif-light"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"

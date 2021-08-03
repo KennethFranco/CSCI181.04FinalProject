@@ -1,8 +1,13 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
@@ -40,6 +45,7 @@ public class CustomerRegister extends AppCompatActivity {
     @ViewById(R.id.customerRegisterBackLink)
     TextView customerRegisterCancelB;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void init(){
         realm = Realm.getDefaultInstance();
@@ -48,6 +54,8 @@ public class CustomerRegister extends AppCompatActivity {
         if (customerRegisterU.getText().toString().equals("") || customerRegisterP.getText().toString().equals("") || customerRegisterCP.getText().toString().equals(""))
         {
             customerRegisterSigninB.setEnabled(false);
+            customerRegisterSigninB.setTextColor(Color.parseColor("#8b8b8b"));
+            customerRegisterSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
         }
         else{
             customerRegisterSigninB.setEnabled(true);
@@ -63,7 +71,11 @@ public class CustomerRegister extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerRegisterP.getText().toString().equals("") || customerRegisterCP.getText().toString().equals("")){
                     customerRegisterSigninB.setEnabled(false);
+                    customerRegisterSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerRegisterSigninB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
+                    customerRegisterSigninB.setTextColor(Color.parseColor("#ffffff"));
+                    customerRegisterSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerRegisterSigninB.setEnabled(true);
                 }
             }
@@ -84,8 +96,12 @@ public class CustomerRegister extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerRegisterU.getText().toString().equals("") || customerRegisterCP.getText().toString().equals("")){
                     customerRegisterSigninB.setEnabled(false);
+                    customerRegisterSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerRegisterSigninB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else
                 {
+                    customerRegisterSigninB.setTextColor(Color.parseColor("#ffffff"));
+                    customerRegisterSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerRegisterSigninB.setEnabled(true);
                 }
             }
@@ -106,8 +122,12 @@ public class CustomerRegister extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerRegisterU.getText().toString().equals("") || customerRegisterP.getText().toString().equals("")){
                     customerRegisterSigninB.setEnabled(false);
+                    customerRegisterSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerRegisterSigninB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else
                 {
+                    customerRegisterSigninB.setTextColor(Color.parseColor("#ffffff"));
+                    customerRegisterSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerRegisterSigninB.setEnabled(true);
                 }
             }
