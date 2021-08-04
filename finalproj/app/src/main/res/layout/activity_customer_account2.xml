@@ -29,11 +29,11 @@
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <Button
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountSaveButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:text="Save"
         android:textAllCaps="false"
@@ -44,8 +44,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.848" />
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountPassword"
+        app:layout_constraintVertical_bias="0.189" />
 
     <TextView
         android:fontFamily="@font/poppins_regular"
@@ -61,6 +61,8 @@
         app:layout_constraintVertical_bias="0.237" />
 
     <EditText
+        android:drawableLeft="@drawable/full"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountFullName"
         android:layout_width="246dp"
@@ -86,6 +88,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountFullName" />
 
     <EditText
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountContactNumber"
         android:layout_width="246dp"
@@ -111,6 +115,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumber" />
 
     <EditText
+        android:drawableLeft="@drawable/address"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountAddress"
         android:layout_width="246dp"
@@ -136,6 +142,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountAddress" />
 
     <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountUsername"
         android:layout_width="246dp"
@@ -151,6 +159,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountUsernameTitle" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountPassword"
         android:layout_width="246dp"
@@ -166,11 +176,11 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountPasswordTitle" />
 
     <Button
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountBackButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:text="Back"
         android:textAllCaps="false"
@@ -181,7 +191,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountSaveButton"
+        app:layout_constraintVertical_bias="0.406" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

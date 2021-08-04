@@ -10,19 +10,25 @@
         android:id="@+id/customerAdminHomeLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Return to home screen"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/admin_CustomerRecyclerView"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="@+id/admin_CustomerRecyclerView"
         app:layout_constraintTop_toBottomOf="@+id/admin_CustomerRecyclerView" />
 
     <TextView
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
         android:id="@+id/customersAdminTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/poppins_bold"
         android:text="Customers"
         android:textColor="#000000"
         android:textSize="28sp"
@@ -36,10 +42,12 @@
         android:id="@+id/admin_CustomerRecyclerView"
         android:layout_width="329dp"
         android:layout_height="549dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/recyclerbg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/customersAdminTitle"
         app:layout_constraintStart_toStartOf="@+id/customersAdminTitle"
-        app:layout_constraintTop_toBottomOf="@+id/customersAdminTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/customersAdminTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

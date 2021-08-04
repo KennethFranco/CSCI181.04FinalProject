@@ -7,48 +7,27 @@
     tools:context=".AdminLogin">
 
     <TextView
-        android:id="@+id/adminRegisterMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Need an account?"
-        android:textColor="#A19999"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminLoginButton" />
-
-    <TextView
-        android:id="@+id/adminLoginRegisterLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/adminLoginBackLink"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminRegisterMessage"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
         android:id="@+id/adminLoginBackLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Back to start"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/poppins_bold"
         android:text="Admin Login"
         android:textColor="#000000"
         android:textSize="28sp"
@@ -59,6 +38,9 @@
         app:layout_constraintVertical_bias="0.165" />
 
     <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_AdminUsername"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -76,6 +58,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_AdminPassword"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -93,11 +78,11 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_AdminUsername" />
 
     <Button
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/adminLoginButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
         android:background="@drawable/standard_button"
-        android:fontFamily="sans-serif-light"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
@@ -108,9 +93,74 @@
         app:backgroundTint="#3B8AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintVertical_bias="0.633" />
+
+    <Button
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/adminClearButton"
+        android:layout_width="184dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="176dp"
+        android:background="@drawable/standard_button"
+        android:includeFontPadding="false"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Clear"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#3B8AFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/adminLoginButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/adminLoginButton" />
+
+    <TextView
+        android:drawableLeft="@drawable/register"
+        android:drawablePadding="5dp"
+        android:id="@+id/adminLoginRegisterLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Register"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/adminLoginBackLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminRegisterMessage"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/adminRegisterMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Need an account?"
+        android:textColor="#A19999"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminClearButton" />
+
+    <CheckBox
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/adminRememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Remember Me"
+        app:layout_constraintBottom_toTopOf="@+id/adminLoginButton"
+        app:layout_constraintEnd_toEndOf="@+id/editText_AdminPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText_AdminPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editText_AdminPassword"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

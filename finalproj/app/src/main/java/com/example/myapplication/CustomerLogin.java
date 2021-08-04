@@ -78,28 +78,22 @@ public class CustomerLogin extends AppCompatActivity {
                 customerLoginU.setText(u);
                 customerLoginP.setText(p);
                 customerLoginRemember.setChecked(true);
+
+                customerLoginClearB.setTextColor(Color.parseColor("#ffffff"));
+                customerLoginClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+                customerLoginClearB.setEnabled(true);
             }
             customerLoginSigninB.setEnabled(true);
         } else{
             customerLoginSigninB.setEnabled(false);
             customerLoginSigninB.setTextColor(Color.parseColor("#8b8b8b"));
             customerLoginSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+
+            customerLoginClearB.setEnabled(false);
+            customerLoginClearB.setTextColor(Color.parseColor("#8b8b8b"));
+            customerLoginClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
         }
 
-//        if (customerLoginU.getText().toString().equals("") || customerLoginP.getText().toString().equals("")){
-////            sets text color to dark gray
-//            customerLoginSigninB.setTextColor(Color.parseColor("#8b8b8b"));
-//
-////            sets bg color to light gray
-//            customerLoginSigninB.getBackground().setColorFilter(Color.parseColor("#e0e0e0"), PorterDuff.Mode.SRC_ATOP);
-//            customerLoginSigninB.setEnabled(false);
-//        } else{
-//
-////            sets text color to white
-////            customerLoginSigninB.setTextColor(Color.parseColor("#ffffff"));
-//            customerLoginSigninB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
-//            customerLoginSigninB.setEnabled(true);
-//        }
 
         customerLoginU.addTextChangedListener(new TextWatcher() {
             @Override
@@ -111,11 +105,11 @@ public class CustomerLogin extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || (customerLoginP.getText().toString().equals(""))){
                     customerLoginSigninB.setEnabled(false);
-                    customerLoginSigninB.getBackground().setColorFilter(Color.parseColor("#e0e0e0"), PorterDuff.Mode.SRC_ATOP);
                     customerLoginSigninB.setTextColor(Color.parseColor("#8b8b8b"));
+                    customerLoginSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
                 } else {
                     customerLoginSigninB.setTextColor(Color.parseColor("#ffffff"));
-                    customerLoginSigninB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
+                    customerLoginSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerLoginSigninB.setEnabled(true);
 
                 }
@@ -137,13 +131,13 @@ public class CustomerLogin extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerLoginU.getText().toString().equals("")){
                     customerLoginSigninB.setEnabled(false);
-                    customerLoginSigninB.getBackground().setColorFilter(Color.parseColor("#e0e0e0"), PorterDuff.Mode.SRC_ATOP);
                     customerLoginSigninB.setTextColor(Color.parseColor("#8b8b8b"));
+                    customerLoginSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
                 } else
                     {
                     customerLoginSigninB.setEnabled(true);
-                    customerLoginSigninB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
                     customerLoginSigninB.setTextColor(Color.parseColor("#ffffff"));
+                    customerLoginSigninB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
@@ -155,16 +149,21 @@ public class CustomerLogin extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Click(R.id.customerLoginClearButton)
     public void clear(){
         prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();
-        edit.clear();
+        edit.remove("uuid");
         edit.apply();
         Toast t = Toast.makeText(this, "Successfully cleared credentials.", Toast.LENGTH_LONG);
         customerLoginU.setText("");
         customerLoginP.setText("");
         customerLoginRemember.setChecked(false);
+
+        customerLoginClearB.setEnabled(false);
+        customerLoginClearB.setTextColor(Color.parseColor("#8b8b8b"));
+        customerLoginClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
         t.show();
     }
 

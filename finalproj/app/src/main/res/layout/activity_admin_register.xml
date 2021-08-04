@@ -7,49 +7,61 @@
     tools:context=".AdminRegister">
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/adminLoginMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="72dp"
         android:text="Already have an account?"
         android:textColor="#A19999"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adminConfirmRegister" />
 
     <TextView
+        android:drawableLeft="@drawable/login"
+        android:drawablePadding="5dp"
         android:id="@+id/adminRegisterLoginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
         android:text="Login"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/adminRegisterBackLink"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adminLoginMessage"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
         android:id="@+id/adminRegisterBackLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Back to start"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.964" />
 
     <Button
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/adminConfirmRegister"
         android:layout_width="184dp"
         android:layout_height="38dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/standard_button"
-        android:fontFamily="sans-serif-light"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
@@ -64,6 +76,9 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_AdminRegisterConfirm" />
 
     <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_AdminRegisterUname"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -81,6 +96,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_AdminRegisterPword"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -98,6 +116,9 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_AdminRegisterUname" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_AdminRegisterConfirm"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -115,11 +136,11 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_AdminRegisterPword" />
 
     <TextView
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Admin Register"
-        android:fontFamily="sans-serif-black"
         android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -127,5 +148,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.165" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
