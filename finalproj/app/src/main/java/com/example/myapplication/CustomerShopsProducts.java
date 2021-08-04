@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -21,6 +22,10 @@ public class CustomerShopsProducts extends AppCompatActivity {
     Realm realm;
     @ViewById(R.id.shopProductsRecyclerView)
     RecyclerView rV;
+
+    @ViewById(R.id.textView7)
+    TextView title;
+
 
     @AfterViews
     public void init(){
@@ -43,6 +48,15 @@ public class CustomerShopsProducts extends AppCompatActivity {
 
         ShopProductsAdapter adapter = new ShopProductsAdapter(this, list, true);
         rV.setAdapter(adapter);
+
+        Shops result = realm.where(Shops.class)
+                .equalTo("uuid", prefsID)
+                .findFirst();
+
+        String name = result.getShopName();
+
+        title.setText("Shop "+name + "'s Products");
+
 
     }
 

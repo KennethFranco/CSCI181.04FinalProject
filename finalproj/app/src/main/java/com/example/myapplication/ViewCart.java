@@ -1,12 +1,17 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -78,6 +83,7 @@ public class ViewCart extends AppCompatActivity {
     Button viewCartSubmitB;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void init(){
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -104,8 +110,17 @@ public class ViewCart extends AppCompatActivity {
         RealmResults<Cart> list5 = realm.where(Cart.class).equalTo("user_uuid",uuidChecker).findAll();
         customerCartClearB.setEnabled(false);
         viewCartSubmitB.setEnabled(false);
+        customerCartClearB.setTextColor(Color.parseColor("#8b8b8b"));
+        customerCartClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+
+        viewCartSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
+        viewCartSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
 
         if (list5.isEmpty()==false){
+            customerCartClearB.setTextColor(Color.parseColor("#ffffff"));
+            customerCartClearB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
+            viewCartSubmitB.setTextColor(Color.parseColor("#ffffff"));
+            viewCartSubmitB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
             customerCartClearB.setEnabled(true);
             viewCartSubmitB.setEnabled(true);
         }
@@ -151,6 +166,7 @@ public class ViewCart extends AppCompatActivity {
         alert.setTitle("Confirmation of Order");
         alert.setMessage("Your order will be processed shortly after submission. Submit order?");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 RealmResults<Cart> list3 = realm.where(Cart.class).equalTo("user_uuid",uuid).findAll();
@@ -200,6 +216,10 @@ public class ViewCart extends AppCompatActivity {
                 sum = 0.0;
                 customerCartClearB.setEnabled(false);
                 viewCartSubmitB.setEnabled(false);
+                customerCartClearB.setTextColor(Color.parseColor("#8b8b8b"));
+                customerCartClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                viewCartSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
+                viewCartSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
                 String message = "Final Price: "+sum;
                 viewCartFP.setText(message);
                 }
@@ -226,6 +246,7 @@ public class ViewCart extends AppCompatActivity {
         alert.setTitle("Clearing Cart");
         alert.setMessage("Are you sure you want to clear your cart?");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -237,6 +258,10 @@ public class ViewCart extends AppCompatActivity {
                 Toast.makeText(ViewCart.this, "Cart cleared.", Toast.LENGTH_SHORT).show();
                 customerCartClearB.setEnabled(false);
                 viewCartSubmitB.setEnabled(false);
+                customerCartClearB.setTextColor(Color.parseColor("#8b8b8b"));
+                customerCartClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                viewCartSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
+                viewCartSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
                 sum = 0.0;
                 String message = "Final Price: "+sum;
                 viewCartFP.setText(message);
@@ -309,6 +334,7 @@ public class ViewCart extends AppCompatActivity {
             alert.setTitle("Confirmation");
             alert.setMessage("Are you sure you want to remove this item from your cart?");
             alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     realm.beginTransaction();
@@ -326,8 +352,16 @@ public class ViewCart extends AppCompatActivity {
                     RealmResults<Cart> list5 = realm.where(Cart.class).equalTo("user_uuid",uuidChecker).findAll();
                     customerCartClearB.setEnabled(false);
                     viewCartSubmitB.setEnabled(false);
+                    customerCartClearB.setTextColor(Color.parseColor("#8b8b8b"));
+                    customerCartClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    viewCartSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
+                    viewCartSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
 
                     if (list5.isEmpty()==false){
+                        customerCartClearB.setTextColor(Color.parseColor("#ffffff"));
+                        customerCartClearB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
+                        viewCartSubmitB.setTextColor(Color.parseColor("#ffffff"));
+                        viewCartSubmitB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
                         customerCartClearB.setEnabled(true);
                         viewCartSubmitB.setEnabled(true);
                     }

@@ -6,10 +6,10 @@
     android:layout_height="75dp">
 
     <TextView
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/viewCartProductName"
         android:layout_width="109dp"
         android:layout_height="20dp"
-        android:fontFamily="sans-serif-medium"
         android:gravity="top|left"
         android:text="Burger"
         android:textSize="18sp"
@@ -21,6 +21,7 @@
         app:layout_constraintVertical_bias="0.527" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/viewCartShopName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,6 +63,7 @@
         app:srcCompat="@android:drawable/arrow_down_float" />
 
     <TextView
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/viewCartTotalPrice"
         android:layout_width="54dp"
         android:layout_height="17dp"
@@ -85,6 +87,7 @@
         app:srcCompat="@android:drawable/arrow_up_float" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/viewCartQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

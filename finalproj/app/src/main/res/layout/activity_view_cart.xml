@@ -7,10 +7,10 @@
     tools:context=".ViewCart">
 
     <TextView
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/viewCartFinalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,10 +21,10 @@
         app:layout_constraintVertical_bias="0.098" />
 
     <TextView
+        android:fontFamily="@font/poppins_bold"
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
         android:text="My Cart"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -48,9 +48,10 @@
         app:layout_constraintVertical_bias="0.383" />
 
     <Button
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/viewCartAddButton"
-        android:layout_width="96dp"
-        android:layout_height="35dp"
+        android:layout_width="100dp"
+        android:layout_height="41dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="28dp"
@@ -65,13 +66,15 @@
         app:layout_constraintStart_toEndOf="@+id/customerCartClearButton" />
 
     <Button
+
         android:id="@+id/customerCartBackButton"
-        android:layout_width="96dp"
-        android:layout_height="35dp"
+        android:layout_width="100dp"
+        android:layout_height="41dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:text="Back"
         android:textAllCaps="false"
@@ -82,9 +85,10 @@
         app:layout_constraintEnd_toStartOf="@+id/customerCartClearButton" />
 
     <Button
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerCartClearButton"
-        android:layout_width="96dp"
-        android:layout_height="35dp"
+        android:layout_width="100dp"
+        android:layout_height="41dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/standard_button"
         android:includeFontPadding="false"

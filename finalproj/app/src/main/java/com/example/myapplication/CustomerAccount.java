@@ -1,9 +1,13 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -85,19 +89,16 @@ public class CustomerAccount extends AppCompatActivity {
 
         Boolean checker3 = checker2.getFirstTime();
 
-        if (checker3==true){
-            customerAccountBackB.setEnabled(false);
-        }
-        else{
-            customerAccountBackB.setEnabled(true);
 
-        }
 
         if (customerAccountFN.getText().toString().equals("") || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals(""))
         {
             customerAccountSaveB.setEnabled(false);
+            customerAccountSaveB.setTextColor(Color.parseColor("#8b8b8b"));
+            customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
         }
         else{
+
             customerAccountSaveB.setEnabled(true);
         }
 
@@ -107,11 +108,16 @@ public class CustomerAccount extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
                     customerAccountSaveB.setEnabled(false);
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerAccountSaveB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
+                    customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerAccountSaveB.setEnabled(true);
                 }
             }
@@ -132,7 +138,11 @@ public class CustomerAccount extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
                     customerAccountSaveB.setEnabled(false);
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerAccountSaveB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
+                    customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerAccountSaveB.setEnabled(true);
                 }
             }
@@ -149,11 +159,16 @@ public class CustomerAccount extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerAccountFN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
                     customerAccountSaveB.setEnabled(false);
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerAccountSaveB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
+                    customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerAccountSaveB.setEnabled(true);
                 }
             }
@@ -170,11 +185,16 @@ public class CustomerAccount extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountFN.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
                     customerAccountSaveB.setEnabled(false);
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerAccountSaveB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
+                    customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerAccountSaveB.setEnabled(true);
                 }
             }
@@ -191,11 +211,16 @@ public class CustomerAccount extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountFN.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
                     customerAccountSaveB.setEnabled(false);
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerAccountSaveB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
+                    customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerAccountSaveB.setEnabled(true);
                 }
             }
@@ -212,11 +237,16 @@ public class CustomerAccount extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountFN.getText().toString().equals("")){
                     customerAccountSaveB.setEnabled(false);
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    customerAccountSaveB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
+                    customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                     customerAccountSaveB.setEnabled(true);
                 }
             }
@@ -249,12 +279,10 @@ public class CustomerAccount extends AppCompatActivity {
                     .equalTo("uuid", ""+uuid)
                     .findFirst();
 
-
-
             Users result3 = realm.where(Users.class).equalTo("username",u).findFirst();
 
-            System.out.println(result3.getUsername());
-            System.out.println(u);
+//            System.out.println(result3.getUsername());
+//            System.out.println(u);
 
             if (result3 != null){
                 if (result2.getUsername().equals(u)){
@@ -316,7 +344,20 @@ public class CustomerAccount extends AppCompatActivity {
 
     @Click(R.id.customerAccountBackButton)
     public void back(){
-        finish();
-        CustomerHome_.intent(this).start();
+        String uuid = prefs.getString("uuid", null);
+        Users checker2 = realm.where(Users.class)
+                .equalTo("uuid", ""+uuid)
+                .findFirst();
+
+        Boolean checker3 = checker2.getFirstTime();
+
+        if (checker3 == true){
+            finish();
+            CustomerLogin_.intent(this).start();
+        } else{
+            finish();
+            CustomerHome_.intent(this).start();
+        }
+
     }
 }

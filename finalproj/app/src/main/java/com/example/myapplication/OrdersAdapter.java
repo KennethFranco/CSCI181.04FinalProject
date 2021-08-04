@@ -37,6 +37,7 @@ public class OrdersAdapter extends RealmRecyclerViewAdapter<Orders, OrdersAdapte
         TextView product_names;
         TextView order_uuid;
         TextView products_price;
+        TextView date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -45,6 +46,7 @@ public class OrdersAdapter extends RealmRecyclerViewAdapter<Orders, OrdersAdapte
             product_names = itemView.findViewById(R.id.customerOrdersOrders);
             order_uuid   = itemView.findViewById(R.id.customerOrdersUUID);
             products_price = itemView.findViewById(R.id.customerOrdersTotalPrice);
+            date = itemView.findViewById(R.id.textView2);
         }
     }
 
@@ -70,5 +72,6 @@ public class OrdersAdapter extends RealmRecyclerViewAdapter<Orders, OrdersAdapte
         holder.product_names.setText(u.getOrder_name());
         holder.order_uuid.setText("Order #"+u.getUuid());
         holder.products_price.setText("PHP "+u.getOrder_price().toString());
+        holder.date.setText("Ordered at: "+u.getDate());
     }
 }
