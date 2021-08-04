@@ -27,11 +27,13 @@ public class AdminWelcome extends AppCompatActivity {
 
     @Click(R.id.viewAllCustomers)
     public void ViewCustomers() {
+        finish();
         AdminViewCustomers_.intent(this).start();
     }
 
     @Click(R.id.viewAllShops)
     public void ViewShops() {
+        finish();
         AdminViewShops_.intent(this).start();
     }
 

@@ -42,6 +42,7 @@ public class CustomerHome extends AppCompatActivity {
             t.show();
         }
         else{
+            finish();
             CustomerShops_.intent(this).start();
         }
     }

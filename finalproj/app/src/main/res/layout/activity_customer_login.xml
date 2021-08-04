@@ -123,6 +123,8 @@
         app:layout_constraintVertical_bias="0.585" />
 
     <TextView
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
         android:id="@+id/customerLoginBackLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -150,6 +152,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerLoginClearButton" />
 
     <TextView
+        android:drawableLeft="@drawable/register"
+        android:drawablePadding="5dp"
         android:id="@+id/customerLoginRegisterLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

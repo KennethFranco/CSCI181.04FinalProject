@@ -110,6 +110,7 @@ public class ViewCart extends AppCompatActivity {
         RealmResults<Cart> list5 = realm.where(Cart.class).equalTo("user_uuid",uuidChecker).findAll();
         customerCartClearB.setEnabled(false);
         viewCartSubmitB.setEnabled(false);
+
         customerCartClearB.setTextColor(Color.parseColor("#8b8b8b"));
         customerCartClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
 
@@ -118,9 +119,11 @@ public class ViewCart extends AppCompatActivity {
 
         if (list5.isEmpty()==false){
             customerCartClearB.setTextColor(Color.parseColor("#ffffff"));
-            customerCartClearB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
+            customerCartClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+
             viewCartSubmitB.setTextColor(Color.parseColor("#ffffff"));
-            viewCartSubmitB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
+            viewCartSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+
             customerCartClearB.setEnabled(true);
             viewCartSubmitB.setEnabled(true);
         }
@@ -359,9 +362,10 @@ public class ViewCart extends AppCompatActivity {
 
                     if (list5.isEmpty()==false){
                         customerCartClearB.setTextColor(Color.parseColor("#ffffff"));
-                        customerCartClearB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
+                        customerCartClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                         viewCartSubmitB.setTextColor(Color.parseColor("#ffffff"));
-                        viewCartSubmitB.getBackground().setColorFilter(Color.parseColor("#3B8AFF"), PorterDuff.Mode.SRC_ATOP);
+                        viewCartSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+
                         customerCartClearB.setEnabled(true);
                         viewCartSubmitB.setEnabled(true);
                     }

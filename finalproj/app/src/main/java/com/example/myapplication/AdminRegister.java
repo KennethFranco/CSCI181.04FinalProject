@@ -1,8 +1,15 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,6 +28,7 @@ import io.realm.Realm;
 public class AdminRegister extends AppCompatActivity {
 
     Realm realm;
+    SharedPreferences prefs;
     @ViewById(R.id.editText_AdminRegisterUname)
     EditText uname;
 
@@ -36,9 +44,98 @@ public class AdminRegister extends AppCompatActivity {
     @ViewById(R.id.adminRegisterBackLink)
     TextView cancel;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void init() {
+        realm = Realm.getDefaultInstance();
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
+        if (uname.getText().toString().equals("") || pword.getText().toString().equals("") || confirm.getText().toString().equals(""))
+        {
+            register.setEnabled(false);
+            register.setTextColor(Color.parseColor("#8b8b8b"));
+            register.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+        }
+        else{
+            register.setEnabled(true);
+        }
+
+        uname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || pword.getText().toString().equals("") || confirm.getText().toString().equals("")){
+                    register.setEnabled(false);
+                    register.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    register.setTextColor(Color.parseColor("#8b8b8b"));
+                } else {
+                    register.setTextColor(Color.parseColor("#ffffff"));
+                    register.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+                    register.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        pword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || uname.getText().toString().equals("") || confirm.getText().toString().equals("")){
+                    register.setEnabled(false);
+                    register.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    register.setTextColor(Color.parseColor("#8b8b8b"));
+                } else
+                {
+                    register.setTextColor(Color.parseColor("#ffffff"));
+                    register.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+                    register.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        confirm.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().trim().length()==0 || uname.getText().toString().equals("") || pword.getText().toString().equals("")){
+                    register.setEnabled(false);
+                    register.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    register.setTextColor(Color.parseColor("#8b8b8b"));
+                } else
+                {
+                    register.setTextColor(Color.parseColor("#ffffff"));
+                    register.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+                    register.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Click(R.id.adminConfirmRegister)

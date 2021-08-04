@@ -20,6 +20,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerRegisterSigninButton" />
 
     <TextView
+        android:drawableLeft="@drawable/login"
+        android:drawablePadding="5dp"
         android:id="@+id/customerRegisterLoginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +37,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerRegisterBackLink"
         android:layout_width="wrap_content"

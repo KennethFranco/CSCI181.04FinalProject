@@ -47,6 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountPassword"
         app:layout_constraintVertical_bias="0.235" />
 
+
     <TextView
         android:id="@+id/customerAccountFullNameTitle"
         android:layout_width="wrap_content"
@@ -61,6 +62,8 @@
         app:layout_constraintVertical_bias="0.035" />
 
     <EditText
+        android:drawableLeft="@drawable/full"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountFullName"
         android:layout_width="246dp"
@@ -86,6 +89,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountFullName" />
 
     <EditText
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountContactNumber"
         android:layout_width="246dp"
@@ -111,6 +116,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumber" />
 
     <EditText
+        android:drawableLeft="@drawable/address"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountAddress"
         android:layout_width="246dp"
@@ -136,6 +143,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountAddress" />
 
     <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountUsername"
         android:layout_width="246dp"
@@ -151,6 +160,8 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountUsernameTitle" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountPassword"
         android:layout_width="246dp"
@@ -183,5 +194,6 @@
         app:layout_constraintStart_toStartOf="@+id/customerAccountSaveButton"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountSaveButton"
         app:layout_constraintVertical_bias="0.316" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

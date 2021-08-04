@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Click(R.id.adminButton)
     public void admin() {
+        finish();
         AdminLogin_.intent(this).start();
     }
 }
