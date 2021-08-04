@@ -7,6 +7,7 @@
     tools:context=".EditProduct">
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/product_back3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editProductSubmitChangesButton" />
 
     <EditText
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editProductName"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -38,6 +40,7 @@
 
 
     <EditText
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editProductDescription"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -58,7 +61,7 @@
         android:layout_width="184dp"
         android:layout_height="50dp"
         android:layout_marginTop="120dp"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
@@ -77,6 +80,7 @@
         app:strokeWidth="0.5dp" />
 
     <EditText
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editProductPrice"
         android:layout_width="100dp"
         android:layout_height="38dp"
@@ -98,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/poppins_bold"
         android:text="Edit Product"
         android:textSize="28sp"
         android:textColor="#000000"

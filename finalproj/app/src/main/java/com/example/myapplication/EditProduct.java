@@ -1,10 +1,14 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -39,6 +43,8 @@ public class EditProduct extends AppCompatActivity {
     Realm realm;
     SharedPreferences prefs;
 
+    Boolean wasChanged;
+
     @ViewById(R.id.editProductName)
     EditText editPN;
 
@@ -62,7 +68,7 @@ public class EditProduct extends AppCompatActivity {
 
     byte[] byte_image;
 
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void checkPermissions() {
 
@@ -96,7 +102,9 @@ public class EditProduct extends AppCompatActivity {
         finish();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void init(){
+        wasChanged = false;
         realm = Realm.getDefaultInstance();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
@@ -108,17 +116,18 @@ public class EditProduct extends AppCompatActivity {
                 .equalTo("uuid", product_uuid)
                 .findFirst();
 
-        System.out.println(result);
-
         File getImageDir = getExternalCacheDir();
-        File savedImage = new File(getImageDir, "savedImage.jpeg");
+        String uuid = prefs.getString("shopUUID", null);
 
-        if (savedImage.exists()) {
-//            refreshImageView(savedImage);
-        } else {
-            Picasso.get()
-                    .load(R.drawable.ic_launcher_background)
-                    .into(product_image);
+        if (result.getImagePath() != null){
+            File savedImage = new File(getImageDir, result.getImagePath());
+            if (savedImage.exists()) {
+                refreshImageView(savedImage);
+            } else {
+                Picasso.get()
+                        .load(R.drawable.ic_launcher_background)
+                        .into(product_image);
+            }
         }
 
         editPN.setText(result.getProduct_name());
@@ -127,9 +136,13 @@ public class EditProduct extends AppCompatActivity {
 
         if (editPN.getText().toString().equals("") || editPD.getText().toString().equals("") || editPP.getText().toString().equals("")){
             editProductSubmitB.setEnabled(false);
+            editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+            editProductSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
         }
         else{
             editProductSubmitB.setEnabled(true);
+            editProductSubmitB.setTextColor(Color.parseColor("#ffffff"));
+            editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
         }
 
         editPN.addTextChangedListener(new TextWatcher() {
@@ -142,8 +155,12 @@ public class EditProduct extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || editPD.getText().toString().equals("") || editPP.getText().toString().equals("")){
                     editProductSubmitB.setEnabled(false);
+                    editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    editProductSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     editProductSubmitB.setEnabled(true);
+                    editProductSubmitB.setTextColor(Color.parseColor("#ffffff"));
+                    editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
@@ -163,8 +180,12 @@ public class EditProduct extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || editPN.getText().toString().equals("") || editPP.getText().toString().equals("")){
                     editProductSubmitB.setEnabled(false);
+                    editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    editProductSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     editProductSubmitB.setEnabled(true);
+                    editProductSubmitB.setTextColor(Color.parseColor("#ffffff"));
+                    editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
@@ -184,8 +205,12 @@ public class EditProduct extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || editPN.getText().toString().equals("") || editPN.getText().toString().equals("")){
                     editProductSubmitB.setEnabled(false);
+                    editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    editProductSubmitB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     editProductSubmitB.setEnabled(true);
+                    editProductSubmitB.setTextColor(Color.parseColor("#ffffff"));
+                    editProductSubmitB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
@@ -218,6 +243,8 @@ public class EditProduct extends AppCompatActivity {
                     File savedImage = refreshFile(jpeg);
 
                     byte_image = jpeg;
+
+                    wasChanged = true;
 
                     // load file to the image view via picasso
                     refreshImageView(savedImage);
@@ -293,12 +320,20 @@ public class EditProduct extends AppCompatActivity {
                 result2.setProduct_description(d);
                 result2.setProduct_price(p);
 
-                try {
-                    result2.setImagePath(System.currentTimeMillis() + ".jpeg");
+                File getImageDir = getExternalCacheDir();
 
-                    File image = saveFile(byte_image, result2.getImagePath());
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (result2.getImagePath() != null){
+                    File savedImage = new File(getImageDir, result2.getImagePath());
+                }
+
+                if (wasChanged == true) {
+                    try {
+                        result2.setImagePath(System.currentTimeMillis() + ".jpeg");
+
+                        File image = saveFile(byte_image, result2.getImagePath());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
 
 
@@ -318,12 +353,20 @@ public class EditProduct extends AppCompatActivity {
             result2.setProduct_description(d);
             result2.setProduct_price(p);
 
-            try {
-                result2.setImagePath(System.currentTimeMillis() + ".jpeg");
+            File getImageDir = getExternalCacheDir();
 
-                File image = saveFile(byte_image, result2.getImagePath());
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (result2.getImagePath() != null){
+                File savedImage = new File(getImageDir, result2.getImagePath());
+            }
+
+            if (wasChanged == true) {
+                try {
+                    result2.setImagePath(System.currentTimeMillis() + ".jpeg");
+
+                    File image = saveFile(byte_image, result2.getImagePath());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
             realm.commitTransaction();

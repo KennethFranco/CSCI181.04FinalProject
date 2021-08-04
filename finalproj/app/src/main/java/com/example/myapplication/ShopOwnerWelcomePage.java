@@ -1,8 +1,12 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -40,6 +44,7 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
     @ViewById(R.id.shopOwner_login)
     Button shopOwnerLoginB;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void init() {
 
@@ -69,9 +74,13 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
 
         if (username.getText().toString().equals("") || password.getText().toString().equals("")){
             shopOwnerLoginB.setEnabled(false);
+            shopOwnerLoginB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+            shopOwnerLoginB.setTextColor(Color.parseColor("#8b8b8b"));
         }
         else{
             shopOwnerLoginB.setEnabled(true);
+            shopOwnerLoginB.setTextColor(Color.parseColor("#ffffff"));
+            shopOwnerLoginB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
         }
 
         username.addTextChangedListener(new TextWatcher() {
@@ -80,12 +89,17 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || (password.getText().toString().equals(""))){
                     shopOwnerLoginB.setEnabled(false);
+                    shopOwnerLoginB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    shopOwnerLoginB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     shopOwnerLoginB.setEnabled(true);
+                    shopOwnerLoginB.setTextColor(Color.parseColor("#ffffff"));
+                    shopOwnerLoginB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
@@ -105,8 +119,12 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || (username.getText().toString().equals(""))){
                     shopOwnerLoginB.setEnabled(false);
+                    shopOwnerLoginB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    shopOwnerLoginB.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     shopOwnerLoginB.setEnabled(true);
+                    shopOwnerLoginB.setTextColor(Color.parseColor("#ffffff"));
+                    shopOwnerLoginB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
