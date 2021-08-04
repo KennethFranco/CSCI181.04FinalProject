@@ -7,6 +7,7 @@
     tools:context=".ShopRegister">
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/shopLoginMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,6 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/shopRegisterButton" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/shopRegisterLoginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +34,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/shopRegisterBackLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shop Register"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,6 +61,7 @@
         app:layout_constraintVertical_bias="0.165" />
 
     <EditText
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_ShopRegisterUsername"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -75,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_ShopRegisterPassword"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -92,6 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_ShopRegisterUsername" />
 
     <EditText
+        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_ShopRegisterConfirm"
         android:layout_width="246dp"
         android:layout_height="38dp"
@@ -109,12 +115,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_ShopRegisterPassword" />
 
     <Button
+
         android:id="@+id/shopRegisterButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/standard_button"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"

@@ -3,11 +3,18 @@ package com.example.myapplication;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
 
 import io.realm.OrderedRealmCollection;
 import io.realm.RealmRecyclerViewAdapter;
@@ -33,6 +40,7 @@ public class ShopsAdapter extends RealmRecyclerViewAdapter<Shops, ShopsAdapter.V
         TextView a;
         TextView b;
         ImageButton c;
+        ImageView shopPhoto;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -41,6 +49,7 @@ public class ShopsAdapter extends RealmRecyclerViewAdapter<Shops, ShopsAdapter.V
             a = itemView.findViewById(R.id.rowShopName);
             b = itemView.findViewById(R.id.rowShopDescription);
             c = itemView.findViewById(R.id.rowShopViewButton);
+            shopPhoto = itemView.findViewById(R.id.shopPhoto);
         }
     }
 
@@ -63,7 +72,15 @@ public class ShopsAdapter extends RealmRecyclerViewAdapter<Shops, ShopsAdapter.V
         // gives you the data object at the given position
         Shops u = getItem(position);
         System.out.println(u);
+        File getImageDir = activity.getExternalCacheDir();
 
+        File file = new File(getImageDir, u.getImagePath());
+
+        Picasso.get()
+                .load(file)
+                .networkPolicy(NetworkPolicy.NO_CACHE)
+                .memoryPolicy(MemoryPolicy.NO_CACHE)
+                .into(holder.shopPhoto);
 
         // copy all the values needed to the appropriate views
         holder.a.setText(u.getShopName());

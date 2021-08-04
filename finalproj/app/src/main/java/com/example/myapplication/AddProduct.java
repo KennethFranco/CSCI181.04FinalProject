@@ -1,10 +1,14 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -65,6 +69,7 @@ public class AddProduct extends AppCompatActivity {
     @ViewById(R.id.product_ImageView)
     ImageView productImage;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void checkPermissions() {
 
@@ -98,6 +103,7 @@ public class AddProduct extends AppCompatActivity {
         finish();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void init() {
         realm = Realm.getDefaultInstance();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -119,8 +125,12 @@ public class AddProduct extends AppCompatActivity {
 
         if (prod_name.getText().toString().equals("") || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")) {
             addproduct.setEnabled(false);
+            addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+            addproduct.setTextColor(Color.parseColor("#8b8b8b"));
         } else {
             addproduct.setEnabled(true);
+            addproduct.setTextColor(Color.parseColor("#ffffff"));
+            addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
         }
 
         prod_name.addTextChangedListener(new TextWatcher() {
@@ -133,8 +143,12 @@ public class AddProduct extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().trim().length() == 0 || prod_num.getText().toString().equals("") || addProductD.getText().toString().equals("")) {
                     addproduct.setEnabled(false);
+                    addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    addproduct.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     addproduct.setEnabled(true);
+                    addproduct.setTextColor(Color.parseColor("#ffffff"));
+                    addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
@@ -154,8 +168,12 @@ public class AddProduct extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().trim().length() == 0 || prod_name.getText().toString().equals("") || addProductD.getText().toString().equals("")) {
                     addproduct.setEnabled(false);
+                    addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    addproduct.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     addproduct.setEnabled(true);
+                    addproduct.setTextColor(Color.parseColor("#ffffff"));
+                    addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
@@ -175,8 +193,12 @@ public class AddProduct extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().trim().length() == 0 || prod_num.getText().toString().equals("") || prod_name.getText().toString().equals("")) {
                     addproduct.setEnabled(false);
+                    addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+                    addproduct.setTextColor(Color.parseColor("#8b8b8b"));
                 } else {
                     addproduct.setEnabled(true);
+                    addproduct.setTextColor(Color.parseColor("#ffffff"));
+                    addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
             }
 
