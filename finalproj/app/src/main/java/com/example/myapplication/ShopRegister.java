@@ -205,4 +205,10 @@ public class ShopRegister extends AppCompatActivity {
         finish();
         ShopOwnerWelcomePage_.intent(this).start();
     }
+
+    @Click(R.id.shopRegisterLoginLink)
+    public void Login() {
+        finish();
+        ShopOwnerWelcomePage_.intent(this).start();
+    }
 }

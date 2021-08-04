@@ -55,7 +55,7 @@ public class CustomerShopsProducts extends AppCompatActivity {
 
         String name = result.getShopName();
 
-        title.setText("Shop "+name + "'s Products");
+        title.setText(name + "'s Products");
 
 
     }

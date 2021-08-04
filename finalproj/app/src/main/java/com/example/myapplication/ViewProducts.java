@@ -1,12 +1,16 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -35,6 +39,7 @@ public class ViewProducts extends AppCompatActivity {
     @ViewById(R.id.Products_clearall)
     Button clearAll;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void init() {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
@@ -57,8 +62,12 @@ public class ViewProducts extends AppCompatActivity {
         Boolean checker = list.isEmpty();
         if (checker==true){
             clearAll.setEnabled(false);
+            clearAll.setTextColor(Color.parseColor("#8b8b8b"));
+            clearAll.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
         } else{
             clearAll.setEnabled(true);
+            clearAll.setTextColor(Color.parseColor("#ffffff"));
+            clearAll.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
         }
 
         ProductsAdapter adapter = new ProductsAdapter(this, list, true);
@@ -75,6 +84,7 @@ public class ViewProducts extends AppCompatActivity {
         alert.setTitle("Confirmation");
         alert.setMessage("Are you sure you want to clear all your products?");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
@@ -85,6 +95,8 @@ public class ViewProducts extends AppCompatActivity {
                 realm.commitTransaction();
                 Toast.makeText(ViewProducts.this, "Deleted all products in Shop.", Toast.LENGTH_SHORT).show();
                 clearAll.setEnabled(false);
+                clearAll.setTextColor(Color.parseColor("#8b8b8b"));
+                clearAll.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
             }
         });
         alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -143,6 +155,7 @@ public class ViewProducts extends AppCompatActivity {
                 alert.setTitle("Confirmation");
                 alert.setMessage("Are you sure?");
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         realm.beginTransaction();
@@ -164,8 +177,12 @@ public class ViewProducts extends AppCompatActivity {
                         Boolean checker = list.isEmpty();
                         if (checker==true){
                             clearAll.setEnabled(false);
+                            clearAll.setTextColor(Color.parseColor("#8b8b8b"));
+                            clearAll.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
                         } else{
                             clearAll.setEnabled(true);
+                            clearAll.setTextColor(Color.parseColor("#ffffff"));
+                            clearAll.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                         }
                     }
                 });

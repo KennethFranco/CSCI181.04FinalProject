@@ -79,30 +79,31 @@
         app:layout_constraintTop_toBottomOf="@+id/customerAccountFullNameTitle" />
 
     <TextView
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountContactNumberTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="247dp"
+        android:layout_height="39dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Contact Number (Please enter only numbers):"
         app:layout_constraintStart_toStartOf="@+id/customerAccountFullName"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountFullName" />
 
     <EditText
-        android:drawableLeft="@drawable/phone"
-        android:drawablePadding="5dp"
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerAccountContactNumber"
         android:layout_width="246dp"
         android:layout_height="38dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/standard_textfield"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="5dp"
         android:ems="10"
+        android:fontFamily="@font/poppins_regular"
         android:hint="Contact Number"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/customerAccountContactNumberTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumberTitle"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumberTitle" />
 
     <TextView
@@ -175,25 +176,21 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountPasswordTitle" />
-
-    <Button
+    <TextView
+        android:drawableLeft="@drawable/back"
         android:id="@+id/customerAccountBackButton"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
-        android:background="@drawable/standard_button"
+        android:drawablePadding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
         android:fontFamily="@font/poppins_regular"
-        android:includeFontPadding="false"
-        android:text="Back"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:backgroundTint="#3B8AFF"
+        android:text="Back to start"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/customerAccountSaveButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/customerAccountSaveButton"
-        app:layout_constraintTop_toBottomOf="@+id/customerAccountSaveButton"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

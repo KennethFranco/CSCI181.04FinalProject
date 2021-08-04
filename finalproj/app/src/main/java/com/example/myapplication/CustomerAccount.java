@@ -15,6 +15,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
@@ -49,8 +50,9 @@ public class CustomerAccount extends AppCompatActivity {
     Button customerAccountSaveB;
 
     @ViewById(R.id.customerAccountBackButton)
-    Button customerAccountBackB;
+    TextView customerAccountBackB;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void init(){
         realm = Realm.getDefaultInstance();
@@ -100,6 +102,8 @@ public class CustomerAccount extends AppCompatActivity {
         else{
 
             customerAccountSaveB.setEnabled(true);
+            customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+            customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
         }
 
         customerAccountFN.addTextChangedListener(new TextWatcher() {
@@ -134,6 +138,7 @@ public class CustomerAccount extends AppCompatActivity {
 
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0 || customerAccountCN.getText().toString().equals("") || customerAccountA.getText().toString().equals("") || customerAccountU.getText().toString().equals("") || customerAccountP.getText().toString().equals("")){
@@ -259,6 +264,7 @@ public class CustomerAccount extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Click(R.id.customerAccountSaveButton)
     public void save(){
 
@@ -305,6 +311,8 @@ public class CustomerAccount extends AppCompatActivity {
                     CustomerHome_.intent(this).start();
 
                     customerAccountBackB.setEnabled(true);
+                    customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                    customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
                 }
                 else{
                     Toast t = Toast.makeText(this, "This username has already been taken! Please choose a new one.", Toast.LENGTH_LONG);
@@ -329,6 +337,8 @@ public class CustomerAccount extends AppCompatActivity {
                 finish();
                 CustomerHome_.intent(this).start();
                 customerAccountBackB.setEnabled(true);
+                customerAccountSaveB.setTextColor(Color.parseColor("#ffffff"));
+                customerAccountSaveB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
             }
 
         }

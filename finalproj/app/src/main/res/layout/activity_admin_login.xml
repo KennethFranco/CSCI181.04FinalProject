@@ -78,11 +78,11 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_AdminUsername" />
 
     <Button
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/adminLoginButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
@@ -93,18 +93,18 @@
         app:backgroundTint="#3B8AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.633" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <Button
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/adminClearButton"
         android:layout_width="184dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
@@ -113,10 +113,10 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:backgroundTint="#3B8AFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/adminLoginButton"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/adminLoginButton" />
+        app:layout_constraintStart_toStartOf="@+id/adminLoginButton"
+        app:layout_constraintTop_toBottomOf="@+id/adminLoginButton" />
 
     <TextView
         android:drawableLeft="@drawable/register"
