@@ -86,14 +86,15 @@ public class ProductsAdapter extends RealmRecyclerViewAdapter<Products, Products
 
         File getImageDir = activity.getExternalCacheDir();
 
-        File file = new File(getImageDir, u.getImagePath());
+        if (u.getImagePath() != null) {
+            File file = new File(getImageDir, u.getImagePath());
 
-        Picasso.get()
-                .load(file)
-                .networkPolicy(NetworkPolicy.NO_CACHE)
-                .memoryPolicy(MemoryPolicy.NO_CACHE)
-                .into(holder.product_image);
-
+            Picasso.get()
+                    .load(file)
+                    .networkPolicy(NetworkPolicy.NO_CACHE)
+                    .memoryPolicy(MemoryPolicy.NO_CACHE)
+                    .into(holder.product_image);
+        }
 
         // copy all the values needed to the appropriate views
         holder.product_name.setText(u.getProduct_name());

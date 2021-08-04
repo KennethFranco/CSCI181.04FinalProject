@@ -74,13 +74,14 @@ public class ShopsAdapter extends RealmRecyclerViewAdapter<Shops, ShopsAdapter.V
         System.out.println(u);
         File getImageDir = activity.getExternalCacheDir();
 
-        File file = new File(getImageDir, u.getImagePath());
-
-        Picasso.get()
-                .load(file)
-                .networkPolicy(NetworkPolicy.NO_CACHE)
-                .memoryPolicy(MemoryPolicy.NO_CACHE)
-                .into(holder.shopPhoto);
+        if(u.getImagePath() != null){
+            File file = new File(getImageDir, u.getImagePath());
+            Picasso.get()
+                    .load(file)
+                    .networkPolicy(NetworkPolicy.NO_CACHE)
+                    .memoryPolicy(MemoryPolicy.NO_CACHE)
+                    .into(holder.shopPhoto);
+        }
 
         // copy all the values needed to the appropriate views
         holder.a.setText(u.getShopName());

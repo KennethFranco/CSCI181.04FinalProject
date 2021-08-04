@@ -48,14 +48,14 @@
         app:layout_constraintVertical_bias="0.383" />
 
     <Button
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/viewCartAddButton"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
+        android:layout_width="106dp"
+        android:layout_height="44dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:text="Submit"
         android:textAllCaps="false"
@@ -68,8 +68,8 @@
     <Button
 
         android:id="@+id/customerCartBackButton"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
+        android:layout_width="106dp"
+        android:layout_height="44dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="28dp"
@@ -87,8 +87,8 @@
     <Button
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerCartClearButton"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
+        android:layout_width="106dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/standard_button"
         android:includeFontPadding="false"

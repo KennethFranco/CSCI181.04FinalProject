@@ -24,8 +24,8 @@
     <Button
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerHomeOrdersHistoryButton"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
         android:background="@drawable/standard_button"
         android:includeFontPadding="false"
         android:text="Orders history"
@@ -41,11 +41,11 @@
         app:layout_constraintVertical_bias="0.047" />
 
     <Button
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerHomeShopsButton"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
         android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:text="Shops"
         android:textAllCaps="false"
@@ -62,8 +62,8 @@
     <Button
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerHomeAccountButton"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
         android:background="@drawable/standard_button"
         android:includeFontPadding="false"
         android:text="Account"
@@ -81,8 +81,8 @@
     <Button
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/customerHomeCartButton"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
         android:background="@drawable/standard_button"
         android:includeFontPadding="false"
         android:text="Cart"
@@ -99,8 +99,8 @@
 
     <Button
         android:id="@+id/customerHomeSignOutButton"
-        android:layout_width="186dp"
-        android:layout_height="42dp"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
         android:background="@drawable/standard_button"
         android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
