@@ -44,6 +44,9 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
     @ViewById(R.id.shopOwner_login)
     Button shopOwnerLoginB;
 
+    @ViewById(R.id.shopClearButton)
+    Button shopClearB;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void init() {
@@ -56,6 +59,7 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
         String uuid = prefs.getString("shopUUID", null);
         Boolean rememberValue = prefs.getBoolean("shoprV", false);
 
+        System.out.println(rememberValue);
         if (rememberValue == true){
             Shops result = realm.where(Shops.class)
                     .equalTo("uuid", ""+uuid)
@@ -68,8 +72,20 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
                 username.setText(u);
                 password.setText(p);
                 rememberMe.setChecked(true);
+
+                shopClearB.setTextColor(Color.parseColor("#ffffff"));
+                shopClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.blue));
+                shopClearB.setEnabled(true);
             }
 
+        } else{
+            shopOwnerLoginB.setEnabled(false);
+            shopOwnerLoginB.setTextColor(Color.parseColor("#8b8b8b"));
+            shopOwnerLoginB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+
+            shopClearB.setEnabled(false);
+            shopClearB.setTextColor(Color.parseColor("#8b8b8b"));
+            shopClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
         }
 
         if (username.getText().toString().equals("") || password.getText().toString().equals("")){
@@ -195,5 +211,30 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
     public void back(){
         finish();
         MainActivity_.intent(this).start();
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Click(R.id.shopClearButton)
+    public void ShopClear(){
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.remove("shopUUID");
+        Boolean checker = false;
+        edit.putBoolean("shoprV", checker);
+
+        Boolean print = prefs.getBoolean("shoprV", false);
+        System.out.println(print);
+
+        edit.apply();
+        Toast t = Toast.makeText(this, "Successfully cleared credentials.", Toast.LENGTH_LONG);
+        username.setText("");
+        password.setText("");
+        rememberMe.setChecked(false);
+
+        shopClearB.setEnabled(false);
+        shopClearB.setTextColor(Color.parseColor("#8b8b8b"));
+        shopClearB.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
+        t.show();
     }
 }

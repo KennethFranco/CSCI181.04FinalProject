@@ -20,13 +20,16 @@
         app:layout_constraintTop_toBottomOf="@+id/shopRegisterButton" />
 
     <TextView
-        android:fontFamily="@font/poppins_regular"
+        android:drawableLeft="@drawable/login"
+        android:drawablePadding="5dp"
         android:id="@+id/shopRegisterLoginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
         android:text="Login"
         android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/shopRegisterBackLink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,13 +37,16 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:fontFamily="@font/poppins_regular"
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
         android:id="@+id/shopRegisterBackLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Back to start"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -61,6 +67,8 @@
         app:layout_constraintVertical_bias="0.165" />
 
     <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_ShopRegisterUsername"
         android:layout_width="246dp"
@@ -79,6 +87,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_ShopRegisterPassword"
         android:layout_width="246dp"
@@ -97,6 +107,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_ShopRegisterUsername" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_ShopRegisterConfirm"
         android:layout_width="246dp"

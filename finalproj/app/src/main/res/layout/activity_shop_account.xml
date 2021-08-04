@@ -7,13 +7,16 @@
     tools:context=".ShopAccount">
 
     <TextView
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/shopAccountHomeLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Return to home screen"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -71,6 +74,8 @@
         app:layout_constraintVertical_bias="0.224" />
 
     <EditText
+        android:drawableLeft="@drawable/desc"
+        android:drawablePadding="5dp"
         android:id="@+id/shopAccountDescription"
         android:layout_width="341dp"
         android:layout_height="43dp"
@@ -85,6 +90,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
         android:id="@+id/shopAccountUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,6 +106,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
         android:id="@+id/shopAccountPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -125,6 +134,8 @@
         app:layout_constraintTop_toBottomOf="@+id/shopAccountName" />
 
     <EditText
+        android:drawableLeft="@drawable/store"
+        android:drawablePadding="5dp"
         android:id="@+id/shopAccountName"
         android:layout_width="341dp"
         android:layout_height="43dp"
