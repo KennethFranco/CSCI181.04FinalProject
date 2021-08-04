@@ -24,8 +24,8 @@
 
     <Button
         android:id="@+id/ViewProducts"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
         android:layout_marginTop="356dp"
         android:background="@drawable/standard_button"
         android:fontFamily="@font/poppins_regular"
@@ -44,8 +44,8 @@
 
     <Button
         android:id="@+id/shopsAccountButton"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
+        android:layout_width="190dp"
+        android:layout_height="44dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/standard_button"
         android:fontFamily="@font/poppins_regular"
