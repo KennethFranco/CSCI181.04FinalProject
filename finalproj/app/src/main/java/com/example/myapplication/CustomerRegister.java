@@ -171,14 +171,14 @@ public class CustomerRegister extends AppCompatActivity {
                 realm.beginTransaction();
                 realm.copyToRealmOrUpdate(u);
                 realm.commitTransaction();
-                long count = realm.where(Users.class).count();
-                Toast t = Toast.makeText(this, "Successfully created an account! You may now login!"+count, Toast.LENGTH_LONG);
+
+                Toast t = Toast.makeText(this, "Successfully created an account! You may now login!", Toast.LENGTH_LONG);
                 t.show();
                 finish();
                 CustomerLogin_.intent(this).start();
             }
             else{
-                Toast t = Toast.makeText(this, "The username you are trying to use already exists. Please login if you already have an account.", Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(this, "The username you are trying to use already exists.", Toast.LENGTH_LONG);
                 t.show();
             }
 

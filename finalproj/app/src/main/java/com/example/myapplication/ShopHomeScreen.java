@@ -40,7 +40,7 @@ public class ShopHomeScreen extends AppCompatActivity {
         Shops uuid = realm.where(Shops.class).equalTo("uuid", valueUUID).findFirst();
 
         if(uuid.getShop() == null) {
-            welcome_msg.setText("Welcome " + uuid.getShopUsername() + "!" + " Please go to accounts to set your account details.");
+            welcome_msg.setText("Welcome " + uuid.getShopUsername() + "!");
         }
         else{
             welcome_msg.setText("Welcome back, " + uuid.getShop() + "!");

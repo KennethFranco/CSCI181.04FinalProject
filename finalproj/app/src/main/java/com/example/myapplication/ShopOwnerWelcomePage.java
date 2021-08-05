@@ -181,7 +181,7 @@ public class ShopOwnerWelcomePage extends AppCompatActivity {
                 System.out.println(result.getUuid());
                 System.out.println(result.getFirstTime());
                 if (result.getFirstTime()==true){
-                    Toast t = Toast.makeText(this, "Thank you for signing up with us! Please fill up these account details in order to start adding products!", Toast.LENGTH_LONG);
+                    Toast t = Toast.makeText(this, "Thank you for signing up with us!", Toast.LENGTH_LONG);
                     t.show();
                     finish();
                     ShopAccount_.intent(this).start();
