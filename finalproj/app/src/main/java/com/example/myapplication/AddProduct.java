@@ -330,7 +330,7 @@ public class AddProduct extends AppCompatActivity {
             realm.copyToRealmOrUpdate(newProduct);
             realm.commitTransaction();
 
-            Toast t = Toast.makeText(this, "Product Saved", Toast.LENGTH_LONG);
+            Toast t = Toast.makeText(this, "Product saved!", Toast.LENGTH_LONG);
             t.show();
 
             ViewProducts_.intent(this).start();

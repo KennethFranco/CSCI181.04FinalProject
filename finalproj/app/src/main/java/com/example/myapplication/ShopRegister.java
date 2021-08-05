@@ -185,9 +185,7 @@ public class ShopRegister extends AppCompatActivity {
             realm.copyToRealmOrUpdate(newShop);
             realm.commitTransaction();
 
-            count = realm.where(Shops.class).count();
-
-            Toast t = Toast.makeText(this, "Login Saved, Total: " + count, Toast.LENGTH_LONG);
+            Toast t = Toast.makeText(this, "Login Saved!", Toast.LENGTH_LONG);
             t.show();
 
             finish();

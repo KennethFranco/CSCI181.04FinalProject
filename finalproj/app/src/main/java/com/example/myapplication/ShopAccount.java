@@ -71,6 +71,7 @@ public class ShopAccount extends AppCompatActivity {
     @ViewById(R.id.imageView2)
     ImageView shopPhoto;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @AfterViews
     public void checkPermissions() {
 

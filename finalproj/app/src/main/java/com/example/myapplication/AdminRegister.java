@@ -167,15 +167,11 @@ public class AdminRegister extends AppCompatActivity {
             newAdmin.setUsername(checkUname);
             newAdmin.setPassword(checkPassword);
 
-            long count = 0;
-
             realm.beginTransaction();
             realm.copyToRealmOrUpdate(newAdmin);
             realm.commitTransaction();
 
-            count = realm.where(Admin.class).count();
-
-            Toast t = Toast.makeText(this, "Login Saved, Total Admins: " + count, Toast.LENGTH_LONG);
+            Toast t = Toast.makeText(this, "Login saved!", Toast.LENGTH_LONG);
             t.show();
 
             finish();

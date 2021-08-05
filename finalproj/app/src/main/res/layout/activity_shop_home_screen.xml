@@ -22,7 +22,7 @@
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:padding="20sp"
-        android:textColor="#000000"
+        android:textColor="#1c2e4a"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
