@@ -119,7 +119,7 @@ public class AddProduct extends AppCompatActivity {
 //            refreshImageView(savedImage);
         } else {
             Picasso.get()
-                    .load(R.drawable.ic_launcher_background)
+                    .load(R.drawable.user_logo)
                     .into(productImage);
         }
 
