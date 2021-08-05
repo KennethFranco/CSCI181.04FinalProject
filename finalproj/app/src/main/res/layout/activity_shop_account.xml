@@ -106,16 +106,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <EditText
-        android:drawableLeft="@drawable/lock"
-        android:drawablePadding="5dp"
         android:id="@+id/shopAccountPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/standard_textfield"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
         android:ems="10"
         android:fontFamily="@font/poppins_regular"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:paddingLeft="30px"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/textView13"
