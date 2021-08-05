@@ -287,8 +287,7 @@ public class CustomerAccount extends AppCompatActivity {
 
             Users result3 = realm.where(Users.class).equalTo("username",u).findFirst();
 
-//            System.out.println(result3.getUsername());
-//            System.out.println(u);
+
 
             if (result3 != null){
                 if (result2.getUsername().equals(u)){
