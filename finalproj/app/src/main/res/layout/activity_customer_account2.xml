@@ -28,6 +28,7 @@
         app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@drawable/user_logo" />
 
+
     <Button
         android:id="@+id/customerAccountSaveButton"
         android:layout_width="184dp"
@@ -42,11 +43,10 @@
         app:backgroundTint="#3B8AFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/customerAccountPassword"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="@+id/customerAccountPassword"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountPassword"
-        app:layout_constraintVertical_bias="0.235" />
-
+        app:layout_constraintVertical_bias="0.163" />
 
     <TextView
         android:id="@+id/customerAccountFullNameTitle"
@@ -59,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:drawableLeft="@drawable/full"
@@ -176,21 +176,22 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAccountPasswordTitle" />
+
     <TextView
-        android:drawableLeft="@drawable/back"
         android:id="@+id/customerAccountBackButton"
-        android:drawablePadding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginTop="24dp"
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Back to start"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/customerAccountSaveButton"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountSaveButton"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountSaveButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

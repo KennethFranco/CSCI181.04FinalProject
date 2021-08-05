@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ShopHomeScreen">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/foregroundshop"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <TextView
         android:id="@+id/ShopHomeWelcome"
         android:layout_width="wrap_content"
