@@ -24,51 +24,68 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Add Product"
         android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:fontFamily="@font/poppins_regular"
         android:id="@+id/editText_ProductName"
         android:layout_width="246dp"
         android:layout_height="38dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Product Name"
         android:inputType="textPersonName"
         android:paddingLeft="30px"
         android:textColor="#000000"
         android:textColorHint="#534E4E"
-        android:hint="Product Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_selectPhoto" />
 
     <EditText
-        android:fontFamily="@font/poppins_regular"
-        android:id="@+id/editText_ProductNumber"
-        android:layout_width="100dp"
+        android:id="@+id/AddProductDescription"
+        android:layout_width="246dp"
         android:layout_height="38dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/standard_textfield"
         android:ems="10"
-        android:inputType="number"
-        android:hint="0.0"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Product Description"
+        android:inputType="textPersonName"
         android:paddingLeft="30px"
         android:textColor="#000000"
         android:textColorHint="#534E4E"
         app:layout_constraintEnd_toEndOf="@+id/editText_ProductName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editText_ProductName"
-        app:layout_constraintTop_toBottomOf="@+id/addProductDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_ProductName" />
+
+    <EditText
+        android:id="@+id/editText_ProductNumber"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="0.0"
+        android:inputType="number"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        android:textColorHint="#534E4E"
+        app:layout_constraintEnd_toEndOf="@+id/AddProductDescription"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/AddProductDescription"
+        app:layout_constraintTop_toBottomOf="@+id/AddProductDescription" />
 
     <Button
         android:id="@+id/addproduct"
@@ -93,22 +110,6 @@
         app:layout_constraintVertical_bias="0.855"
         app:strokeColor="#000000"
         app:strokeWidth="0.5dp" />
-
-    <EditText
-        android:fontFamily="@font/poppins_regular"
-        android:id="@+id/addProductDescription"
-        android:layout_width="246dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/standard_textfield"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Product Description"
-        android:paddingLeft="30px"
-        android:textColor="#000000"
-        android:textColorHint="#534E4E"
-        app:layout_constraintStart_toStartOf="@+id/editText_ProductName"
-        app:layout_constraintTop_toBottomOf="@+id/editText_ProductName" />
 
     <ImageView
         android:id="@+id/product_ImageView"

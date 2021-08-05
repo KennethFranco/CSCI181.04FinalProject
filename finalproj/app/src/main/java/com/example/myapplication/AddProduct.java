@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
@@ -37,7 +36,6 @@ import java.io.IOException;
 import java.util.UUID;
 
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 @EActivity(R.layout.activity_add_product)
 public class AddProduct extends AppCompatActivity {
@@ -60,7 +58,7 @@ public class AddProduct extends AppCompatActivity {
     @ViewById(R.id.editText_ProductNumber)
     EditText prod_num;
 
-    @ViewById(R.id.addProductDescription)
+    @ViewById(R.id.AddProductDescription)
     EditText addProductD;
 
     @ViewById(R.id.product_selectPhoto)
@@ -191,7 +189,7 @@ public class AddProduct extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.toString().trim().length() == 0 || prod_num.getText().toString().equals("") || prod_name.getText().toString().equals("")) {
+                if (s.toString().trim().length() == 0 || prod_name.getText().toString().equals("") || addProductD.getText().toString().equals("")) {
                     addproduct.setEnabled(false);
                     addproduct.setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(), R.color.gray));
                     addproduct.setTextColor(Color.parseColor("#8b8b8b"));

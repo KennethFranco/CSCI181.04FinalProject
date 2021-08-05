@@ -36,7 +36,7 @@
         <activity android:name=".AdminViewShops_" />
         <activity android:name=".AdminViewCustomers_" />
         <activity android:name=".AdminRegister_" />
-        <activity android:name=".AdminLogin_" />
+        <activity android:name=".AdminLogin_" />w
         <activity android:name=".AdminWelcome_" />
         <activity android:name=".CustomerOrders_" />
         <activity android:name=".ViewCart_" />
