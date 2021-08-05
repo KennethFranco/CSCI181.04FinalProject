@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerAccount">
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/customerAccountPasswordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Password:"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountUsername"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountUsername" />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="103dp"
+        android:layout_height="133dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        app:srcCompat="@drawable/user_logo" />
+
+
+    <Button
+        android:id="@+id/customerAccountSaveButton"
+        android:layout_width="184dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_button"
+        android:fontFamily="@font/poppins_regular"
+        android:includeFontPadding="false"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#3B8AFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/customerAccountPassword"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountPassword"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountPassword"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <TextView
+        android:id="@+id/customerAccountFullNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Full Name:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:drawableLeft="@drawable/full"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/customerAccountFullName"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountFullNameTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountContactNumberTitle"
+        android:layout_width="247dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Contact Number (Please enter only numbers):"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountFullName"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountFullName" />
+
+    <EditText
+        android:id="@+id/customerAccountContactNumber"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Contact Number"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="@+id/customerAccountContactNumberTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumberTitle"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumberTitle" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/customerAccountAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Address:"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountContactNumber"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountContactNumber" />
+
+    <EditText
+        android:drawableLeft="@drawable/address"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/customerAccountAddress"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountAddressTitle" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/customerAccountUsernameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Username:"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountAddress"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountAddress" />
+
+    <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/customerAccountUsername"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountUsernameTitle" />
+
+    <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/customerAccountPassword"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountPasswordTitle" />
+
+    <TextView
+        android:id="@+id/customerAccountBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Back to start"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/customerAccountSaveButton"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/customerAccountSaveButton"
+        app:layout_constraintTop_toBottomOf="@+id/customerAccountSaveButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

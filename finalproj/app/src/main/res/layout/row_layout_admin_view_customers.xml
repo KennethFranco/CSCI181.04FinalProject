@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:fontFamily="@font/poppins_bold"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
+        android:id="@+id/admin_CustomerUname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:id="@+id/admin_CustomerPword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/admin_CustomerUname"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/admin_CustomerUname"
+        app:layout_constraintTop_toBottomOf="@+id/admin_CustomerUname" />
+
+    <ImageButton
+        android:id="@+id/admin_ClearUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:background="#D6D6D6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

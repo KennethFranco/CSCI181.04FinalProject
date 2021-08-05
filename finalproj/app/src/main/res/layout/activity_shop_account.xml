@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopAccount">
+
+    <TextView
+        android:id="@+id/shopAccountHomeLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:drawableLeft="@drawable/back"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Return to home screen"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shopAccountSaveButton" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="103dp"
+        android:layout_height="133dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        app:srcCompat="@drawable/user_logo" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Password"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/shopAccountUsername"
+        app:layout_constraintTop_toBottomOf="@+id/shopAccountUsername" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Username"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/shopAccountDescription"
+        app:layout_constraintTop_toBottomOf="@+id/shopAccountDescription" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Shop Name"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.224" />
+
+    <EditText
+        android:drawableLeft="@drawable/desc"
+        android:drawablePadding="5dp"
+        android:id="@+id/shopAccountDescription"
+        android:layout_width="341dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:fontFamily="@font/poppins_regular"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <EditText
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="5dp"
+        android:id="@+id/shopAccountUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <EditText
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="5dp"
+        android:id="@+id/shopAccountPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Shop Description"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/shopAccountName"
+        app:layout_constraintTop_toBottomOf="@+id/shopAccountName" />
+
+    <EditText
+        android:drawableLeft="@drawable/store"
+        android:drawablePadding="5dp"
+        android:id="@+id/shopAccountName"
+        android:layout_width="341dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/standard_textfield"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:inputType="textPersonName"
+        android:paddingLeft="30px"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/shopAccountSaveButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="184dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/poppins_regular"
+        android:includeFontPadding="false"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855"
+        app:strokeColor="#000000"
+        app:strokeWidth="0.5dp" />
+
+    <ImageButton
+        android:id="@+id/addShopPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.536"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

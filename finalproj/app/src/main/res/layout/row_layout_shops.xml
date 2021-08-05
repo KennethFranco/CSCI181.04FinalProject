@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row_layout"
+    android:layout_width="match_parent"
+    android:layout_height="75dp">
+
+    <TextView
+        android:fontFamily="@font/poppins_bold"
+        android:id="@+id/rowShopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311" />
+
+    <TextView
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/rowShopDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/rowShopName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rowShopName"
+        app:layout_constraintTop_toBottomOf="@+id/rowShopName" />
+
+    <ImageView
+        android:id="@+id/shopPhoto"
+        android:layout_width="75dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rowShopViewButton"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toEndOf="@+id/rowShopName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_logo" />
+
+    <ImageButton
+        android:id="@+id/rowShopViewButton"
+        android:layout_width="413dp"
+        android:layout_height="73dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
