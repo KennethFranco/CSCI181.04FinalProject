@@ -15,13 +15,11 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
+        android:text="Welcome!"
         android:id="@+id/ShopHomeWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10sp"
         android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:padding="20sp"
         android:textColor="#1c2e4a"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,12 +28,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.165" />
 
+
+
+
+    <TextView
+
+        android:id="@+id/shopWelcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="What would you like to do?"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/ShopHomeWelcome"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/ShopHomeWelcome"
+        app:layout_constraintTop_toBottomOf="@+id/ShopHomeWelcome" />
+
     <Button
         android:id="@+id/ViewProducts"
         android:layout_width="150dp"
         android:layout_height="131dp"
-        android:layout_marginTop="280dp"
 
+        android:layout_marginTop="128dp"
+        android:drawableTop="@drawable/productsfinal"
         android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
@@ -46,17 +62,18 @@
         android:textSize="16sp"
         app:backgroundTint="#3B8AFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ShopHomeWelcome" />
 
     <Button
         android:id="@+id/shopsAccountButton"
         android:layout_width="150dp"
         android:layout_height="131dp"
-        android:layout_marginTop="20dp"
-        android:drawableTop="@drawable/useraccountfinal"
 
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:drawableTop="@drawable/useraccountfinal"
         android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:paddingTop="2dp"
@@ -66,10 +83,10 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:backgroundTint="#3B8AFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ViewProducts" />
+        app:layout_constraintBottom_toBottomOf="@+id/ViewProducts"
+        app:layout_constraintStart_toEndOf="@+id/ViewProducts"
+        app:layout_constraintTop_toTopOf="@+id/ViewProducts"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/shopHomeScreenBackButton"
