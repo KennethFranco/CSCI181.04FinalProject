@@ -69,7 +69,7 @@ public class CustomerAccount extends AppCompatActivity {
                 .equalTo("uuid", ""+uuid)
                 .findFirst();
 
-        System.out.println(result);
+
 
         Boolean checker = prefs.getBoolean("userFT", true);
 
