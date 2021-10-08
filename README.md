@@ -1,7 +1,6 @@
 ![231746578_246227570670140_515638215605247938_n](https://user-images.githubusercontent.com/83637447/136556222-e49e4e2b-7de5-4c7f-a709-bbf4697176f6.png)
-# CSCI181.04FinalProject
-Android Application developed using Android Studio for CSCI 181.04: Special Topics in Software Engineering: Android Development Final Project
-
+# CSCI 181.04 Special Topics in Software Engineering: Android Development Final Project 
+# InstaEats: An Android application that allows users to order food from multiple vendors while also allowing these vendors to track the orders for all of their products.
 
 
 ![233047214_360336678982795_1629921900843847027_n](https://user-images.githubusercontent.com/83637447/136556144-5fa2fa55-e34e-4676-b7c9-d4f40cbdc66f.png)
