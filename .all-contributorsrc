@@ -7,6 +7,12 @@
   "commitConvention": "angular",
   "contributors": [
     {
+      "login": "paz10s",
+      "name": "Vincent Paz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65367607?v=4",
+      "profile": "https://github.com/paz10s",
+      "contributions": [
+        "design"
       "login": "MarcoFrancisco13",
       "name": "Marco Francisco",
       "avatar_url": "https://avatars.githubusercontent.com/u/79687819?v=4",

@@ -27,6 +27,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/paz10s"><img src="https://avatars.githubusercontent.com/u/65367607?v=4?s=100" width="100px;" alt="Vincent Paz"/><br /><sub><b>Vincent Paz</b></sub></a><br /><a href="#design-paz10s" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MarcoFrancisco13"><img src="https://avatars.githubusercontent.com/u/79687819?v=4?s=100" width="100px;" alt="Marco Francisco"/><br /><sub><b>Marco Francisco</b></sub></a><br /><a href="https://github.com/KennethFranco/InstaEats-Android-Mobile-Application/commits?author=MarcoFrancisco13" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://kennethfranco.github.io/kennethfranco/"><img src="https://avatars.githubusercontent.com/u/83637447?v=4?s=100" width="100px;" alt="Kenneth Franco"/><br /><sub><b>Kenneth Franco</b></sub></a><br /><a href="https://github.com/KennethFranco/InstaEats-Android-Mobile-Application/commits?author=KennethFranco" title="Code">💻</a></td>
     </tr>
